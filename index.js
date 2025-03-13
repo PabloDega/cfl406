@@ -7,23 +7,25 @@ const server = http.createServer(app);
 
 //-----------------------------
 // Layouts EJS
+app.set('views', './src/views/');
 app.set("view engine", "ejs");
 import expressEjsLayouts from 'express-ejs-layouts';
 app.use(expressEjsLayouts);
-app.set("layout", "./src/views/layouts/panel");
+app.set("layout", "layouts/main");
 
 //-----------------------------
 // cookies
 import cookieSession from 'cookie-session';
-app.use(
-  cookieSession({
-    name: "session",
+app.use(cookieSession({
+    name: "CFL406",
     keys: [process.env.SESSION_KEYS1, process.env.SESSION_KEYS2],
     maxAge: 24 * 60 * 60 * 1000,
+    overwrite: false,
   })
 );
-import cookieParser from 'cookie-parser';
-app.use(cookieParser());
+
+/* import cookieParser from 'cookie-parser';
+app.use(cookieParser()); */
 
 //-----------------------------
 // Limiter

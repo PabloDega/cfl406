@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --maxWidth: 900px;
+    --color1: #bbb;
+    --color2: rgb(0, 140, 255);
+}
+body{
+    background-color: var(--color1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#mainCont{
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.2);
+}
+header{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 2em;
+    background: linear-gradient(105deg, white, rgb(233, 233, 233));
+    position: relative;
+    transition: 1s;
+}
+header > img{
+    width: 200px;
+}
+header > span{
+    cursor: pointer;
+    transition: 0.2s;
+}
+header > span:hover{
+    border-bottom: 2px solid black;
+    padding-bottom: 4px;
+}
+.flexH{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.flexV{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+#cont2{
+    flex-grow: 1;
+}
+footer{
+    padding: 2rem;
+    background-color: rgb(100, 100, 100);
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+}
+footer img{
+    width: 200px;
+}
+input{
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 1px gray solid;
+}
+.spacer{
+    flex-grow: 1;
+}
+.btn{
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: var(--color2);
+    font-weight: 600;
+    color: white;
+    transition: 0.5s;
+    width: fit-content;
+}
+.btn:hover{
+    background-color: gray;
+}
+#buscador{
+    align-items: stretch;
+}
+.oculto{
+    display: none;
+}
+.landPublicacion{
+    background-image: url(/im/gradientTop.svg), linear-gradient(45deg, green 5%, blue 50%, purple);
+    background-size: cover;
+    color: white;
+    font-size: 1.2em;
+    overflow: hidden;
+}
+.landPublicacion > div{
+    flex-grow: 1;
+    padding: 2em;
+    gap: 0.5rem;
+}
+.landPublicacion img{
+    transition: 2s;
+    transform: translate(10px, 10px);
+}
+.landNombre{
+    text-align: center;
+    font-size: 1.2em;
+    padding: 0 1em;
+}
+.landNombre h2, .landNombre h3{
+    font-weight: 100;
+}
+.landNombre h1{
+    color: var(--color2);
+}
+.landLogos{
+    max-width: 100%;
+}
+.landLogos img{
+    max-height: 50px;
+    width: 100%;
+}
+@media only screen and (max-width: 750px) {
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 134px;
+        overflow: hidden;
+    }
+    header > img{
+        margin-bottom: 1em;
+    }
+    header > div  >img{
+        height: 40px;
+    }
+    header > span:hover{
+        border-bottom: 0;
+        padding-bottom: 0;
+        border-left: 2px solid black;
+        padding-left: 4px;
+    }
+    #hambHeader{
+        display: flex;
+        position: absolute;
+        right: 2em;
+        top: 3em;
+        cursor: pointer;
+    }
+    .landPublicacion{
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+    .landPublicacion > div {
+        z-index: 2;
+    }
+    .landPublicacion span{
+        max-height: 200px;
+    }
+    .landPublicacion img{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        max-width: 440px;
+        right: 0;
+        opacity: 0.6;
+    }
+    .landLogos{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
