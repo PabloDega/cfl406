@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 :root{
-    --maxWidth: 900px;
+    --maxWidth: 1100px;
     --color1: #bbb;
     --color2: rgb(0, 140, 255);
+    --color3: rgb(222, 122, 0);
+    
 }
 body{
     background-color: var(--color1);
@@ -85,6 +87,12 @@ input{
 .btn:hover{
     background-color: gray;
 }
+.btnNaranja{
+    background-color: var(--color3);
+}
+.btnVerde{
+    background-color: green;
+}
 #buscador{
     align-items: stretch;
 }
@@ -97,15 +105,24 @@ input{
     color: white;
     font-size: 1.2em;
     overflow: hidden;
+    position: relative;
+    min-height: 350px;
 }
 .landPublicacion > div{
     flex-grow: 1;
     padding: 2em;
     gap: 0.5rem;
+    z-index: 2;
 }
 .landPublicacion img{
+    width: 100%;
+    position: absolute;
     transition: 2s;
     transform: translate(10px, 10px);
+    bottom: 0;
+    max-width: 640px;
+    right: 0;
+    opacity: 1;
 }
 .landNombre{
     text-align: center;
@@ -119,11 +136,89 @@ input{
     color: var(--color2);
 }
 .landLogos{
-    max-width: 100%;
+    width: 100%;
+    padding: 0 1em;
+}
+.landLogos span{
+    flex-grow: 1;
 }
 .landLogos img{
-    max-height: 50px;
     width: 100%;
+}
+.landH{
+    text-align: center;
+    color: gray;
+    font-weight: 600;
+    font-size: 1.4em;
+    padding: 1em;
+    border-bottom: 2px solid gray;
+    position: relative;
+}
+.landOferta{
+    padding: 1em;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    align-items: stretch;
+}
+.card{
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    gap: 0.5em;
+    flex-grow: 1;
+    width: min-content;
+    max-width: 25%;
+    min-width: 200px;
+}
+.card h1{
+    font-size: 1.5em;
+    color: var(--color3);
+    max-width: 100%;
+}
+.card h2{
+    font-size: 1em;
+    color: gray;
+    font-weight: 400;
+    transform: translate(0, 0.5em);
+}
+.card > span{
+    border-top: 2px solid lightgray;
+    padding-top: 0.5em;
+}
+.card > div {
+    flex-grow: 1;
+    align-items: flex-end;
+    font-size: 0.8em;
+}
+#landBtnFiltrar{
+    font-size: 1rem;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+.landCarrousel{
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+.carrouselSector{
+    padding: 2em;
+}
+.carrouselSector img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--maxWidth);
+}
+.carrouselTxt{
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 1em;
+}
+@media only screen and (max-width: 925px) {
+    .landPublicacion img{
+        opacity: 0.6;
+    }
 }
 @media only screen and (max-width: 750px) {
     header{
@@ -154,24 +249,15 @@ input{
     .landPublicacion{
         flex-direction: column;
         align-items: flex-start;
-        position: relative;
-    }
-    .landPublicacion > div {
-        z-index: 2;
     }
     .landPublicacion span{
         max-height: 200px;
     }
-    .landPublicacion img{
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        max-width: 440px;
-        right: 0;
-        opacity: 0.6;
-    }
     .landLogos{
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .landLogos img{
+        max-height: 50px;
     }
 }
