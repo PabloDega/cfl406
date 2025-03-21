@@ -204,6 +204,7 @@ input{
 .carrouselImg{
     display: flex;
     width: 300%;
+    transition: 2s;
 }
 .carrouselSector{
     padding: 2em;
@@ -234,6 +235,7 @@ input{
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
+    transition: 2s;
 }
 @media only screen and (max-width: 925px) {
     .landPublicacion img{
