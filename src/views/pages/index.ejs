@@ -4,7 +4,7 @@
     <span>Inscripciones Abiertas</span>
     <span>Cursos Presenciales</span>
     <span>Abierto a toda la comunidad</span>
-    <span type="button" class="btn btnAzul">INSCRIPCION</span>
+    <span class="btn btnAzul btnInscripcion">INSCRIPCION</span>
   </div>
   <span>
     <img src="im/res01.svg">
@@ -66,28 +66,16 @@
 
 </div>
 
-<div class="landH">
+<div class="landH" id="ofertaFormativa">
   Oferta formativa 2025
   <div class="btn btnVerde" id="landBtnFiltrar">Filtrar</div>
 </div>
 
 <div class="landOferta flexH">
-
-<!--   <div class="card flexV">
-    <h2>Sede San Martín</h2>
-    <h1>Electricidad Básica</h1>
-    <span>✔ Curso presencial</span>
-    <span>✔ Titulo oficial</span>
-    <span>✔ Inscripciones abiertas</span>
-    <div class="flexH">
-      <div class="btn">Inscripción</div>
-      <div class="btn btnNaranja">Requisitos</div>
-    </div>
-  </div> -->
-
+<!-- javascript fill -->
 </div>
 
-<div class="landH">
+<div class="landH" id="landMapa">
   Sedes
 </div>
 
@@ -101,6 +89,9 @@
   </span>
 </div>
 
+<script>window.cursos = <%- JSON.stringify(cursos) %></script>
 
-<script src="/script/landing.js"></script>
-<script src="/script/carrousel.js"></script>
+
+<script defer src="/script/landing.js"></script>
+<script defer src="/script/carrousel.js"></script>
+<script defer src="/script/inscripcion.js"></script>

@@ -171,6 +171,7 @@ input{
     width: min-content;
     max-width: 25%;
     min-width: 200px;
+    transition: 3s;
 }
 .card h1{
     font-size: 1.5em;
@@ -192,6 +193,12 @@ input{
     align-items: flex-end;
     font-size: 0.8em;
 }
+.cardSeleccionado{
+    transform: scale(1.07);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #c6c6c6;
+}
+
 #landBtnFiltrar{
     font-size: 1rem;
     position: absolute;
@@ -294,37 +301,93 @@ input{
 #btnCancelar{
     display: none;
 }
+
+header.desborda-x {
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 134px;
+    overflow: hidden;
+}
+header.desborda-x > img {
+    margin-bottom: 1em;
+}
+header.desborda-x > div > img {
+    height: 40px;
+}
+header.desborda-x > span:hover {
+    border-bottom: 0;
+    padding-bottom: 0;
+    border-left: 2px solid black;
+    padding-left: 4px;
+}
+header.desborda-x #hambHeader {
+    display: flex;
+    position: absolute;
+    right: 2em;
+    top: 3em;
+    cursor: pointer;
+}
+#error{
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#error .error-text{
+    background-color: red;
+    font-weight: 600;
+    width: 100%;
+    padding: 1em;
+    position: relative;
+}
+.barraLoad{
+    display: flex;
+    width: 100%;
+    height: 5px;
+    background-color: darkred;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 101;
+    animation: barraLoad 7s linear;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;}
+@keyframes barraLoad {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+#resultados{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+#resultados .resultado{
+    padding: 1em;
+    border-bottom: 1px solid var(--color2);
+    transition: 0.2s;
+    min-width: 250px;
+}
 @media only screen and (max-width: 925px) {
     .landPublicacion img{
         opacity: 0.6;
     }
 }
 @media only screen and (max-width: 750px) {
-    header{
-        flex-direction: column;
-        align-items: flex-start;
-        max-height: 134px;
-        overflow: hidden;
-    }
-    header > img{
-        margin-bottom: 1em;
-    }
-    header > div  >img{
-        height: 40px;
-    }
-    header > span:hover{
-        border-bottom: 0;
-        padding-bottom: 0;
-        border-left: 2px solid black;
-        padding-left: 4px;
-    }
-    #hambHeader{
-        display: flex;
-        position: absolute;
-        right: 2em;
-        top: 3em;
-        cursor: pointer;
-    }
     .landPublicacion{
         flex-direction: column;
         align-items: flex-start;

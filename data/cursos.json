@@ -1,0 +1,138 @@
+{
+  "cursos": [
+    {
+      "curso": "Programación Web",
+      "codigo": 123,
+      "id": 1,
+      "activo": true,
+      "area": "Informática",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "30/03/2025",
+      "cierreInscripciones": "30/03/2025",
+      "duracion": "Cuatrimestral",
+      "titulo": "Oficial",
+      "tipo": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo de primario completo",
+        "txtxtx"
+      ]
+    },
+    {
+      "curso": "Electricidad Básica",
+      "codigo": 124,
+      "id": 2,
+      "area": "Informática",
+      "activo": true,
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "20/03/2025",
+      "cierreInscripciones": "20/03/2025",
+      "duracion": "Cuatrimestral",
+      "titulo": "Oficial",
+      "tipo": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo de primario completo"
+      ]
+    },
+    {
+      "curso": "Excel",
+      "codigo": 125,
+      "id": 3,
+      "activo": true,
+      "area": "Informática",
+      "sede": "San Miguel",
+      "año": 2025,
+      "inicio": "11/05/2025",
+      "cierreInscripciones": "11/05/2025",
+      "duracion": "Bimestral",
+      "titulo": "CFL406",
+      "tipo": "Online",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo de primario completo"
+      ]
+    },
+    {
+      "curso": "Manicuría",
+      "codigo": 126,
+      "activo": true,
+      "id": 4,
+      "area": "Estética",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "08/08/2025",
+      "cierreInscripciones": "08/08/2025",
+      "duracion": "Cuatrimestral",
+      "titulo": "Oficial",
+      "tipo": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo de primario completo"
+      ]
+    },
+    {
+      "curso": "Peinados",
+      "codigo": 127,
+      "activo": true,
+      "id": 5,
+      "area": "Estética",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "09/04/2025",
+      "cierreInscripciones": "09/04/2025",
+      "duracion": "Cuatrimestral",
+      "titulo": "Oficial",
+      "tipo": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo de primario completo"
+      ]
+    },
+    {
+      "curso": "Maquillaje Porfesional",
+      "codigo": 128,
+      "activo": true,
+      "id": 6,
+      "area": "Estética",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "12/05/2025",
+      "cierreInscripciones": "12/05/2025",
+      "duracion": "Cuatrimestral",
+      "titulo": "Oficial",
+      "tipo": "Semi presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo de primario completo"
+      ]
+    },
+    {
+      "curso": "Maquillaje Porfesional",
+      "codigo": 128,
+      "activo": true,
+      "id": 6,
+      "area": "Estética",
+      "sede": "San Miguel",
+      "año": 2025,
+      "inicio": "12/09/2025",
+      "cierreInscripciones": "12/09/2025",
+      "duracion": "Cuatrimestral",
+      "titulo": "Oficial",
+      "tipo": "Semi presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo de primario completo"
+      ]
+    }
+  ]
+}
