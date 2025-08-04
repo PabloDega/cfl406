@@ -1,5 +1,7 @@
 console.log("landing")
 
+import { mostrarCortinaConMsg } from "./cortina.js";
+
 // Mapa de Google
 let mapas = [{
     sede: "San Martin",
@@ -14,7 +16,7 @@ let mapaLoad = 0;
 // Cursos ----------------------------
 function renderCursos(){
     if(!window.cursos || window.cursos.length == 0){
-        mostrarCortina("No hay cursos disponibles", true);
+        mostrarCortinaConMsg("No hay cursos disponibles", true);
         return;
     }
     let txtHTML = ""
@@ -76,22 +78,5 @@ function mostrarRequisitos(requisitos){
         txt += `<li>${dato}</li>`
     })
     txt += "</ul>"
-    mostrarCortina(txt, false)
-}
-
-// cortina
-function mostrarCortina(txt, btncancelar){
-    let resp = true;
-    let cortina = document.querySelector(".cortina");
-    cortina.style.display = "flex";
-    if(btncancelar){
-        document.querySelector("#btnCancelar").style.display = "block";
-    }
-    document.querySelector(".cortina #txt").innerHTML = txt;
-
-    document.querySelectorAll(".cortina .btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            console.log(e.target.dataset.resp)
-        })
-    })
+    mostrarCortinaConMsg(txt, false)
 }

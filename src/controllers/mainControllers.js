@@ -15,3 +15,12 @@ export const index = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 }
+
+export const login = async (req, res) => {
+  try {
+    res.render("pages/login", {});
+  } catch (error) {
+    console.error("Error en login controller:", error);
+    res.status(500).send("Internal Server Error");
+  }
+}

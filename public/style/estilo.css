@@ -298,7 +298,7 @@ input{
     flex-direction: column;
     gap: 1em;
 }
-#btnCancelar{
+#btnPopUpCancelar{
     display: none;
 }
 
