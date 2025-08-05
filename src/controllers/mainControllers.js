@@ -18,7 +18,11 @@ export const index = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    res.render("pages/login", {});
+    res.render("pages/login", {
+      layout: "layouts/panel",
+      logged: false,
+      error: [{ message: "Usuario o contraseña incorrectos", code: 401 }, { message: "Otro error", code: 402 }],
+    });
   } catch (error) {
     console.error("Error en login controller:", error);
     res.status(500).send("Internal Server Error");

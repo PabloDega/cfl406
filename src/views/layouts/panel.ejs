@@ -14,8 +14,13 @@
           <div id="cont2" class="flexV">
           <%- body %>
           </div>
-        <%- include("../partial/footer")%>
+        <%- include("../partial/panel/footer")%>
     </div>
+    <script>
+      window.error = <%- JSON.stringify(error) %>;
+      window.logged = <%- JSON.stringify(logged) %>;
+    </script>
     <script defer src="/script/panel.js"></script>
+    <script defer type="module" src="/script/mostrarError.js"></script>
 </body>
 </html>
