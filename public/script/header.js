@@ -2,10 +2,9 @@ console.log("Header")
 
 import { debounce } from "./debounce.js";
 import { buscar, mostrarResultados } from "./buscar.js";
-import { mostrarError } from "./mostrarError.js";
+import { mostrarErrores } from "./mostrarError.js";
 
-setTimeout(() => {mostrarError(new Error("Otro error de prueba1"), 2);}, 1000);
-setTimeout(() => {mostrarError(new Error("Otro error de prueba2"), 3);}, 2000);
+mostrarErrores([new Error("Error de prueba 3"), new Error("Error de prueba 4")]);
 
 let menuAbierto = false;
 
@@ -60,11 +59,11 @@ document.querySelectorAll("header .btnHeader").forEach(btn => {
         if (e.target.id === "btnHome") {
             window.location.href = "/";
         } else if (e.target.id === "btnFormacion") {
-            window.location.href = "#ofertaFormativa";
+            window.location.href = "/#ofertaFormativa";
         } else if (e.target.id === "btnSedes") {
-            window.location.href = "#landMapa";
+            window.location.href = "/#landMapa";
         } else if (e.target.id === "btnContactos") {
-            window.location.href = "#footer";
+            window.location.href = "/#footer";
         }
     });
 });

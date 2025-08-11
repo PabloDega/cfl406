@@ -66,7 +66,7 @@ footer.flexV{
     padding-top: 2em;
 }
 footer img{
-    width: 200px;
+    width: 150px;
 }
 input{
     padding: 0.5em;
@@ -194,9 +194,28 @@ input{
     font-size: 0.8em;
 }
 .cardSeleccionado{
-    transform: scale(1.07);
+    /* transform: scale(1.07);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.2);
-    background-color: #c6c6c6;
+    background-color: #c6c6c6; */
+    animation: cardSeleccionado 1s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cardSeleccionado {
+    0% {
+        outline: 3px darkorange solid;
+        box-shadow: 0 0 0 20px rgba(255, 140, 0, 0) ;
+    }
+    20% {
+        outline: 3px darkorange solid;
+    }
+    60% {
+        outline: 7px darkorange solid;
+    }
+    100% {
+        outline: 3px darkorange solid;
+        box-shadow: 0 0 0 3px rgba(255, 140, 0, 1);
+    }
 }
 
 #landBtnFiltrar{

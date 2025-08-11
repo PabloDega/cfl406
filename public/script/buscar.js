@@ -1,6 +1,6 @@
 console.log("buscar");
 
-import { mostrarError } from "./mostrarError.js";
+import { mostrarErrores } from "./mostrarError.js";
 
 export const buscar = (query) => {
     try {
@@ -20,7 +20,7 @@ export const buscar = (query) => {
         return resultados.length > 0 ? resultados : "No se encontraron resultados";
         // Here you would typically make an API call or search through a dataset
     } catch (error) {
-        mostrarError(error);
+        mostrarErrores([error]);
         console.error("Error al buscar:", error.message);
     }
 };
@@ -45,8 +45,11 @@ export const mostrarResultados = (resultados) => {
                     const y = card.getBoundingClientRect().top + window.pageYOffset - 200;
                     window.scrollTo({ top: y, behavior: "smooth" });
                 }
+                // remover previamente la clase "cardSeleccionado"
+                document.querySelectorAll(".cardSeleccionado").forEach(card => {
+                    card.classList.remove("cardSeleccionado");
+                });
                 document.querySelector(`#cardCurso-${cursoId}`).classList.add("cardSeleccionado");
-                setTimeout(() => {document.querySelector(`#cardCurso-${cursoId}`).classList.remove("cardSeleccionado");}, 6000);
                 contenedorResultados.style.display = "none";
             });
         });

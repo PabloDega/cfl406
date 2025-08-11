@@ -9,3 +9,12 @@ export const mostrarError = (error, i) => {
         document.querySelector(`#error-${i}`).style.display = "none";
     }, 7000);
 };
+
+export const mostrarErrores = async (errores) => {
+    const contenedorErrores = document.querySelector("#error");
+    contenedorErrores.innerHTML = ""; // Limpiar errores previos
+    for (let i = 0; i < errores.length; i++) {
+        mostrarError(errores[i], i);
+        await new Promise(resolve => setTimeout(resolve, 500));
+    }
+};
