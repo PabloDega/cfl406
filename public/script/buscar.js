@@ -12,10 +12,10 @@ export const buscar = (query) => {
             throw new Error("La búsqueda no puede estar vacía");
         }
         // Simulate a search operation
-        const resultados = window.cursos.filter(curso =>
-            Object.values(curso).some(valor =>
-                typeof valor === 'string' && valor.toLowerCase().includes(trimmedQuery.toLowerCase())
-            )
+        const resultados = window.cursos.filter(curso => {
+            return Object.values(curso).some(valor => {
+                return typeof valor === 'string' && valor.toLowerCase().includes(trimmedQuery.toLowerCase())
+            }) && curso.activo}
         );
         return resultados.length > 0 ? resultados : "No se encontraron resultados";
         // Here you would typically make an API call or search through a dataset

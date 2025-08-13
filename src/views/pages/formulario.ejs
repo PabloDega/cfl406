@@ -4,7 +4,10 @@
         <select name="curso" id="curso">
             <option value="">Seleccione un curso</option>
             <%cursos.forEach(curso => {
-                if(!curso.inscripcion) { return }%>
+                if(!curso.inscripcion) { return };
+                let cierreInscripciones = curso.cierreInscripciones.split("/");
+                cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1, cierreInscripciones[0]);
+                if(cierreInscripciones < new Date()){return};%>
                 <option value="<%= curso.id %>"><%= curso.curso %> - <%= curso.sede %></option>
             <% }) %>
         </select>

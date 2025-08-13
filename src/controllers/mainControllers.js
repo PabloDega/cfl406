@@ -18,9 +18,21 @@ export const index = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    res.render("pages/login", { layout: "layouts/panel" });
+    res.render("pages/login", { layout: "layouts/login" });
   } catch (error) {
     console.error("Error en login controller:", error);
+    res.status(500).send("Internal Server Error");
+  }
+}
+
+export const postLogin = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    // Aquí puedes manejar la lógica de autenticación
+    console.log("Datos de login:", { username, password });
+    res.redirect("/");
+  } catch (error) {
+    console.error("Error en postLogin controller:", error);
     res.status(500).send("Internal Server Error");
   }
 }

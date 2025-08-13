@@ -30,7 +30,7 @@ function renderCursos(){
         cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1, cierreInscripciones[0])
         if(cierreInscripciones < new Date()){
             estado.visibilidad = "oculto";
-            estado.estado = "X Inscripciones cerradas"
+            estado.estado = "X Inscripciones cerradas";
         }
         txtHTML += `<div class="card flexV" data-id="${curso.id}" id="cardCurso-${curso.id}">
                         <h2>Sede ${curso.sede}</h2>
@@ -42,7 +42,7 @@ function renderCursos(){
                         <div class="btn btnInscripcion ${estado.visibilidad}" data-id="${curso.id}" data-curso="${curso.curso}">Inscripción</div>
                         <div class="btn btnNaranja btnRequisitos" data-id="${curso.id}">Requisitos</div>
                         </div>
-                    </div>`
+                    </div>`;
     });
     document.querySelector(".landOferta").innerHTML = txtHTML;
 }

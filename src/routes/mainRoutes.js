@@ -4,7 +4,9 @@ import * as mainControllers from "../controllers/mainControllers.js";
 
 router.get("/", mainControllers.index);
 
-router.get("/admin", mainControllers.login);
+router.get("/login", mainControllers.login);
+
+router.post("/login", mainControllers.postLogin);
 
 router.get("/formulario", mainControllers.formulario);
 

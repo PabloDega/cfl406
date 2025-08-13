@@ -55,6 +55,11 @@ header > span:hover{
 }
 #cont2{
     flex-grow: 1;
+    padding-top: 1em;
+}
+.contLogin{
+    display: flex;
+    align-items: center;
 }
 footer.flexV{
     padding: 2rem;
@@ -62,11 +67,27 @@ footer.flexV{
     align-items: center;
     color: white;
     font-size: 1.5em;
-    gap: 0;
+    gap: 1em;
     padding-top: 2em;
 }
-footer img{
+footer > span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0em;
+}
+footer > span img, footer > img {
     width: 150px;
+}
+footer #contactos{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+footer #contactos svg{
+    height: 30px;
+    cursor: pointer;
+    fill: white;
 }
 input{
     padding: 0.5em;
@@ -400,6 +421,16 @@ header.desborda-x #hambHeader {
     border-bottom: 1px solid var(--color2);
     transition: 0.2s;
     min-width: 250px;
+}
+.off{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 400px;
 }
 @media only screen and (max-width: 925px) {
     .landPublicacion img{
