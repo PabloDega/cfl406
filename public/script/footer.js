@@ -1,3 +1,5 @@
+import { mostrarErrores, mostrarInfo } from "./mostrarError.js";
+
 console.log("Footer script loaded");
 
 document.querySelectorAll("footer #contactos svg").forEach(svg => {
@@ -11,7 +13,13 @@ document.querySelectorAll("footer #contactos svg").forEach(svg => {
         } else if (btnPresionado === "facebook") {
             window.open("https://www.facebook.com/cfl406.sanmartin", "_blank");
         } else if (btnPresionado === "mail") {
-            window.open("mailto:cfp406secsanmartin@gmail.com", "_blank");
+            navigator.clipboard.writeText("cfp406secsanmartin@gmail.com")
+                .then(() => {
+                    mostrarInfo("Dirección de correo copiada al portapapeles.");
+                })
+                .catch(() => {
+                    mostrarErrores([new Error("No se pudo copiar la dirección de correo.")]);
+                });
         } else if (btnPresionado === "telefono") {
             window.open("tel:+541153704909", "_blank");
         }

@@ -367,8 +367,10 @@ header.desborda-x #hambHeader {
     top: 3em;
     cursor: pointer;
 }
-#error{
-    position: relative;
+#error, #info{
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
     width: 100%;
     display: flex;
@@ -379,18 +381,27 @@ header.desborda-x #hambHeader {
     justify-content: center;
     cursor: pointer;
 }
-#error .error-text{
+#error .error-text, #info .info-text{
     background-color: red;
     font-weight: 600;
     width: 100%;
     padding: 1em;
     position: relative;
 }
+#info .info-text{
+    background-color: green;
+}
+#error .error-text img, #info .info-text img{
+    width: 1em;
+    height: 1em;
+    margin-left: 0.5em;
+    filter: invert(1);
+}
 .barraLoad{
     display: flex;
     width: 100%;
     height: 5px;
-    background-color: darkred;
+    background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -398,7 +409,8 @@ header.desborda-x #hambHeader {
     animation: barraLoad 7s linear;
     animation-iteration-count: 1;
     animation-direction: normal;
-    animation-fill-mode: forwards;}
+    animation-fill-mode: forwards;
+}
 @keyframes barraLoad {
     0% { width: 0; }
     100% { width: 100%; }
