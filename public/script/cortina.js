@@ -18,7 +18,6 @@ export function mostrarCortinaConMsg(txt, btncancelar){
 
     document.querySelectorAll(".cortina .btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
-            console.log(e.target.dataset.resp)
             return e.target.dataset.resp;
         })
     })

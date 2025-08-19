@@ -11,17 +11,23 @@ export const buscar = (query) => {
         if (trimmedQuery.length === 0) {
             throw new Error("La búsqueda no puede estar vacía");
         }
-        // Simulate a search operation
+        
+        // Verificar que window.cursos existe
+        if (!window.cursos || !Array.isArray(window.cursos)) {
+            throw new Error("Datos de cursos no disponibles");
+        }
+        
         const resultados = window.cursos.filter(curso => {
             return Object.values(curso).some(valor => {
                 return typeof valor === 'string' && valor.toLowerCase().includes(trimmedQuery.toLowerCase())
-            }) && curso.activo}
-        );
+            }) && curso.activo
+        });
+        
         return resultados.length > 0 ? resultados : "No se encontraron resultados";
-        // Here you would typically make an API call or search through a dataset
     } catch (error) {
         mostrarErrores([error]);
         console.error("Error al buscar:", error.message);
+        return [];
     }
 };
 
@@ -56,4 +62,4 @@ export const mostrarResultados = (resultados) => {
     } else {
         contenedorResultados.innerHTML = "<p>No se encontraron resultados.</p>";
     }
-}   
+}

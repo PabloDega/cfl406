@@ -52,7 +52,6 @@ renderCursos();
 document.querySelectorAll(".btnRequisitos").forEach(btn => {
     btn.addEventListener("click", (e) => {
         let curso = cursos.find((curso) => curso.id == e.target.dataset.id);
-        console.log(curso.requisitos);
         mostrarRequisitos(curso.requisitos);
     })
 })

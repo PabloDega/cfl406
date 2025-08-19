@@ -1,0 +1,39 @@
+<h1>Lista de cursos <div class="btn small" id="agregarCurso">Agregar curso</div></h1>
+
+<% if (cursos && cursos.length > 0) { %>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Año</th>
+                <th>Sede</th>
+                <th>Curso</th>
+                <th>Inicio</th>
+                <th>Duración</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% cursos.forEach(curso => { %>
+                <tr>
+                    <td><%= curso.codigo %></td>
+                    <td><%= curso.año %></td>
+                    <td><%= curso.sede %></td>
+                    <td><%= curso.curso %></td>
+                    <td><%= curso.inicio %></td>
+                    <td><%= curso.duracion %></td>
+                    <td>
+                        <div class="acciones">
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="ver">Ver</div>
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="inscribir">Inscribir</div>
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="editar">Editar</div>
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="eliminar">Eliminar</div>
+                        </div>
+                    </td>
+                </tr>
+        <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <p>No hay cursos disponibles.</p>
+<% } %>

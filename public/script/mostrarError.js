@@ -1,5 +1,4 @@
 export const mostrarError = (error, i) => {
-    console.log(error)
     const errorSpan = document.createElement("span");
     errorSpan.className = "error-text";
     errorSpan.id = `error-${i}`;

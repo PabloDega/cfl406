@@ -5,7 +5,6 @@ console.log("Footer script loaded");
 document.querySelectorAll("footer #contactos svg").forEach(svg => {
     svg.addEventListener("click", () => {
         const btnPresionado = svg.getAttribute("data-btn");
-        console.log(`Button clicked: ${btnPresionado}`);
         if (btnPresionado === "whatsapp") {
             window.open("https://wa.me/541127703652", "_blank");
         } else if (btnPresionado === "instagram") {

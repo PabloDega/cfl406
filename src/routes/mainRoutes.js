@@ -1,13 +1,14 @@
 import express from "express"
 export const router = express.Router();
 import * as mainControllers from "../controllers/mainControllers.js";
+import * as authControllers from "../controllers/authControllers.js";
 
 router.get("/", mainControllers.index);
 
-router.get("/login", mainControllers.login);
-
-router.post("/login", mainControllers.postLogin);
-
-router.get("/formulario", mainControllers.formulario);
+router.get("/formulario",mainControllers.formulario);
 
 router.post("/formulario", mainControllers.postFormulario);
+
+router.get("/login", authControllers.login);
+
+router.post("/login", authControllers.postLogin);
