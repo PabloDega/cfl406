@@ -140,12 +140,13 @@ input{
 .landPublicacion img{
     width: 100%;
     position: absolute;
-    transition: 2s;
-    transform: translate(10px, 10px);
+    /* transition: 2s;
+    transform: translate(10px, 10px); */
     bottom: 0;
-    max-width: 640px;
+    /* max-width: 640px; */
     right: 0;
-    opacity: 1;
+    opacity: 0.6;
+    min-width: 800px;
 }
 .landNombre{
     text-align: center;
@@ -155,8 +156,9 @@ input{
 .landNombre h2, .landNombre h3{
     font-weight: 100;
 }
-.landNombre h1{
+#cont2 .landNombre h1{
     color: var(--color2);
+    display: block;
 }
 .landLogos{
     width: 100%;
