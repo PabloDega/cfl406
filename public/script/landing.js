@@ -40,6 +40,7 @@ function renderCursos(){
                         <span>${estado.estado}</span>
                         <div class="flexH">
                         <div class="btn btnInscripcion ${estado.visibilidad}" data-id="${curso.id}" data-curso="${curso.curso}">Inscripción</div>
+                        <div class="btn btnAzul btnMasInfo" data-id="${curso.id}">+ Info</div>
                         <div class="btn btnNaranja btnRequisitos" data-id="${curso.id}">Requisitos</div>
                         </div>
                     </div>`;
@@ -51,10 +52,17 @@ renderCursos();
 
 document.querySelectorAll(".btnRequisitos").forEach(btn => {
     btn.addEventListener("click", (e) => {
-        let curso = cursos.find((curso) => curso.id == e.target.dataset.id);
+        let curso = window.cursos.find((curso) => curso.id == e.target.dataset.id);
         mostrarRequisitos(curso.requisitos);
-    })
-})
+    });
+});
+
+document.querySelectorAll(".btnMasInfo").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        let curso = window.cursos.find((curso) => curso.id == e.target.dataset.id);
+        mostrarMasInfo(curso);
+    });
+});
 
 // Mapas ----------------------------
 document.querySelectorAll(".mapa").forEach((btn) => {
@@ -77,5 +85,20 @@ function mostrarRequisitos(requisitos){
         txt += `<li>${dato}</li>`
     })
     txt += "</ul>"
+    mostrarCortinaConMsg(txt, false)
+}
+
+function mostrarMasInfo(curso){
+    let txt = `<h1>${curso.curso}</h1>
+              <h2>Sede ${curso.sede}</h2>
+              <span>✔ Curso ${curso.tipo}</span>
+              <span>✔ Titulo ${curso.titulo}</span>
+              <span>✔ Duración: ${curso.duracion}</span>
+              <span>✔ Inicio: ${curso.inicio}</span>
+              <span>✔ Cierre de inscripciones: ${curso.cierreInscripciones}</span>
+              <span>✔ Horario: ${curso.horario}</span>
+              <span>✔ Modalidad: ${curso.modalidad}</span>
+              <span>✔ Requisitos: ${curso.requisitos.length} requisitos</span>
+              <span>✔ Descripción: ${curso.descripcion}</span>`;
     mostrarCortinaConMsg(txt, false)
 }

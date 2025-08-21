@@ -11,16 +11,24 @@
       "inicio": "30/03/2025",
       "cierreInscripciones": "20/12/2025",
       "duracion": "Anual",
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
+      "horario": "13:00 a 16:30",
+      "idProfesor": 1,
+      "profesor": "Pablo Deganis",
+      "descripcion": "Curso de introducción a la programación web, abarcando HTML, CSS y JavaScript.",
       "titulo": "Oficial",
-      "tipo": "Presencial",
+      "modalidad": "Presencial",
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo de primario completo en adelante"
+        "Presentar titulo primario/secundario completo"
       ]
     },
     {
-      "curso": "Electricidad Básica",
+      "curso": "Electricidad Básica Domiciliaria",
       "codigo": 124,
       "id": 2,
       "area": "Oficios",
@@ -28,14 +36,49 @@
       "sede": "San Martín",
       "año": 2025,
       "inicio": "20/03/2025",
-      "cierreInscripciones": "20/09/2025",
+      "cierreInscripciones": "20/07/2025",
       "duracion": "Cuatrimestral",
-      "titulo": "Oficial",
-      "tipo": "Presencial",
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de introducción a la electricidad domiciliaria, abarcando circuitos básicos y seguridad eléctrica.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo de primario completo"
+        "Presentar titulo primario/secundario completo"
+      ]
+    },
+    {
+      "curso": "Electricidad Básica Domiciliaria",
+      "codigo": 129,
+      "id": 2,
+      "area": "Oficios",
+      "activo": true,
+      "sede": "San Miguel",
+      "año": 2025,
+      "inicio": "05/08/2025",
+      "cierreInscripciones": "03/12/2025",
+      "duracion": "Cuatrimestral",
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de introducción a la electricidad domiciliaria, abarcando circuitos básicos y seguridad eléctrica.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
       ]
     },
     {
@@ -49,12 +92,20 @@
       "inicio": "11/05/2025",
       "cierreInscripciones": "11/05/2025",
       "duracion": "Bimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de introducción a Excel, abarcando funciones básicas y avanzadas, tablas dinámicas y gráficos.",
       "titulo": "CFL406",
-      "tipo": "Online",
+      "modalidad": "Presencial",
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo de primario completo"
+        "Presentar titulo primario/secundario completo"
       ]
     },
     {
@@ -68,12 +119,49 @@
       "inicio": "08/08/2025",
       "cierreInscripciones": "08/08/2025",
       "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles",
+        "Viernes"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Dolores Ferrer",
+      "descripcion": "Curso de manicuría, abarcando técnicas de esmaltado, cuidado de uñas y diseño.",
       "titulo": "Oficial",
-      "tipo": "Presencial",
+      "modalidad": "Presencial",
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo de primario completo"
+        "Presentar titulo primario/secundario completo"
+      ]
+    },
+    {
+      "curso": "Manicuría",
+      "codigo": 130,
+      "activo": true,
+      "id": 4,
+      "area": "Estética",
+      "sede": "San Miguel",
+      "año": 2025,
+      "inicio": "08/08/2025",
+      "cierreInscripciones": "08/12/2025",
+      "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles",
+        "Viernes"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Dolores Ferrer",
+      "descripcion": "Curso de manicuría, abarcando técnicas de esmaltado, cuidado de uñas y diseño.",
+      "titulo": "Oficial",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
       ]
     },
     {
@@ -87,12 +175,20 @@
       "inicio": "09/04/2025",
       "cierreInscripciones": "09/04/2025",
       "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Johana",
+      "descripcion": "Curso de peinados, abarcando técnicas de recogidos, trenzas y estilos para diferentes ocasiones.",
       "titulo": "Oficial",
-      "tipo": "Presencial",
+      "modalidad": "Presencial",
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo de primario completo"
+        "Presentar titulo primario/secundario completo"
       ]
     },
     {
@@ -106,12 +202,21 @@
       "inicio": "12/05/2025",
       "cierreInscripciones": "12/05/2025",
       "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles",
+        "Viernes"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Maria Paula Lopez",
+      "descripcion": "Curso de maquillaje profesional, abarcando técnicas de maquillaje para eventos, novias y fotografía.",
       "titulo": "Oficial",
-      "tipo": "Semi presencial",
+      "modalidad": "Presencial",
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo de primario completo"
+        "Presentar titulo primario/secundario completo"
       ]
     },
     {
@@ -125,12 +230,129 @@
       "inicio": "12/09/2025",
       "cierreInscripciones": "12/09/2025",
       "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles",
+        "Viernes"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Maria Paula Lopez",
+      "descripcion": "Curso de maquillaje profesional, abarcando técnicas de maquillaje para eventos, novias y fotografía.",
       "titulo": "Oficial",
-      "tipo": "Semi presencial",
+      "modalidad": "Presencial",
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo de primario completo"
+        "Presentar titulo primario/secundario completo"
+      ]
+    },
+    {
+      "curso": "Liquidación de Sueldos para Delegados",
+      "codigo": 131,
+      "activo": true,
+      "id": 4,
+      "area": "Contable",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "08/08/2025",
+      "cierreInscripciones": "08/08/2025",
+      "duracion": "Bimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de liquidación de sueldos para delegados, abarcando normativas laborales y cálculo de remuneraciones.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Ser delegado del S.E.C."
+      ]
+    },
+    {
+      "curso": "Liquidación de Sueldos para Delegados",
+      "codigo": 132,
+      "activo": true,
+      "id": 4,
+      "area": "Contable",
+      "sede": "San Miguel",
+      "año": 2025,
+      "inicio": "08/08/2025",
+      "cierreInscripciones": "08/08/2025",
+      "duracion": "Bimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de liquidación de sueldos para delegados, abarcando normativas laborales y cálculo de remuneraciones.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Ser delegado del S.E.C."
+      ]
+    },
+    {
+      "curso": "Liquidación de Sueldos para Delegados",
+      "codigo": 133,
+      "activo": true,
+      "id": 4,
+      "area": "Contable",
+      "sede": "San Miguel",
+      "año": 2025,
+      "inicio": "08/08/2025",
+      "cierreInscripciones": "08/08/2025",
+      "duracion": "Bimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de liquidación de sueldos para delegados, abarcando normativas laborales y cálculo de remuneraciones.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Ser delegado del S.E.C."
+      ]
+    },
+    {
+      "curso": "Impresión 3D",
+      "codigo": 132,
+      "activo": true,
+      "id": 4,
+      "area": "Informática",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "12/08/2025",
+      "cierreInscripciones": "11/09/2025",
+      "duracion": "Bimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "18:00 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Pablo Deganis",
+      "descripcion": "Curso de impresión 3D, abarcando diseño y modelado en 3D, así como el uso de impresoras 3D.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Ser delegado del S.E.C."
       ]
     }
   ]

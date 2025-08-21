@@ -18,11 +18,13 @@ function abrirMenu() {
     void encabezado.offsetWidth;
     encabezado.style.transition = "max-height 0.4s ease";
     encabezado.style.maxHeight = alturaCompleta;
+    encabezado.style.overflow = "visible";
 }
 
 function cerrarMenu() {
     encabezado.style.transition = "max-height 0.4s ease";
     encabezado.style.maxHeight = "134px";
+    encabezado.style.overflow = "hidden";
 }
 
 botonHamburguesa.addEventListener("click", () => {
