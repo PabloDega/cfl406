@@ -20,6 +20,8 @@ function renderCursos(){
         return;
     }
     let txtHTML = ""
+    // ordenar alfabeticamente los cursos por su propiedad .curso
+    window.cursos.sort((a, b) => a.curso.localeCompare(b.curso));
     window.cursos.forEach((curso) => {
         if(!curso.activo){return}
         let estado = {
@@ -35,13 +37,14 @@ function renderCursos(){
         txtHTML += `<div class="card flexV" data-id="${curso.id}" id="cardCurso-${curso.id}">
                         <h2>Sede ${curso.sede}</h2>
                         <h1>${curso.curso}</h1>
-                        <span>✔ Curso ${curso.tipo}</span>
+                        <span>✔ Curso ${curso.modalidad}</span>
                         <span>✔ Titulo ${curso.titulo}</span>
                         <span>${estado.estado}</span>
+                        <span class="grow"></span>
                         <div class="flexH">
-                        <div class="btn btnInscripcion ${estado.visibilidad}" data-id="${curso.id}" data-curso="${curso.curso}">Inscripción</div>
-                        <div class="btn btnAzul btnMasInfo" data-id="${curso.id}">+ Info</div>
-                        <div class="btn btnNaranja btnRequisitos" data-id="${curso.id}">Requisitos</div>
+                            <div class="btn btnInscripcion ${estado.visibilidad}" data-id="${curso.id}" data-curso="${curso.curso}">Inscripción</div>
+                            <div class="btn btnAzul btnMasInfo" data-id="${curso.id}">+ Info</div>
+                            <div class="btn btnNaranja btnRequisitos" data-id="${curso.id}">Requisitos</div>
                         </div>
                     </div>`;
     });
@@ -91,14 +94,14 @@ function mostrarRequisitos(requisitos){
 function mostrarMasInfo(curso){
     let txt = `<h1>${curso.curso}</h1>
               <h2>Sede ${curso.sede}</h2>
-              <span>✔ Curso ${curso.tipo}</span>
+              <span>✔ Curso ${curso.curso}</span>
               <span>✔ Titulo ${curso.titulo}</span>
               <span>✔ Duración: ${curso.duracion}</span>
               <span>✔ Inicio: ${curso.inicio}</span>
+              <span>✔ Fin: ${curso.fin}</span>
               <span>✔ Cierre de inscripciones: ${curso.cierreInscripciones}</span>
-              <span>✔ Horario: ${curso.horario}</span>
+              <span>✔ Horario: ${curso.dias.join(" y ")} de ${curso.horario}</span>
               <span>✔ Modalidad: ${curso.modalidad}</span>
-              <span>✔ Requisitos: ${curso.requisitos.length} requisitos</span>
               <span>✔ Descripción: ${curso.descripcion}</span>`;
     mostrarCortinaConMsg(txt, false)
 }

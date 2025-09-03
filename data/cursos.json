@@ -2,14 +2,15 @@
   "cursos": [
     {
       "curso": "Programación Web",
-      "codigo": 123,
+      "codigo": 1,
       "id": 1,
       "activo": true,
       "area": "Informática",
       "sede": "San Miguel",
       "año": 2025,
       "inicio": "30/03/2025",
-      "cierreInscripciones": "20/12/2025",
+      "fin": "20/12/2025",
+      "cierreInscripciones": "15/04/2025",
       "duracion": "Anual",
       "dias": [
         "Martes",
@@ -29,20 +30,21 @@
     },
     {
       "curso": "Electricidad Básica Domiciliaria",
-      "codigo": 124,
+      "codigo": 2,
       "id": 2,
       "area": "Oficios",
       "activo": true,
       "sede": "San Martín",
       "año": 2025,
       "inicio": "20/03/2025",
-      "cierreInscripciones": "20/07/2025",
+      "fin": "20/07/2025",
+      "cierreInscripciones": "15/04/2025",
       "duracion": "Cuatrimestral",
       "dias": [
-        "Martes",
-        "Jueves"
+        "Lunes",
+        "Miércoles"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "14:30 a 17:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
       "descripcion": "Curso de introducción a la electricidad domiciliaria, abarcando circuitos básicos y seguridad eléctrica.",
@@ -56,20 +58,21 @@
     },
     {
       "curso": "Electricidad Básica Domiciliaria",
-      "codigo": 129,
-      "id": 2,
+      "codigo": 3,
+      "id": 3,
       "area": "Oficios",
       "activo": true,
       "sede": "San Miguel",
       "año": 2025,
       "inicio": "05/08/2025",
-      "cierreInscripciones": "03/12/2025",
+      "fin": "03/12/2025",
+      "cierreInscripciones": "20/08/2025",
       "duracion": "Cuatrimestral",
       "dias": [
         "Martes",
         "Jueves"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "15:00 a 17:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
       "descripcion": "Curso de introducción a la electricidad domiciliaria, abarcando circuitos básicos y seguridad eléctrica.",
@@ -83,14 +86,15 @@
     },
     {
       "curso": "Excel",
-      "codigo": 125,
-      "id": 3,
+      "codigo": 4,
+      "id": 4,
       "activo": true,
       "area": "Informática",
-      "sede": "San Miguel",
+      "sede": "San Martín",
       "año": 2025,
       "inicio": "11/05/2025",
-      "cierreInscripciones": "11/05/2025",
+      "fin": "11/05/2025",
+      "cierreInscripciones": "28/05/2025",
       "duracion": "Bimestral",
       "dias": [
         "Lunes",
@@ -109,22 +113,49 @@
       ]
     },
     {
-      "curso": "Manicuría",
-      "codigo": 126,
+      "curso": "Excel",
+      "codigo": 5,
+      "id": 5,
       "activo": true,
-      "id": 4,
+      "area": "Informática",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "11/05/2025",
+      "fin": "11/05/2025",
+      "cierreInscripciones": "28/05/2025",
+      "duracion": "Bimestral",
+      "dias": [
+        "Viernes"
+      ],
+      "horario": "9:00 a 12:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de introducción a Excel, abarcando funciones básicas y avanzadas, tablas dinámicas y gráficos.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ]
+    },
+    {
+      "curso": "Manicuría",
+      "codigo": 6,
+      "activo": true,
+      "id": 6,
       "area": "Estética",
       "sede": "San Martín",
       "año": 2025,
       "inicio": "08/08/2025",
-      "cierreInscripciones": "08/08/2025",
+      "fin": "08/08/2025",
+      "cierreInscripciones": "30/08/2025",
       "duracion": "Cuatrimestral",
       "dias": [
-        "Lunes",
         "Miércoles",
         "Viernes"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "14:00 a 16:40",
       "idProfesor": 1,
       "profesor": "Dolores Ferrer",
       "descripcion": "Curso de manicuría, abarcando técnicas de esmaltado, cuidado de uñas y diseño.",
@@ -138,21 +169,21 @@
     },
     {
       "curso": "Manicuría",
-      "codigo": 130,
+      "codigo": 7,
       "activo": true,
-      "id": 4,
+      "id": 7,
       "area": "Estética",
       "sede": "San Miguel",
       "año": 2025,
       "inicio": "08/08/2025",
-      "cierreInscripciones": "08/12/2025",
+      "fin": "08/12/2025",
+      "cierreInscripciones": "30/08/2025",
       "duracion": "Cuatrimestral",
       "dias": [
-        "Lunes",
         "Miércoles",
         "Viernes"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "14:00 a 16:40",
       "idProfesor": 1,
       "profesor": "Dolores Ferrer",
       "descripcion": "Curso de manicuría, abarcando técnicas de esmaltado, cuidado de uñas y diseño.",
@@ -165,24 +196,25 @@
       ]
     },
     {
-      "curso": "Peinados",
-      "codigo": 127,
+      "curso": "Peluquero",
+      "codigo": 8,
       "activo": true,
-      "id": 5,
+      "id": 8,
       "area": "Estética",
       "sede": "San Martín",
       "año": 2025,
-      "inicio": "09/04/2025",
-      "cierreInscripciones": "09/04/2025",
-      "duracion": "Cuatrimestral",
+      "inicio": "11/03/2025",
+      "fin": "26/11/2026",
+      "cierreInscripciones": "26/03/2025",
+      "duracion": "2 años",
       "dias": [
-        "Lunes",
-        "Miércoles"
+        "Martes",
+        "Jueves"
       ],
       "horario": "18:00 a 20:00",
       "idProfesor": 1,
       "profesor": "Johana",
-      "descripcion": "Curso de peinados, abarcando técnicas de recogidos, trenzas y estilos para diferentes ocasiones.",
+      "descripcion": "Curso de peluquería, abarcando técnicas de cortes, peinados y estilos para diferentes ocasiones.",
       "titulo": "Oficial",
       "modalidad": "Presencial",
       "requisitos": [
@@ -192,22 +224,22 @@
       ]
     },
     {
-      "curso": "Maquillaje Porfesional",
-      "codigo": 128,
+      "curso": "Maquillaje Profesional",
+      "codigo": 9,
       "activo": true,
-      "id": 6,
+      "id": 9,
       "area": "Estética",
-      "sede": "San Martín",
+      "sede": "San Miguel",
       "año": 2025,
-      "inicio": "12/05/2025",
-      "cierreInscripciones": "12/05/2025",
-      "duracion": "Cuatrimestral",
+      "inicio": "04/03/2024",
+      "fin": "26/11/2025",
+      "cierreInscripciones": "19/03/2024",
+      "duracion": "2 años",
       "dias": [
         "Lunes",
-        "Miércoles",
-        "Viernes"
+        "Miércoles"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "9:30 a 12:10",
       "idProfesor": 1,
       "profesor": "Maria Paula Lopez",
       "descripcion": "Curso de maquillaje profesional, abarcando técnicas de maquillaje para eventos, novias y fotografía.",
@@ -220,25 +252,25 @@
       ]
     },
     {
-      "curso": "Maquillaje Porfesional",
-      "codigo": 128,
+      "curso": "Liquidación de Sueldos",
+      "codigo": 10,
       "activo": true,
-      "id": 6,
-      "area": "Estética",
-      "sede": "San Miguel",
+      "id": 10,
+      "area": "Contable",
+      "sede": "San Martín",
       "año": 2025,
-      "inicio": "12/09/2025",
-      "cierreInscripciones": "12/09/2025",
-      "duracion": "Cuatrimestral",
+      "inicio": "04/03/2024",
+      "fin": "26/11/2025",
+      "cierreInscripciones": "19/03/2024",
+      "duracion": "2 años",
       "dias": [
         "Lunes",
-        "Miércoles",
-        "Viernes"
+        "Miércoles"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "15:00 a 17:00",
       "idProfesor": 1,
-      "profesor": "Maria Paula Lopez",
-      "descripcion": "Curso de maquillaje profesional, abarcando técnicas de maquillaje para eventos, novias y fotografía.",
+      "profesor": "Silvia Cejas",
+      "descripcion": "Curso de liquidación de sueldos, abarcando normativas laborales y cálculo de remuneraciones.",
       "titulo": "Oficial",
       "modalidad": "Presencial",
       "requisitos": [
@@ -249,20 +281,20 @@
     },
     {
       "curso": "Liquidación de Sueldos para Delegados",
-      "codigo": 131,
+      "codigo": 11,
       "activo": true,
-      "id": 4,
+      "id": 11,
       "area": "Contable",
       "sede": "San Martín",
       "año": 2025,
       "inicio": "08/08/2025",
-      "cierreInscripciones": "08/08/2025",
+      "fin": "08/10/2025",
+      "cierreInscripciones": "23/08/2025",
       "duracion": "Bimestral",
       "dias": [
-        "Lunes",
-        "Miércoles"
+        "Viernes"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "10:00 a 13:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
       "descripcion": "Curso de liquidación de sueldos para delegados, abarcando normativas laborales y cálculo de remuneraciones.",
@@ -276,20 +308,20 @@
     },
     {
       "curso": "Liquidación de Sueldos para Delegados",
-      "codigo": 132,
+      "codigo": 12,
       "activo": true,
-      "id": 4,
+      "id": 12,
       "area": "Contable",
       "sede": "San Miguel",
       "año": 2025,
       "inicio": "08/08/2025",
-      "cierreInscripciones": "08/08/2025",
+      "fin": "08/08/2025",
+      "cierreInscripciones": "23/08/2025",
       "duracion": "Bimestral",
       "dias": [
-        "Lunes",
-        "Miércoles"
+        "Martes"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "10:00 a 13:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
       "descripcion": "Curso de liquidación de sueldos para delegados, abarcando normativas laborales y cálculo de remuneraciones.",
@@ -302,48 +334,22 @@
       ]
     },
     {
-      "curso": "Liquidación de Sueldos para Delegados",
-      "codigo": 133,
+      "curso": "Taller de Impresión 3D",
+      "codigo": 13,
       "activo": true,
-      "id": 4,
-      "area": "Contable",
-      "sede": "San Miguel",
-      "año": 2025,
-      "inicio": "08/08/2025",
-      "cierreInscripciones": "08/08/2025",
-      "duracion": "Bimestral",
-      "dias": [
-        "Lunes",
-        "Miércoles"
-      ],
-      "horario": "18:00 a 20:00",
-      "idProfesor": 1,
-      "profesor": "Rodolfo Barcasia",
-      "descripcion": "Curso de liquidación de sueldos para delegados, abarcando normativas laborales y cálculo de remuneraciones.",
-      "titulo": "CFL406",
-      "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Ser delegado del S.E.C."
-      ]
-    },
-    {
-      "curso": "Impresión 3D",
-      "codigo": 132,
-      "activo": true,
-      "id": 4,
+      "id": 13,
       "area": "Informática",
       "sede": "San Martín",
       "año": 2025,
-      "inicio": "12/08/2025",
-      "cierreInscripciones": "11/09/2025",
+      "inicio": "11/08/2025",
+      "fin": "17/09/2025",
+      "cierreInscripciones": "20/08/2025",
       "duracion": "Bimestral",
       "dias": [
         "Lunes",
         "Miércoles"
       ],
-      "horario": "18:00 a 20:00",
+      "horario": "10:00 a 12:00",
       "idProfesor": 1,
       "profesor": "Pablo Deganis",
       "descripcion": "Curso de impresión 3D, abarcando diseño y modelado en 3D, así como el uso de impresoras 3D.",
@@ -352,8 +358,148 @@
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Ser delegado del S.E.C."
+        "Presentar titulo primario/secundario completo"
       ]
+    },
+    {
+        "curso": "Liquidación De Impuestos",
+        "codigo": 14,
+        "activo": true,
+        "id": 14,
+        "area": "Contable",
+        "sede": "San Martín",
+        "año": 2025,
+        "inicio": "05/03/2025",
+        "fin": "19/05/2025",
+        "cierreInscripciones": "20/03/2025",
+        "duracion": "Bimestral",
+        "dias": [
+            "Lunes",
+            "Miércoles"
+        ],
+        "horario": "17:30 a 20:00",
+        "idProfesor": 1,
+        "profesor": "Silvia Cejas",
+        "descripcion": "Curso de liquidación de impuestos, abarcando normativas fiscales y técnicas de cálculo.",
+        "titulo": "Oficial",
+        "modalidad": "Presencial",
+        "requisitos": [
+            "Ser Mayor de 18 años",
+            "Presentar DNI vigente",
+            "Presentar titulo primario/secundario completo"
+        ]
+    },
+    {
+        "curso": "Marketing De Productos ",
+        "codigo": 15,
+        "activo": true,
+        "id": 15,
+        "area": "Contable",
+        "sede": "San Martín",
+        "año": 2025,
+        "inicio": "21/05/2025",
+        "fin": "10/09/2025",
+        "cierreInscripciones": "05/06/2025",
+        "duracion": "Cuatrimestral",
+        "dias": [
+            "Lunes",
+            "Miércoles"
+        ],
+        "horario": "17:30 a 20:00",
+        "idProfesor": 1,
+        "profesor": "Silvia Cejas",
+        "descripcion": "Curso de Auxiliar en Marketing de Productos, abarcando estrategias de promoción y ventas.",
+        "titulo": "Oficial",
+        "modalidad": "Presencial",
+        "requisitos": [
+            "Ser Mayor de 18 años",
+            "Presentar DNI vigente",
+            "Presentar titulo primario/secundario completo"
+        ]
+    },
+    {
+        "curso": "Marketing De Servicios",
+        "codigo": 16,
+        "activo": true,
+        "id": 16,
+        "area": "Contable",
+        "sede": "San Martín",
+        "año": 2025,
+        "inicio": "15/09/2025",
+        "fin": "29/12/2025",
+        "cierreInscripciones": "30/09/2025",
+        "duracion": "Cuatrimestral",
+        "dias": [
+            "Lunes",
+            "Miércoles"
+        ],
+        "horario": "17:30 a 20:00",
+        "idProfesor": 1,
+        "profesor": "Silvia Cejas",
+        "descripcion": "Curso de Marketing de Servicios, abarcando estrategias de promoción y ventas.",
+        "titulo": "Oficial",
+        "modalidad": "Presencial",
+        "requisitos": [
+            "Ser Mayor de 18 años",
+            "Presentar DNI vigente",
+            "Presentar titulo primario/secundario completo"
+        ]
+    },
+    {
+        "curso": "Administración De Pymes",
+        "codigo": 17,
+        "activo": true,
+        "id": 17,
+        "area": "Contable",
+        "sede": "San Miguel",
+        "año": 2025,
+        "inicio": "05/03/2025",
+        "fin": "08/12/2025",
+        "cierreInscripciones": "20/03/2025",
+        "duracion": "Anual",
+        "dias": [
+            "Lunes",
+            "Miércoles"
+        ],
+        "horario": "13:00 a 16:20",
+        "idProfesor": 1,
+        "profesor": "Silvia Cejas",
+        "descripcion": "Curso de Administración de Pymes, abarcando gestión empresarial y desarrollo de proyectos.",
+        "titulo": "Oficial",
+        "modalidad": "Presencial",
+        "requisitos": [
+            "Ser Mayor de 18 años",
+            "Presentar DNI vigente",
+            "Presentar titulo primario/secundario completo"
+        ]
+    },
+    {
+        "curso": "Administración y Conducción de RRHH",
+        "codigo": 18,
+        "activo": true,
+        "id": 18,
+        "area": "Contable",
+        "sede": "San Martín",
+        "año": 2025,
+        "inicio": "06/03/2025",
+        "fin": "18/12/2025",
+        "cierreInscripciones": "23/03/2025",
+        "duracion": "Cuatrimestral",
+        "dias": [
+            "Martes",
+            "Jueves"
+        ],
+        "horario": "17:30 a 20:00",
+        "idProfesor": 1,
+        "profesor": "Daiana Biaggini",
+        "descripcion": "Curso de Auxiliar en Administración y Conducción de RRHH, abarcando normativas laborales y gestión de recursos humanos.",
+        "titulo": "Oficial",
+        "modalidad": "Presencial",
+        "requisitos": [
+            "Ser Mayor de 18 años",
+            "Presentar DNI vigente",
+            "Ser delegado del S.E.C."
+        ]
     }
   ]
 }

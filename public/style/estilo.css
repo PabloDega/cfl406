@@ -200,7 +200,7 @@ input{
     flex-grow: 1;
     width: min-content;
     max-width: 25%;
-    min-width: 200px;
+    min-width: 250px;
     transition: 3s;
 }
 .card h1{
@@ -219,9 +219,20 @@ input{
     padding-top: 0.5em;
 }
 .card > div {
-    flex-grow: 1;
     align-items: flex-end;
     font-size: 0.8em;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+.card .btn{
+    flex-grow: 1;
+    text-align: center;
+}
+.card .btnInscripcion {
+    width: 100%;
+}
+.grow{
+    flex-grow: 1;
 }
 .cardSeleccionado{
     /* transform: scale(1.07);
@@ -336,6 +347,7 @@ input{
 .cortina #txt{
     display: flex;
     flex-direction: column;
+    gap: 0.5em;
 }
 .popupCortina{
     background-color: rgba(0, 0, 0, 0.5);
