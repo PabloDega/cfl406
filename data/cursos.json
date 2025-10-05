@@ -4,7 +4,7 @@
       "curso": "Programación Web",
       "codigo": 1,
       "id": 1,
-      "activo": true,
+      "activo": false,
       "area": "Informática",
       "sede": "San Miguel",
       "año": 2025,
@@ -362,144 +362,144 @@
       ]
     },
     {
-        "curso": "Liquidación De Impuestos",
-        "codigo": 14,
-        "activo": true,
-        "id": 14,
-        "area": "Contable",
-        "sede": "San Martín",
-        "año": 2025,
-        "inicio": "05/03/2025",
-        "fin": "19/05/2025",
-        "cierreInscripciones": "20/03/2025",
-        "duracion": "Bimestral",
-        "dias": [
-            "Lunes",
-            "Miércoles"
-        ],
-        "horario": "17:30 a 20:00",
-        "idProfesor": 1,
-        "profesor": "Silvia Cejas",
-        "descripcion": "Curso de liquidación de impuestos, abarcando normativas fiscales y técnicas de cálculo.",
-        "titulo": "Oficial",
-        "modalidad": "Presencial",
-        "requisitos": [
-            "Ser Mayor de 18 años",
-            "Presentar DNI vigente",
-            "Presentar titulo primario/secundario completo"
-        ]
+      "curso": "Liquidación De Impuestos",
+      "codigo": 14,
+      "activo": true,
+      "id": 14,
+      "area": "Contable",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "05/03/2025",
+      "fin": "19/05/2025",
+      "cierreInscripciones": "20/03/2025",
+      "duracion": "Bimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "17:30 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Silvia Cejas",
+      "descripcion": "Curso de liquidación de impuestos, abarcando normativas fiscales y técnicas de cálculo.",
+      "titulo": "Oficial",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ]
     },
     {
-        "curso": "Marketing De Productos ",
-        "codigo": 15,
-        "activo": true,
-        "id": 15,
-        "area": "Contable",
-        "sede": "San Martín",
-        "año": 2025,
-        "inicio": "21/05/2025",
-        "fin": "10/09/2025",
-        "cierreInscripciones": "05/06/2025",
-        "duracion": "Cuatrimestral",
-        "dias": [
-            "Lunes",
-            "Miércoles"
-        ],
-        "horario": "17:30 a 20:00",
-        "idProfesor": 1,
-        "profesor": "Silvia Cejas",
-        "descripcion": "Curso de Auxiliar en Marketing de Productos, abarcando estrategias de promoción y ventas.",
-        "titulo": "Oficial",
-        "modalidad": "Presencial",
-        "requisitos": [
-            "Ser Mayor de 18 años",
-            "Presentar DNI vigente",
-            "Presentar titulo primario/secundario completo"
-        ]
+      "curso": "Marketing De Productos ",
+      "codigo": 15,
+      "activo": true,
+      "id": 15,
+      "area": "Contable",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "21/05/2025",
+      "fin": "10/09/2025",
+      "cierreInscripciones": "05/06/2025",
+      "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "17:30 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Silvia Cejas",
+      "descripcion": "Curso de Auxiliar en Marketing de Productos, abarcando estrategias de promoción y ventas.",
+      "titulo": "Oficial",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ]
     },
     {
-        "curso": "Marketing De Servicios",
-        "codigo": 16,
-        "activo": true,
-        "id": 16,
-        "area": "Contable",
-        "sede": "San Martín",
-        "año": 2025,
-        "inicio": "15/09/2025",
-        "fin": "29/12/2025",
-        "cierreInscripciones": "30/09/2025",
-        "duracion": "Cuatrimestral",
-        "dias": [
-            "Lunes",
-            "Miércoles"
-        ],
-        "horario": "17:30 a 20:00",
-        "idProfesor": 1,
-        "profesor": "Silvia Cejas",
-        "descripcion": "Curso de Marketing de Servicios, abarcando estrategias de promoción y ventas.",
-        "titulo": "Oficial",
-        "modalidad": "Presencial",
-        "requisitos": [
-            "Ser Mayor de 18 años",
-            "Presentar DNI vigente",
-            "Presentar titulo primario/secundario completo"
-        ]
+      "curso": "Marketing De Servicios",
+      "codigo": 16,
+      "activo": true,
+      "id": 16,
+      "area": "Contable",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "15/09/2025",
+      "fin": "29/12/2025",
+      "cierreInscripciones": "30/09/2025",
+      "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "17:30 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Silvia Cejas",
+      "descripcion": "Curso de Marketing de Servicios, abarcando estrategias de promoción y ventas.",
+      "titulo": "Oficial",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ]
     },
     {
-        "curso": "Administración De Pymes",
-        "codigo": 17,
-        "activo": true,
-        "id": 17,
-        "area": "Contable",
-        "sede": "San Miguel",
-        "año": 2025,
-        "inicio": "05/03/2025",
-        "fin": "08/12/2025",
-        "cierreInscripciones": "20/03/2025",
-        "duracion": "Anual",
-        "dias": [
-            "Lunes",
-            "Miércoles"
-        ],
-        "horario": "13:00 a 16:20",
-        "idProfesor": 1,
-        "profesor": "Silvia Cejas",
-        "descripcion": "Curso de Administración de Pymes, abarcando gestión empresarial y desarrollo de proyectos.",
-        "titulo": "Oficial",
-        "modalidad": "Presencial",
-        "requisitos": [
-            "Ser Mayor de 18 años",
-            "Presentar DNI vigente",
-            "Presentar titulo primario/secundario completo"
-        ]
+      "curso": "Administración De Pymes",
+      "codigo": 17,
+      "activo": true,
+      "id": 17,
+      "area": "Contable",
+      "sede": "San Miguel",
+      "año": 2025,
+      "inicio": "05/03/2025",
+      "fin": "08/12/2025",
+      "cierreInscripciones": "20/03/2025",
+      "duracion": "Anual",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "13:00 a 16:20",
+      "idProfesor": 1,
+      "profesor": "Silvia Cejas",
+      "descripcion": "Curso de Administración de Pymes, abarcando gestión empresarial y desarrollo de proyectos.",
+      "titulo": "Oficial",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ]
     },
     {
-        "curso": "Administración y Conducción de RRHH",
-        "codigo": 18,
-        "activo": true,
-        "id": 18,
-        "area": "Contable",
-        "sede": "San Martín",
-        "año": 2025,
-        "inicio": "06/03/2025",
-        "fin": "18/12/2025",
-        "cierreInscripciones": "23/03/2025",
-        "duracion": "Cuatrimestral",
-        "dias": [
-            "Martes",
-            "Jueves"
-        ],
-        "horario": "17:30 a 20:00",
-        "idProfesor": 1,
-        "profesor": "Daiana Biaggini",
-        "descripcion": "Curso de Auxiliar en Administración y Conducción de RRHH, abarcando normativas laborales y gestión de recursos humanos.",
-        "titulo": "Oficial",
-        "modalidad": "Presencial",
-        "requisitos": [
-            "Ser Mayor de 18 años",
-            "Presentar DNI vigente",
-            "Ser delegado del S.E.C."
-        ]
+      "curso": "Administración y Conducción de RRHH",
+      "codigo": 18,
+      "activo": false,
+      "id": 18,
+      "area": "Contable",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "06/03/2025",
+      "fin": "18/12/2025",
+      "cierreInscripciones": "23/03/2025",
+      "duracion": "Cuatrimestral",
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
+      "horario": "17:30 a 20:00",
+      "idProfesor": 1,
+      "profesor": "Daiana Biaggini",
+      "descripcion": "Curso de Auxiliar en Administración y Conducción de RRHH, abarcando normativas laborales y gestión de recursos humanos.",
+      "titulo": "Oficial",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Ser delegado del S.E.C."
+      ]
     }
   ]
 }

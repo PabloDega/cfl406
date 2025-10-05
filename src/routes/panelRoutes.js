@@ -4,4 +4,4 @@ import * as panelControllers from "../controllers/panelControllers.js";
 
 router.get("/", panelControllers.panelIndex);
 
-router.get("/cursos/acciones/:accion/*", panelControllers.cursosAcciones);
+router.get("/cursos/acciones/:accion/:id", panelControllers.cursosAcciones);
