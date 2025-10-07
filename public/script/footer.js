@@ -20,7 +20,12 @@ document.querySelectorAll("footer #contactos svg").forEach(svg => {
                     mostrarErrores([new Error("No se pudo copiar la dirección de correo.")]);
                 });
         } else if (btnPresionado === "telefono") {
-            window.open("tel:+541153704909", "_blank");
+            // detectar si es movil o pc
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                window.location.href = "tel:+541153704909";
+            } else {
+                mostrarInfo("Podes llamarnos al +54 11 5370-4909");
+            }
         }
     });
 });
