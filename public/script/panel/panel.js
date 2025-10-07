@@ -2,7 +2,7 @@ console.log("Panel script loaded");
 
 import { mostrarErrores } from "../mostrarError.js";
 
-import { cortina } from "../cortina.js";
+import { mostrarCortinaConModal } from "../cortina.js";
 
 document.querySelectorAll('.panelCont').forEach(panel => {
     panel.addEventListener('click', (e) => {
@@ -26,19 +26,18 @@ document.querySelectorAll(".acciones > .btn").forEach(accion => {
         
         fetch(url, {
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            headers: {'Content-Type': 'application/json'}
         })
         .then(response => response.json())
         .then(data => {
-            console.log("Data received:", data);
+            //console.log("Data received:", data);
             if(data.error){
                 mostrarErrores([new Error(data.msg)]);
             } else if(accion === "ver" || accion === "editar"){
                 // Aquí puedes manejar la visualización o edición del curso
                 console.log("Curso data:", data.data);
                 // Por ejemplo, podrías abrir un modal con la información del curso
+                mostrarCortinaConModal(data.data, accion, ['id', 'activo', 'idProfesor', 'inscripcion']);
             } else if(accion === "inscribir"){
                 if(data.redirect){
                     window.location.href = data.redirect;
