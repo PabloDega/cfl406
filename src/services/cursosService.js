@@ -19,10 +19,14 @@ const leerDatosCursos = async () => {
 };
 
 // Función auxiliar para guardar datos de cursos
-const guardarDatosCursos = async (cursos) => {
+export const guardarDatosCursos = async (cursos) => {
   try {
     const cursosPath = path.join(__dirname, "/data/cursos.json");
     await fs.promises.writeFile(cursosPath, JSON.stringify({ cursos }, null, 2), "utf-8");
+    return {
+      error: false,
+      msg: "Datos de cursos guardados con éxito"
+    };
   } catch (error) {
     console.error("Error guardando datos de cursos:", error);
     throw {

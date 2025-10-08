@@ -2,7 +2,7 @@ console.log("Header")
 
 import { debounce } from "./debounce.js";
 import { buscar, mostrarResultados } from "./buscar.js";
-import { mostrarErrores } from "./mostrarError.js";
+import { mostrarErrores } from "./mostrar.js";
 
 //mostrarErrores([new Error("Error de prueba 3"), new Error("Error de prueba 4")]);
 

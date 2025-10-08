@@ -49,3 +49,17 @@ export const copiarTexto = (elemento) => {
         mostrarInfo("Texto copiado al portapapeles.");
     });
 };
+
+export const mostrarDeLS = (key) => {
+    const valor = localStorage.getItem(key);
+    if (valor) {
+        mostrarInfo(valor);
+        localStorage.removeItem(key);
+    }
+};
+
+export const guardarEnLS = (key, value) => {
+    localStorage.setItem(key, value);
+}
+
+mostrarDeLS("flashMessage");

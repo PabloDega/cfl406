@@ -1,6 +1,6 @@
 console.log("Login script loaded");
 
-import { mostrarErrores, mostrarInfo } from "../mostrarError.js";
+import { mostrarErrores, mostrarInfo } from "../mostrar.js";
 
 document.querySelector("#enviarFormLogin").addEventListener("click", function(event) {
     event.preventDefault();

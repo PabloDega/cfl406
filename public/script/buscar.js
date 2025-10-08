@@ -1,6 +1,6 @@
 console.log("buscar");
 
-import { mostrarErrores } from "./mostrarError.js";
+import { mostrarErrores } from "./mostrar.js";
 
 export const buscar = (query) => {
     try {

@@ -1,3 +1,5 @@
+import { mostrarError, mostrarInfo, guardarEnLS } from "./mostrar.js";
+
 let cortina = document.querySelector(".cortina");
 
 // capturar el evento wheel sobre la cortina para evitar el scroll del fondo, pero permitirlo en el modal
@@ -22,11 +24,12 @@ export function mostrarCortinaConMsg(txt, btncancelar) {
 }
 
 export function mostrarCortinaConModal(data, accion, avoid, claseCursos) {
-  console.log(data, claseCursos);
   let editable = accion === "editar";
   let disableInput = accion === "ver" ? "readonly" : "";
   if (editable) {
     document.querySelector("#btnPopUpCancelar").style.display = "block";
+    document.querySelector("#btnPopUpCancelar").dataset.accion = "modificar";
+    document.querySelector("#btnPopUpAceptar").dataset.accion = "modificar";
   }
   cortina.style.display = "flex";
   let modalHTML = `<h2>${data.curso}</h2>`;
@@ -37,7 +40,7 @@ export function mostrarCortinaConModal(data, accion, avoid, claseCursos) {
     // Si el dato es una fecha en formato DD/MM/YYYY, cambiar el input a type="date"
     if (editable) {
       tipoDato = claseCursos[key] || "text";
-      if(tipoDato === "string") tipoDato = "text";
+      if(tipoDato === "string" || tipoDato === "object") tipoDato = "text";
       // Si el dato es una fecha en formato DD/MM/YYYY cambiar el formato a YYYY-MM-DD
       if (tipoDato === "date" && /^\d{2}\/\d{2}\/\d{4}$/.test(valor)) {
         const [day, month, year] = valor.split("/");
@@ -52,7 +55,24 @@ export function mostrarCortinaConModal(data, accion, avoid, claseCursos) {
 // agregar evento a los botones de la cortina
 
 document.querySelectorAll(".cortina .btn").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
+  btn.addEventListener("click", async (e) => {
+    if( e.target.id === "btnPopUpAceptar" && e.target.dataset.accion) {
+      let envio = await enviarFormulario(e.target.dataset.accion);
+      if(!envio.error) {
+        guardarEnLS("flashMessage", envio.msg);
+        window.location.reload();
+      } else {
+        mostrarError("Error al ejecutar la acción", 1);
+        return;
+      }
+    }
+
+    // limpiar los data-atributos de los botones si se cierra el popup con cancelar
+    if( e.target.id === "btnPopUpCancelar" && e.target.dataset.accion) {
+      e.target.removeAttribute("data-accion");
+      document.querySelector("#btnPopUpAceptar").removeAttribute("data-accion");
+    }
+    // limpiar la cortina
     cortina.style.display = "none";
     document.querySelector(".cortina #txt").innerHTML = "";
     document.querySelector(".cortina #modal").innerHTML = "";
@@ -69,3 +89,23 @@ document.querySelector(".popup").addEventListener("click", (e) => {
     document.querySelector("#btnPopUpCancelar").style.display = "none";
   }
 });
+
+async function enviarFormulario(accion) {
+  console.log("enviando formulario para acción:", accion);
+  // mostrar cortina de carga
+
+  // recolectar los datos del modal
+  try {
+    let inputs = document.querySelectorAll(".cortina #modal input");
+    let data = {};
+    inputs.forEach(input => {
+      data[input.id] = input.value;
+    });
+    console.log("Datos recolectados:", data);
+    // enviar los datos al servidor
+    return { error: false, msg: "Accion " + accion + " realizada con éxito" };
+  } catch (error) {
+    console.error("Error al recolectar los datos del formulario:", error);
+    return { error: true, msg: "Error al recolectar los datos del formulario" };
+  }
+}

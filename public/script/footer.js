@@ -1,4 +1,4 @@
-import { mostrarErrores, mostrarInfo } from "./mostrarError.js";
+import { mostrarErrores, mostrarInfo } from "./mostrar.js";
 
 console.log("Footer script loaded");
 
