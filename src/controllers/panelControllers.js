@@ -1,9 +1,8 @@
-import { getCursos, getCurso, eliminarCurso } from "../services/cursosService.js";
+import { getCursos, getCurso, eliminarCurso, getClase } from "../services/cursosService.js";
 
 export const panelIndex = async (req, res) => {
     try {
         const cursos = await getCursos();
-
         res.render("pages/panel", {
             layout: "layouts/panel",
             user: req.session.auth,
@@ -61,4 +60,21 @@ export const cursosAcciones = async (req, res) => {
             codigo: "CA03",
         });
     }
+};
+
+export const getClaseCursos = async (req, res) => {
+   try {
+       const data = await getClase();
+       res.json({
+           error: false,
+           data,
+       });
+   } catch (error) {
+       console.error("Error en getClase:", error);
+       return res.status(500).json({
+           error: true,
+           msg: "Error al obtener las clases",
+           codigo: "GC02",
+       });
+   }
 };

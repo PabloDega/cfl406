@@ -7,7 +7,7 @@ const leerDatosCursos = async () => {
   try {
     const cursosPath = path.join(__dirname, "/data/cursos.json");
     const cursosData = await fs.promises.readFile(cursosPath, "utf-8");
-    return JSON.parse(cursosData).cursos;
+    return JSON.parse(cursosData);
   } catch (error) {
     console.error("Error leyendo datos de cursos:", error);
     throw {
@@ -47,8 +47,8 @@ const agregarEstadoInscripcion = (cursos) => {
 
 export const getCursos = async () => {
   try {
-    const cursosRaw = await leerDatosCursos();
-    
+    let cursosRaw = await leerDatosCursos();
+    cursosRaw = cursosRaw.cursos;
     // Filtrar cursos activos
     const cursosActivos = cursosRaw.filter((curso) => curso.activo);
     
@@ -78,8 +78,8 @@ export const getCursos = async () => {
 
 export const getCurso = async (id) => {
   try {
-    const cursosRaw = await leerDatosCursos();
-    
+    let cursosRaw = await leerDatosCursos();
+    cursosRaw = cursosRaw.cursos;    
     // Buscar curso por ID
     const cursoEncontrado = cursosRaw.find((curso) => curso.id === id);
     
@@ -110,8 +110,8 @@ export const getCurso = async (id) => {
 
 export const getCursosRaw = async () => {
   try {
-    const cursosRaw = await leerDatosCursos();
-    
+    let cursosRaw = await leerDatosCursos();
+    cursosRaw = cursosRaw.cursos;    
     // Devolver todos los cursos (activos e inactivos) con estado de inscripción
     return agregarEstadoInscripcion(cursosRaw);
     
@@ -130,8 +130,8 @@ export const getCursosRaw = async () => {
 
 export const eliminarCurso = async (id) => {
   try {
-    const cursos = await leerDatosCursos();
-    
+    let cursosRaw = await leerDatosCursos();
+    cursosRaw = cursosRaw.cursos;    
     // Buscar y modificar el curso
     let cursoEncontrado = false;
     const cursosModificados = cursos.map((curso) => {
@@ -185,4 +185,21 @@ export const validarCurso = (curso) => {
   }
   
   return true;
+};
+
+export const getClase = async () => {
+  try {
+    let cursosRaw = await leerDatosCursos();
+    return cursosRaw.clase;
+  } catch (error) {
+    console.error("Error en getCursosRaw:", error);
+    if (error.error) {
+      throw error; // Re-lanzar errores estructurados
+    }
+    throw {
+      error: true,
+      msg: "Error al obtener cursos sin filtrar",
+      codigo: "GCR01"
+    };
+  }
 };

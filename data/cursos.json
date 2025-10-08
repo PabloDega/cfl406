@@ -501,5 +501,26 @@
         "Ser delegado del S.E.C."
       ]
     }
-  ]
+  ],
+  "clase": {
+    "curso": "string",
+    "codigo": "number",
+    "id": "number",
+    "activo": "boolean",
+    "area": "string",
+    "sede": "string",
+    "año": "number",
+    "inicio": "date",
+    "fin": "date",
+    "cierreInscripciones": "date",
+    "duracion": "string",
+    "dias": "object",
+    "horario": "string",
+    "idProfesor": "number",
+    "profesor": "string",
+    "descripcion": "string",
+    "titulo": "string",
+    "modalidad": "string",
+    "requisitos": "object"
+  }
 }
