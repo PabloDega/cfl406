@@ -476,7 +476,7 @@
     {
       "curso": "Administración y Conducción de RRHH",
       "codigo": 18,
-      "activo": false,
+      "activo": true,
       "id": 18,
       "area": "Contable",
       "sede": "San Martín",
@@ -501,26 +501,5 @@
         "Ser delegado del S.E.C."
       ]
     }
-  ],
-  "clase": {
-    "curso": "string",
-    "codigo": "number",
-    "id": "number",
-    "activo": "boolean",
-    "area": "string",
-    "sede": "string",
-    "año": "number",
-    "inicio": "date",
-    "fin": "date",
-    "cierreInscripciones": "date",
-    "duracion": "string",
-    "dias": "object",
-    "horario": "string",
-    "idProfesor": "number",
-    "profesor": "string",
-    "descripcion": "string",
-    "titulo": "string",
-    "modalidad": "string",
-    "requisitos": "object"
-  }
+  ]
 }

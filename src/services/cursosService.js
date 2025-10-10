@@ -138,7 +138,7 @@ export const eliminarCurso = async (id) => {
     cursosRaw = cursosRaw.cursos;    
     // Buscar y modificar el curso
     let cursoEncontrado = false;
-    const cursosModificados = cursos.map((curso) => {
+    const cursosModificados = cursosRaw.map((curso) => {
       if (curso.id === id) {
         cursoEncontrado = true;
         return { ...curso, activo: false };
@@ -191,7 +191,7 @@ export const validarCurso = (curso) => {
   return true;
 };
 
-export const getClase = async () => {
+/* export const getClase = async () => {
   try {
     let cursosRaw = await leerDatosCursos();
     return cursosRaw.clase;
@@ -206,4 +206,4 @@ export const getClase = async () => {
       codigo: "GCR01"
     };
   }
-};
+}; */

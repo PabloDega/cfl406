@@ -2,10 +2,13 @@ import { getUsers } from "../services/loginServices.js";
 
 export const login = async (req, res) => {
   try {
-    res.render("pages/login", { layout: "layouts/login" });
+    return res.render("pages/login", { layout: "layouts/login" });
   } catch (error) {
     console.error("Error en login controller:", error);
-    res.status(500).send("Internal Server Error");
+    return res.status(500).render('error', { 
+      message: 'Error interno del servidor',
+      layout: 'layouts/main'
+    });
   }
 }
 
@@ -32,10 +35,10 @@ export const postLogin = async (req, res) => {
       };
     }
 
-    res.json({ success });
+    return res.json({ success });
   } catch (error) {
     console.error("Error en postLogin controller:", error);
-    res.status(500).json({ success: false, error: "Internal Server Error" });
+    return res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 }
 

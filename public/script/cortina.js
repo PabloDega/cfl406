@@ -23,7 +23,7 @@ export function mostrarCortinaConMsg(txt, btncancelar) {
   document.querySelector(".cortina #txt").innerHTML = txt;
 }
 
-export function mostrarCortinaConModal(data, accion, avoid, claseCursos) {
+export function mostrarCortinaConModal(data, accion, avoid) {
   let editable = accion === "editar";
   let disableInput = accion === "ver" ? "readonly" : "";
   if (editable) {
@@ -39,7 +39,7 @@ export function mostrarCortinaConModal(data, accion, avoid, claseCursos) {
     let valor = data[key];
     // Si el dato es una fecha en formato DD/MM/YYYY, cambiar el input a type="date"
     if (editable) {
-      tipoDato = claseCursos[key] || "text";
+      tipoDato = window.clases.cursos[key] || "text";
       if(tipoDato === "string" || tipoDato === "object") tipoDato = "text";
       // Si el dato es una fecha en formato DD/MM/YYYY cambiar el formato a YYYY-MM-DD
       if (tipoDato === "date" && /^\d{2}\/\d{2}\/\d{4}$/.test(valor)) {
@@ -56,7 +56,7 @@ export function mostrarCortinaConModal(data, accion, avoid, claseCursos) {
 
 document.querySelectorAll(".cortina .btn").forEach((btn) => {
   btn.addEventListener("click", async (e) => {
-    if( e.target.id === "btnPopUpAceptar" && e.target.dataset.accion) {
+    /* if( e.target.id === "btnPopUpAceptar" && e.target.dataset.accion) {
       let envio = await enviarFormulario(e.target.dataset.accion);
       if(!envio.error) {
         guardarEnLS("flashMessage", envio.msg);
@@ -65,7 +65,7 @@ document.querySelectorAll(".cortina .btn").forEach((btn) => {
         mostrarError("Error al ejecutar la acción", 1);
         return;
       }
-    }
+    } */
 
     // limpiar los data-atributos de los botones si se cierra el popup con cancelar
     if( e.target.id === "btnPopUpCancelar" && e.target.dataset.accion) {
@@ -89,23 +89,3 @@ document.querySelector(".popup").addEventListener("click", (e) => {
     document.querySelector("#btnPopUpCancelar").style.display = "none";
   }
 });
-
-async function enviarFormulario(accion) {
-  console.log("enviando formulario para acción:", accion);
-  // mostrar cortina de carga
-
-  // recolectar los datos del modal
-  try {
-    let inputs = document.querySelectorAll(".cortina #modal input");
-    let data = {};
-    inputs.forEach(input => {
-      data[input.id] = input.value;
-    });
-    console.log("Datos recolectados:", data);
-    // enviar los datos al servidor
-    return { error: false, msg: "Accion " + accion + " realizada con éxito" };
-  } catch (error) {
-    console.error("Error al recolectar los datos del formulario:", error);
-    return { error: true, msg: "Error al recolectar los datos del formulario" };
-  }
-}

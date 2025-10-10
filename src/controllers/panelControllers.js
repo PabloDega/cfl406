@@ -1,19 +1,26 @@
-import { getCursos, getCurso, eliminarCurso, getClase, guardarDatosCursos } from "../services/cursosService.js";
+import { getCursos, getCurso, eliminarCurso, guardarDatosCursos } from "../services/cursosService.js";
+import { getClases } from "../services/clasesService.js";
 
 export const panelIndex = async (req, res) => {
     try {
         const cursos = await getCursos();
-        res.render("pages/panel", {
+        const clases = await getClases();
+        
+        // Una sola respuesta exitosa
+        return res.render("pages/panel", {
             layout: "layouts/panel",
             user: req.session.auth,
             cursos,
+            clases,
         });
+        
     } catch (error) {
         console.error("Error en panel controller:", error);
-        res.status(500).json({
-            error: true,
-            msg: "Error interno del servidor",
-            codigo: "PI01",
+        
+        // Una sola respuesta de error
+        return res.status(500).render('error', { 
+            message: 'Error interno del servidor',
+            layout: 'layouts/main'
         });
     }
 };
@@ -62,27 +69,10 @@ export const cursosAcciones = async (req, res) => {
     }
 };
 
-export const getClaseCursos = async (req, res) => {
-   try {
-       const data = await getClase();
-       res.json({
-           error: false,
-           data,
-       });
-   } catch (error) {
-       console.error("Error en getClase:", error);
-       return res.status(500).json({
-           error: true,
-           msg: "Error al obtener las clases",
-           codigo: "GC02",
-       });
-   }
-};
-
 export const agregarCurso = async (req, res) => {
     try {
         // leer clase de curso desde el servicio
-        const clase = await getClase();
+        const clase = await getClases();
         const keys = Object.keys(clase);
         const data = {};
         keys.forEach(key => {
@@ -137,8 +127,8 @@ export const modificarCurso = async (req, res) => {
             });
         }
         // leer clase de curso desde el servicio
-        const clase = await getClase();
-        const keys = Object.keys(clase);
+        const clases = await getClases();
+        const keys = Object.keys(clases);
         const data = {};
         keys.forEach(key => {
             if (req.body[key] !== undefined) {

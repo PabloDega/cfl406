@@ -1,0 +1,23 @@
+{
+  "cursos": {
+    "curso": "string",
+    "codigo": "number",
+    "id": "number",
+    "activo": "boolean",
+    "area": "string",
+    "sede": "string",
+    "año": "number",
+    "inicio": "string",
+    "fin": "string",
+    "cierreInscripciones": "string",
+    "duracion": "string",
+    "dias": "object",
+    "horario": "string",
+    "idProfesor": "number",
+    "profesor": "string",
+    "descripcion": "string",
+    "titulo": "string",
+    "modalidad": "string",
+    "requisitos": "object"
+  }
+}
