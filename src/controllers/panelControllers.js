@@ -5,7 +5,7 @@ export const panelIndex = async (req, res) => {
     try {
         const cursos = await getCursos();
         const clases = await getClases();
-        
+
         // Una sola respuesta exitosa
         return res.render("pages/panel", {
             layout: "layouts/panel",

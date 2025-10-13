@@ -23,7 +23,8 @@ export function mostrarCortinaConMsg(txt, btncancelar) {
   document.querySelector(".cortina #txt").innerHTML = txt;
 }
 
-export function mostrarCortinaConModal(data, accion, avoid) {
+export function mostrarCortinaConModal(data, accion, avoid, clase) {
+  console.log(clase)
   let editable = accion === "editar";
   let disableInput = accion === "ver" ? "readonly" : "";
   if (editable) {
@@ -39,7 +40,7 @@ export function mostrarCortinaConModal(data, accion, avoid) {
     let valor = data[key];
     // Si el dato es una fecha en formato DD/MM/YYYY, cambiar el input a type="date"
     if (editable) {
-      tipoDato = window.clases.cursos[key] || "text";
+      tipoDato = clase[key] || "text";
       if(tipoDato === "string" || tipoDato === "object") tipoDato = "text";
       // Si el dato es una fecha en formato DD/MM/YYYY cambiar el formato a YYYY-MM-DD
       if (tipoDato === "date" && /^\d{2}\/\d{2}\/\d{4}$/.test(valor)) {
