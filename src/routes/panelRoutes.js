@@ -4,4 +4,7 @@ import * as panelControllers from "../controllers/panelControllers.js";
 
 router.get("/", panelControllers.panelIndex);
 
+router.get("/cursos/agregar", panelControllers.mostrarFormularioAgregar);
+router.post("/cursos/agregar", panelControllers.agregarCurso);
+
 router.get("/cursos/:accion/:id", panelControllers.cursosAcciones);

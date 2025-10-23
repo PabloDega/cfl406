@@ -14,7 +14,16 @@ if (!process.env.SERVERPORT) {
 import express from "express";
 const app = express();
 
-// Configuración de Helmet para seguridad (PRIMERO)
+// Logger HTTP - Solo errores y requests importantes
+import morgan from 'morgan';
+app.use(morgan('dev', {
+  skip: (req, res) => {
+    // Solo loggear errores (4xx, 5xx) y archivos estáticos importantes
+    return res.statusCode < 400 && !req.url.includes('/panel');
+  }
+}));
+
+// Configuración de Helmet para seguridad
 import helmet from 'helmet';
 app.use(helmet({
   contentSecurityPolicy: {
@@ -43,6 +52,7 @@ const limiter = rateLimit(rateLimitConfig);
 app.use(limiter);
 
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json()); // Para manejar JSON en requests
 import http from 'http';
 const server = http.createServer(app);
 import { dirname } from 'path';
