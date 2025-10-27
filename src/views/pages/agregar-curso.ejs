@@ -1,0 +1,204 @@
+<div class="panelContent">
+    <div class="flexV">
+        <!-- Header de la página -->
+        <div class="flexH">
+            <h1>
+                <span>➕</span>
+                Agregar Nuevo Curso
+            </h1>
+            <div class="spacer"></div>
+            <a href="/panel" class="btn">
+                ← Volver al Panel
+            </a>
+        </div>
+
+        <!-- Formulario principal -->
+        <div class="card">
+            <form id="formAgregarCurso" method="POST" action="/panel/cursos/agregar" class="flexV">
+                
+                <!-- Sección: Información Básica -->
+                <div class="landH">
+                    📋 Información Básica
+                </div>
+                
+                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
+                    <div class="flexV grow">
+                        <label for="curso"><strong>Nombre del Curso *</strong></label>
+                        <input type="text" id="curso" name="curso" required placeholder="Ej: Desarrollo Web Full Stack">
+                    </div>
+
+                    <div class="flexV" style="min-width: 200px;">
+                        <label for="codigo"><strong>Código *</strong></label>
+                        <input type="number" id="codigo" name="codigo" required placeholder="101">
+                    </div>
+                </div>
+
+                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
+                    <div class="flexV grow">
+                        <label for="titulo"><strong>Título/Certificación *</strong></label>
+                        <input type="text" id="titulo" name="titulo" required placeholder="Certificado en...">
+                    </div>
+
+                    <div class="flexV grow">
+                        <label for="area"><strong>Área *</strong></label>
+                        <select id="area" name="area" required style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid;">
+                            <option value="">Seleccionar área...</option>
+                            <option value="Informática">Informática</option>
+                            <option value="Administración">Administración</option>
+                            <option value="Oficios">Oficios</option>
+                            <option value="Salud">Salud</option>
+                            <option value="Educación">Educación</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
+                    <div class="flexV grow">
+                        <label for="modalidad"><strong>Modalidad *</strong></label>
+                        <select id="modalidad" name="modalidad" required style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid;">
+                            <option value="">Seleccionar modalidad...</option>
+                            <option value="Presencial">Presencial</option>
+                            <option value="Virtual">Virtual</option>
+                            <option value="Híbrida">Híbrida</option>
+                        </select>
+                    </div>
+
+                    <div class="flexV grow">
+                        <label for="sede"><strong>Sede *</strong></label>
+                        <input type="text" id="sede" name="sede" required placeholder="Campus Central">
+                    </div>
+                </div>
+
+                <!-- Sección: Fechas y Horarios -->
+                <div class="landH">
+                    📅 Fechas y Horarios
+                </div>
+
+                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
+                    <div class="flexV">
+                        <label for="año"><strong>Año *</strong></label>
+                        <input type="number" id="año" name="año" value="2025" required style="min-width: 120px;">
+                    </div>
+
+                    <div class="flexV grow">
+                        <label for="inicio"><strong>Fecha de Inicio *</strong></label>
+                        <input type="date" id="inicio" name="inicio" required>
+                    </div>
+
+                    <div class="flexV grow">
+                        <label for="fin"><strong>Fecha de Fin *</strong></label>
+                        <input type="date" id="fin" name="fin" required>
+                    </div>
+                </div>
+
+                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
+                    <div class="flexV grow">
+                        <label for="cierreInscripciones"><strong>Cierre de Inscripciones *</strong></label>
+                        <input type="date" id="cierreInscripciones" name="cierreInscripciones" required>
+                    </div>
+
+                    <div class="flexV grow">
+                        <label for="duracion"><strong>Duración *</strong></label>
+                        <input type="text" id="duracion" name="duracion" required placeholder="Ej: 3 meses, 120 horas">
+                    </div>
+                </div>
+
+                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
+                    <div class="flexV grow">
+                        <label for="horario"><strong>Horario *</strong></label>
+                        <input type="text" id="horario" name="horario" required placeholder="Ej: 18:00 - 20:00">
+                    </div>
+
+                    <div class="flexV grow">
+                        <label><strong>Días de la semana *</strong></label>
+                        <div class="flexH" style="flex-wrap: wrap; gap: 1em; align-items: center;">
+                            <label style="font-weight: normal; display: flex; align-items: center; gap: 0.5em;">
+                                <input type="checkbox" value="lunes" name="dias">
+                                Lunes
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center; gap: 0.5em;">
+                                <input type="checkbox" value="martes" name="dias">
+                                Martes
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center; gap: 0.5em;">
+                                <input type="checkbox" value="miércoles" name="dias">
+                                Miércoles
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center; gap: 0.5em;">
+                                <input type="checkbox" value="jueves" name="dias">
+                                Jueves
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center; gap: 0.5em;">
+                                <input type="checkbox" value="viernes" name="dias">
+                                Viernes
+                            </label>
+                            <label style="font-weight: normal; display: flex; align-items: center; gap: 0.5em;">
+                                <input type="checkbox" value="sábado" name="dias">
+                                Sábado
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección: Profesor -->
+                <div class="landH">
+                    👨‍🏫 Información del Profesor
+                </div>
+
+                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
+                    <div class="flexV">
+                        <label for="idProfesor"><strong>ID Profesor *</strong></label>
+                        <input type="number" id="idProfesor" name="idProfesor" required style="min-width: 120px;">
+                    </div>
+
+                    <div class="flexV grow">
+                        <label for="profesor"><strong>Nombre del Profesor *</strong></label>
+                        <input type="text" id="profesor" name="profesor" required placeholder="Nombre completo">
+                    </div>
+                </div>
+
+                <!-- Sección: Detalles del Curso -->
+                <div class="landH">
+                    📝 Detalles del Curso
+                </div>
+
+                <div class="flexV">
+                    <label for="descripcion"><strong>Descripción *</strong></label>
+                    <textarea id="descripcion" name="descripcion" required rows="4" 
+                              style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid; resize: vertical;"
+                              placeholder="Descripción completa del curso..."></textarea>
+                </div>
+
+                <div class="flexV">
+                    <label for="requisitos"><strong>Requisitos (uno por línea)</strong></label>
+                    <textarea id="requisitos" name="requisitos" rows="3" 
+                              style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid; resize: vertical;"
+                              placeholder="Nivel secundario completo&#10;Conocimientos básicos de informática&#10;..."></textarea>
+                </div>
+
+                <div class="flexH" style="align-items: center; gap: 0.5em;">
+                    <input type="checkbox" id="activo" name="activo" checked>
+                    <label for="activo" style="font-weight: normal;">
+                        Curso activo (visible para inscripciones)
+                    </label>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="flexH" style="gap: 1em; justify-content: flex-end; margin-top: 2em;">
+                    <a href="/panel" class="btn" style="background-color: gray;">
+                        ✖ Cancelar
+                    </a>
+                    <button type="reset" class="btn btnNaranja">
+                        ↻ Limpiar
+                    </button>
+                    <button type="submit" class="btn btnVerde">
+                        💾 Guardar Curso
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Script específico para agregar curso -->
+<script src="/script/panel/agregar-curso.js"></script>

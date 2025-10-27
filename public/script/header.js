@@ -12,6 +12,7 @@ const encabezado = document.querySelector("header");
 const botonHamburguesa = document.querySelector("#hambHeader");
 
 function abrirMenu() {
+    if (!encabezado) return;
     encabezado.style.maxHeight = "none";
     const alturaCompleta = encabezado.scrollHeight + "px";
     encabezado.style.maxHeight = "134px";
@@ -22,12 +23,13 @@ function abrirMenu() {
 }
 
 function cerrarMenu() {
+    if (!encabezado) return;
     encabezado.style.transition = "max-height 0.4s ease";
     encabezado.style.maxHeight = "134px";
     encabezado.style.overflow = "hidden";
 }
 
-botonHamburguesa.addEventListener("click", () => {
+botonHamburguesa?.addEventListener("click", () => {
     if (menuAbierto) {
         cerrarMenu();
     } else {
@@ -53,37 +55,56 @@ function verificarDesbordamientoHorizontalEncabezado() {
 }
 
 const verificarDesbordamientoXEncabezadoDebounce = debounce(verificarDesbordamientoHorizontalEncabezado, 300);
-verificarDesbordamientoHorizontalEncabezado();
-window.addEventListener("resize", verificarDesbordamientoXEncabezadoDebounce);
 
-document.querySelectorAll("header .btnHeader").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        if (e.target.id === "btnHome") {
-            window.location.href = "/";
-        } else if (e.target.id === "btnFormacion") {
-            window.location.href = "/#ofertaFormativa";
-        } else if (e.target.id === "btnSedes") {
-            window.location.href = "/#landMapa";
-        } else if (e.target.id === "btnContactos") {
-            window.location.href = "/#footer";
+// Solo ejecutar si existe el header
+if (encabezado) {
+    verificarDesbordamientoHorizontalEncabezado();
+    window.addEventListener("resize", verificarDesbordamientoXEncabezadoDebounce);
+}
+
+// Solo agregar event listeners si existen los elementos del header
+const botonesHeader = document.querySelectorAll("header .btnHeader");
+if (botonesHeader.length > 0) {
+    botonesHeader.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            if (e.target.id === "btnHome") {
+                window.location.href = "/";
+            } else if (e.target.id === "btnFormacion") {
+                window.location.href = "/#ofertaFormativa";
+            } else if (e.target.id === "btnSedes") {
+                window.location.href = "/#landMapa";
+            } else if (e.target.id === "btnContactos") {
+                window.location.href = "/#footer";
+            }
+        });
+    });
+}
+
+// Solo agregar buscador si existe
+const txtBuscado = document.querySelector("#txtBuscado");
+const btnBuscar = document.querySelector("#btnBuscar");
+const resultados = document.querySelector("#resultados");
+
+if (txtBuscado) {
+    txtBuscado.addEventListener("keyup", (e) => {
+        const buscado = e.target.value.trim();
+        if (buscado) {
+            const res = buscar(buscado);
+            mostrarResultados(res);
+        } else {
+            if (resultados) {
+                resultados.style.display = "none";
+            }
         }
     });
-});
+}
 
-document.querySelector("#txtBuscado").addEventListener("keyup", (e) => {
-    const buscado = e.target.value.trim();
-    if (buscado) {
-        const res = buscar(buscado);
-        mostrarResultados(res);
-    } else {
-        document.querySelector("#resultados").style.display = "none";
-    }
-});
-
-document.querySelector("#btnBuscar").addEventListener("click", () => {
-    const buscado = document.querySelector("#txtBuscado").value.trim();
-    if (buscado) {
-        const res = buscar(buscado);
-        mostrarResultados(res);
-    }
-});
+if (btnBuscar) {
+    btnBuscar.addEventListener("click", () => {
+        const buscado = txtBuscado?.value.trim();
+        if (buscado) {
+            const res = buscar(buscado);
+            mostrarResultados(res);
+        }
+    });
+}

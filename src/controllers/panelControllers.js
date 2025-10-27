@@ -25,6 +25,27 @@ export const panelIndex = async (req, res) => {
     }
 };
 
+export const mostrarFormularioAgregar = async (req, res) => {
+    try {
+        const clases = await getClases();
+        
+        return res.render("pages/agregar-curso", {
+            layout: "layouts/panel",
+            user: req.session.auth,
+            clases,
+            title: "Agregar Nuevo Curso"
+        });
+        
+    } catch (error) {
+        console.error("Error en mostrarFormularioAgregar:", error);
+        
+        return res.status(500).render('error', { 
+            message: 'Error interno del servidor',
+            layout: 'layouts/panel'
+        });
+    }
+};
+
 export const cursosAcciones = async (req, res) => {
     try {
         const { accion, id } = req.params;
@@ -71,26 +92,61 @@ export const cursosAcciones = async (req, res) => {
 
 export const agregarCurso = async (req, res) => {
     try {
-        // leer clase de curso desde el servicio
+        // Si es una petición GET, mostrar el formulario
+        if (req.method === 'GET') {
+            return mostrarFormularioAgregar(req, res);
+        }
+        
+        // Si es POST, procesar el formulario
         const clase = await getClases();
         const keys = Object.keys(clase);
         const data = {};
+        
+        // Si viene como JSON
+        let bodyData = req.body;
+        if (req.headers['content-type'] && req.headers['content-type'].includes('application/json')) {
+            bodyData = req.body;
+        }
+        
         keys.forEach(key => {
-            if (req.body[key] !== undefined) {
-                data[key] = req.body[key];
+            if (bodyData[key] !== undefined && bodyData[key] !== null && bodyData[key] !== '') {
+                data[key] = bodyData[key];
             } else {
                 data[key] = null;
             }
         });
         
-        // Validar campos obligatorios
-        if (Object.values(data).some(value => !value)) {
+        // Campos obligatorios específicos
+        const camposObligatorios = ['curso', 'codigo', 'area', 'sede', 'año', 'inicio', 'fin', 'cierreInscripciones', 'duracion', 'horario', 'idProfesor', 'profesor', 'descripcion', 'titulo', 'modalidad'];
+        const faltantes = camposObligatorios.filter(campo => !data[campo]);
+        
+        if (faltantes.length > 0) {
             return res.status(400).json({
                 error: true,
-                msg: "Todos los campos son obligatorios",
+                msg: `Faltan campos obligatorios: ${faltantes.join(', ')}`,
                 codigo: "AC01",
             });
         }
+
+        // Procesar campos especiales
+        if (typeof data.dias === 'string') {
+            try {
+                data.dias = JSON.parse(data.dias);
+            } catch (e) {
+                data.dias = [];
+            }
+        }
+        
+        if (typeof data.requisitos === 'string') {
+            try {
+                data.requisitos = JSON.parse(data.requisitos);
+            } catch (e) {
+                data.requisitos = [];
+            }
+        }
+        
+        // Convertir activo a boolean
+        data.activo = data.activo === true || data.activo === 'true';
 
         // Lógica para agregar el curso
         const cursos = await getCursos();
@@ -104,7 +160,11 @@ export const agregarCurso = async (req, res) => {
             return res.status(400).json(resultado);
         }
 
-        return res.json(resultado);
+        return res.json({
+            error: false,
+            msg: "Curso agregado exitosamente",
+            data: nuevoCurso
+        });
     } catch (error) {
         console.error("Error en agregarCurso:", error);
         return res.status(500).json({

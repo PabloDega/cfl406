@@ -26,15 +26,14 @@ document.querySelectorAll(".acciones > .btn").forEach((accion) => {
   });
 });
 
-document.querySelector("#agregarCurso").addEventListener("click", (e) => {
+document.querySelector("#agregarCurso")?.addEventListener("click", (e) => {
   e.stopPropagation();
   const url = "/panel/cursos/agregar";
   console.log(`Redirecting to: ${url}`);
-  return;
   window.location.href = url;
 });
 
-document.querySelector("#btnPopUpAceptar").addEventListener("click", async (e) => {
+document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) => {
   if (e.target.dataset.accion) {
     let envio = await enviarFormulario(e.target.dataset.accion);
     if (!envio.error) {

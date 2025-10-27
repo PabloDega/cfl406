@@ -561,3 +561,15 @@ header.desborda-x #hambHeader {
         gap: 1em;
     }
 }
+
+/* Header simplificado para páginas específicas del panel */
+.header-simplificado {
+    justify-content: center;
+    padding: 1em;
+    background: linear-gradient(105deg, #f8f9fa, #e9ecef);
+    border-bottom: 2px solid var(--color2);
+}
+
+.header-simplificado img {
+    width: 150px;
+}
