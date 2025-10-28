@@ -97,7 +97,7 @@ function validarCamposObligatorios(data) {
     return true;
 }
 
-async function enviarFormulario(data) {
+export async function enviarFormulario(data) {
     try {
         // Mostrar loading
         const submitBtn = document.querySelector('button[type="submit"]');

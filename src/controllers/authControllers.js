@@ -25,19 +25,70 @@ export const postLogin = async (req, res) => {
     if (!username || !password) {
       return res.status(400).json({ success: false, message: "Faltan datos de usuario." });
     }
-    const success = users.some(user => user.username === username && user.password === password);
-
-    if (success) {
+    
+    const user = users.find(user => user.username === username && user.password === password);
+    
+    if (user) {
+      // Generar token único para la sesión
+      const sessionToken = generateSessionToken();
+      const loginTime = Date.now();
+      const expiresAt = loginTime + (24 * 60 * 60 * 1000); // 24 horas desde ahora
+      
       req.session.auth = {
-        username,
+        username: user.username,
         login: true,
-        rol: users.find(user => user.username === username).rol || "user"
+        rol: user.rol || "user",
+        sessionToken,
+        loginTime,
+        expiresAt,
+        lastActivity: loginTime,
+        userId: user.id || null
       };
+      
+      // Regenerar ID de sesión por seguridad
+      req.session.regenerate((err) => {
+        if (err) {
+          console.error('Error regenerando sesión:', err);
+        }
+      });
+      
+      return res.json({ 
+        success: true, 
+        message: "Login exitoso",
+        user: {
+          username: user.username,
+          rol: user.rol
+        }
+      });
     }
 
-    return res.json({ success });
+    return res.json({ success: false, message: "Credenciales incorrectas" });
   } catch (error) {
     console.error("Error en postLogin controller:", error);
+    return res.status(500).json({ success: false, error: "Internal Server Error" });
+  }
+}
+
+// Función para generar token único de sesión
+function generateSessionToken() {
+  const timestamp = Date.now().toString();
+  const random = Math.random().toString(36).substring(2);
+  return `${timestamp}-${random}`;
+}
+
+// Controlador para logout
+export const logout = async (req, res) => {
+  try {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error('Error al cerrar sesión:', err);
+        return res.status(500).json({ success: false, message: "Error al cerrar sesión" });
+      }
+      res.clearCookie('sessionId'); // Limpiar cookie de sesión
+      return res.json({ success: true, message: "Sesión cerrada exitosamente" });
+    });
+  } catch (error) {
+    console.error("Error en logout controller:", error);
     return res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 }

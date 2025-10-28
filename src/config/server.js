@@ -32,6 +32,7 @@ export const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   name: 'sessionId',
+  rolling: true, // Renovar cookie en cada request
   cookie: {
     maxAge: 24 * 60 * 60 * 1000, // 24 horas
     httpOnly: true,

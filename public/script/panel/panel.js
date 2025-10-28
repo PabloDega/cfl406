@@ -1,6 +1,7 @@
 console.log("Panel script loaded");
 
 import { ABMCursos } from "./cursos.js";
+import { enviarFormulario } from "./agregar-curso.js";
 
 document.querySelectorAll(".panelCont").forEach((panel) => {
   panel.addEventListener("click", (e) => {
