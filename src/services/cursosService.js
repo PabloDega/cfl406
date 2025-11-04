@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { __dirname } from "../../index.js";
+import { crearFecha } from "../utils/dates.js";
 
 // Función auxiliar para leer datos de cursos
 const leerDatosCursos = async () => {
@@ -41,7 +42,7 @@ export const guardarDatosCursos = async (cursos) => {
 const agregarEstadoInscripcion = (cursos) => {
   const hoy = new Date();
   return cursos.map((curso) => {
-    const fechaCierre = new Date(curso.cierreInscripciones);
+    const fechaCierre = crearFecha(curso.cierreInscripciones);
     return {
       ...curso,
       inscripcion: fechaCierre >= hoy,

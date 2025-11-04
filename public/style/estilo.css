@@ -497,7 +497,49 @@ header.desborda-x #hambHeader {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    max-width: 400px;
+    max-width: 500px;
+    padding: 1em;
+    margin: 0 auto  ;
+}
+.formulario select{
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 1px gray solid;
+    width: 100%;
+}
+.formulario h1{
+    text-align: center;
+    color: var(--color2);
+    border-bottom: 2px solid var(--color2);
+}
+.formPasos{
+    gap: 1em;
+    justify-content: center;
+    padding-bottom: 1em;
+    border-bottom: 2px solid var(--color2);
+}
+.btnFormulario{
+    background-color: var(--color1);
+    padding: 0.5em;
+    font-size: 1.2em;
+    font-weight: 600;
+    width: fit-content;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0.2em;
+}
+.btnFormulario:hover{
+    background-color: var(--color2)
+}
+.btnFormularioActivo{
+    background-color: var(--color2);
+    outline: 3px black solid;
+}
+.formHeader{
+    justify-content: center;
+    padding: 1em;
+    background: linear-gradient(105deg, #f8f9fa, #e9ecef);
+    border-bottom: 2px solid var(--color2);
 }
 #enviarFormLogin{
     width: 100%;
@@ -535,6 +577,11 @@ header.desborda-x #hambHeader {
     display: flex;
     gap: 0.5em;
     align-items: center;
+}
+.formItems{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
 }
 @media only screen and (max-width: 925px) {
     .landPublicacion img{

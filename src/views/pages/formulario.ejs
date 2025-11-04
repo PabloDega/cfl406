@@ -1,21 +1,62 @@
 <form action="" method="post" id="formularioInscripcion" class="formulario">
     <h1>Formulario de Inscripción</h1>
-    <div class="formItems">
-        <select name="curso" id="curso">
-            <option value="">Seleccione un curso</option>
-            <%cursos.forEach(curso => {
-                if(!curso.inscripcion) { return };
-                let cierreInscripciones = curso.cierreInscripciones.split("/");
-                cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1, cierreInscripciones[0]);
-                if(cierreInscripciones < new Date()){return};%>
-                <option value="<%= curso.id %>"><%= curso.curso %> - <%= curso.sede %></option>
-            <% }) %>
-        </select>
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-        <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
-        <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
-
+    <div id="paso1" class="formPasos flexV">
+        <h2>Paso 1 / n</h2>
+        <h3>Seleccionar sede</h3>
+        <span class="flexH">
+            <div class="btnFormulario btnSedeFormulario" data-sede-id="1">San Martín</div>
+            <div class="btnFormulario btnSedeFormulario" data-sede-id="2">San Miguel</div>
+        </span>
     </div>
+
+    <div id="paso2" class="formPasos flexV oculto">
+        <h2>Paso 2 / n</h2>
+        <h3>Seleccionar curso en <span id="sedeSeleccionada"></span></h3>
+        <span id="selectSede1" class="selectCurso oculto">
+            <select name="curso" class="select">
+                <option value="">Seleccione un curso</option>
+                <% cursos.forEach(curso=> {
+                    if(!curso.inscripcion || curso.sede !== "San Martín") { return };
+                    let cierreInscripciones = curso.cierreInscripciones.split("/");
+                    cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1,
+                    cierreInscripciones[0]);
+                    if(cierreInscripciones < new Date()){return};%>
+                        <option value="<%= curso.id %>">
+                            <%= curso.curso %> - <%= curso.sede %>
+                        </option>
+                        <% }) %>
+            </select>
+        </span>
+        <span id="selectSede2" class="selectCurso oculto">
+            <select name="curso" id="sede2" class="select">
+                <option value="">Seleccione un curso</option>
+                <% cursos.forEach(curso=> {
+                    if(!curso.inscripcion || curso.sede !== "San Miguel") { return };
+                    let cierreInscripciones = curso.cierreInscripciones.split("/");
+                    cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1,
+                    cierreInscripciones[0]);
+                    if(cierreInscripciones < new Date()){return};%>
+                        <option value="<%= curso.id %>">
+                            <%= curso.curso %> - <%= curso.sede %>
+                        </option>
+                        <% }) %>
+            </select>
+        </span>
+    </div>
+
+    <div id="paso3" class="formPasos flexV oculto">
+        <h2>Paso 3 / n</h2>
+        <h3>Datos personales</h3>
+        <div class="formItems">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required>
+            <input type="text" id="direccion" name="direccion" placeholder="Dirección" required>
+        </div>
+    </div>
+    <span class="flexH">
+        <div class="btn" id="enviarFormulario">🚀 Enviar</div>
+        <div class="btn btnNaranja" id="vaciarFormulario">🗑️ Vaciar formulario</div>
+    </span>
 </form>

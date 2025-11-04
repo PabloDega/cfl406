@@ -500,6 +500,62 @@
         "Presentar DNI vigente",
         "Ser delegado del S.E.C."
       ]
+    },
+    {
+      "curso": "Programación Web",
+      "codigo": 19,
+      "id": 19,
+      "activo": true,
+      "area": "Informática",
+      "sede": "San Miguel",
+      "año": 2026,
+      "inicio": "30/03/2026",
+      "fin": "20/12/2026",
+      "cierreInscripciones": "15/04/2026",
+      "duracion": "Anual",
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
+      "horario": "13:00 a 16:30",
+      "idProfesor": 1,
+      "profesor": "Pablo Deganis",
+      "descripcion": "Curso de introducción a la programación web, abarcando HTML, CSS y JavaScript.",
+      "titulo": "Oficial",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ]
+    },
+    {
+      "curso": "Electricidad Básica Domiciliaria",
+      "codigo": 20,
+      "id": 20,
+      "area": "Oficios",
+      "activo": true,
+      "sede": "San Martín",
+      "año": 2026,
+      "inicio": "20/03/2026",
+      "fin": "20/07/2026",
+      "cierreInscripciones": "15/04/2026",
+      "duracion": "Cuatrimestral",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "14:30 a 17:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "Curso de introducción a la electricidad domiciliaria, abarcando circuitos básicos y seguridad eléctrica.",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ]
     }
   ]
 }

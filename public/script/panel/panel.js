@@ -1,7 +1,7 @@
 console.log("Panel script loaded");
 
 import { ABMCursos } from "./cursos.js";
-import { enviarFormulario } from "./agregar-curso.js";
+import { postAgregarCurso } from "./agregar-curso.js";
 
 document.querySelectorAll(".panelCont").forEach((panel) => {
   panel.addEventListener("click", (e) => {
@@ -36,7 +36,7 @@ document.querySelector("#agregarCurso")?.addEventListener("click", (e) => {
 
 document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) => {
   if (e.target.dataset.accion) {
-    let envio = await enviarFormulario(e.target.dataset.accion);
+    let envio = await postAgregarCurso(e.target.dataset.accion);
     if (!envio.error) {
       guardarEnLS("flashMessage", envio.msg);
       window.location.reload();

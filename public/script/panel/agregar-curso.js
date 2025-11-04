@@ -55,7 +55,7 @@ function inicializarFormulario() {
         }
         
         // Enviar datos
-        await enviarFormulario(data);
+        await postAgregarCurso(data);
     });
 }
 
@@ -97,7 +97,7 @@ function validarCamposObligatorios(data) {
     return true;
 }
 
-export async function enviarFormulario(data) {
+export async function postAgregarCurso(data) {
     try {
         // Mostrar loading
         const submitBtn = document.querySelector('button[type="submit"]');
