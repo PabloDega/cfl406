@@ -1,7 +1,7 @@
 <form action="" method="post" id="formularioInscripcion" class="formulario">
   <h1>Formulario de Inscripción</h1>
   <div id="paso1" class="formPasos flexV">
-    <h2>Paso 1 / n</h2>
+    <h2>Paso 1 / 4</h2>
     <h3>Seleccionar sede</h3>
     <span class="flexH">
       <div class="btnFormulario btnSedeFormulario" data-sede-id="1">San Martín</div>
@@ -10,28 +10,40 @@
   </div>
 
   <div id="paso2" class="formPasos flexV oculto">
-    <h2>Paso 2 / n</h2>
+    <h2>Paso 2 / 4</h2>
     <h3>Seleccionar curso en <span id="sedeSeleccionada"></span></h3>
     <span id="selectSede1" class="selectCurso oculto">
-      <select name="curso" class="select">
+      <select name="curso" class="select selectCursoSede" data-sede-id="1">
         <option value="0" selected>Seleccione un curso</option>
-        <% cursos.forEach(curso=> { if(!curso.inscripcion || curso.sede !== "San Martín") { return }; let cierreInscripciones = curso.cierreInscripciones.split("/"); cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1, cierreInscripciones[0]); if(cierreInscripciones < new Date()){return};%>
-        <option value="<%= curso.id %>"><%= curso.curso %> - <%= curso.sede %></option>
-        <% }) %>
       </select>
     </span>
     <span id="selectSede2" class="selectCurso oculto">
-      <select name="curso" id="sede2" class="select">
+      <select name="curso" class="select selectCursoSede" data-sede-id="2">
         <option value="0" selected>Seleccione un curso</option>
-        <% cursos.forEach(curso=> { if(!curso.inscripcion || curso.sede !== "San Miguel") { return }; let cierreInscripciones = curso.cierreInscripciones.split("/"); cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1, cierreInscripciones[0]); if(cierreInscripciones < new Date()){return};%>
-        <option value="<%= curso.id %>"><%= curso.curso %> - <%= curso.sede %></option>
-        <% }) %>
       </select>
+    </span>
+    <span id="formDetallesCurso" class="flexV oculto">
+      <span>
+        <span>Área</span>
+        <span id="areaCurso">Informática</span>
+      </span>
+      <span>
+        <span>Inicio</span>
+        <span id="inicioCurso">20/03/2026</span>
+      </span>
+      <span>
+        <span>Fin</span>
+        <span id="finCurso">20/07/2026</span>
+      </span>
+      <span>
+        <span>Dia y Horario</span>
+        <span id="diaHorarioCurso">Lunes y Miércoles de 18:00 a 21:00</span>
+      </span>
     </span>
   </div>
 
   <div id="paso3" class="formPasos flexV oculto">
-    <h2>Paso 3 / n</h2>
+    <h2>Paso 3 / 4</h2>
     <h3>Datos personales</h3>
     <div class="formItems">
       <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
@@ -40,24 +52,23 @@
       <input type="text" id="telefono" name="telefono" placeholder="Teléfono" required />
       <select name="provincia" id="provincia"></select>
       <select name="localidad" id="localidad" disabled>
-        <option value="0">Seleccione una localidad</option>
-
+        <option value="0" selected>Seleccione una localidad</option>
       </select>
       <input type="text" id="direccion" name="direccion" placeholder="Dirección" required />
     </div>
   </div>
 
   <div id="paso4" class="formPasos flexV oculto">
-    <h2>Paso 4 / n</h2>
+    <h2>Paso 4 / 4</h2>
     <h3>Datos de afiliación</h3>
     // un select que pregunte si esta afiliado al SEC San Martín, de responder positivo consultar en input nombre de la empresa
     <div class="formItems">
       <select name="afiliacion" id="afiliacion">
         <option value="0" selected>¿Está afiliado al SEC San Martín?</option>
-        <option value="si">Sí</option>
-        <option value="no">No</option>
+        <option value="true">Sí</option>
+        <option value="false">No</option>
       </select>
-      <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa (si corresponde)" disabled />
+      <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa (si corresponde)" class="oculto" />
     </div>
   </div>
 
@@ -66,3 +77,6 @@
     <div class="btn btnNaranja" id="vaciarFormulario">🗑️ Vaciar formulario</div>
   </span>
 </form>
+<script>
+  window.cursos = <%- JSON.stringify(cursos) %>
+</script>

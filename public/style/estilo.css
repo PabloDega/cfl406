@@ -539,6 +539,9 @@ header.desborda-x #hambHeader {
     opacity: 0.5;
     cursor: not-allowed;
 }
+.selectCursoSede{
+    font-size: 1.2em;
+}
 .formHeader{
     justify-content: center;
     padding: 1em;
@@ -586,6 +589,18 @@ header.desborda-x #hambHeader {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+}
+#formDetallesCurso{
+    border: 2px solid var(--color2);
+    padding: 1em;
+    border-radius: 0.5em;
+    font-size: 0.9rem;
+    gap: 0.5em;
+    background-color: var(--color1);
+}
+#formDetallesCurso> span > span:first-child{
+    font-weight: 600;
+    border-bottom: 2px solid black;
 }
 @media only screen and (max-width: 925px) {
     .landPublicacion img{

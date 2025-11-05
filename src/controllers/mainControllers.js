@@ -38,9 +38,10 @@ export const formulario = async (req, res) => {
 
 export const postFormulario = async (req, res) => {
   try {
-    const { nombre, email, curso } = req.body;
+    console.log(req.body);
+    //const { nombre, email, curso } = req.body;
     // Aquí puedes manejar la lógica para procesar el formulario
-    console.log("Datos del formulario:", { nombre, email, curso });
+    //console.log("Datos del formulario:", { nombre, email, curso });
     return res.redirect("/");
   } catch (error) {
     console.error("Error en postFormulario controller:", error);

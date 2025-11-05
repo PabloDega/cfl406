@@ -15,6 +15,11 @@ router.post("/login", authControllers.postLogin);
 
 router.post("/logout", authControllers.logout);
 
+// Manejar solicitudes de Chrome DevTools silenciosamente
+router.get('/.well-known/*', (req, res) => {
+    res.status(204).end(); // No Content
+});
+
 router.post("/logout", (req, res) => {
     req.session.destroy((err) => {
         if (err) {

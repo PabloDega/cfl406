@@ -18,7 +18,13 @@ const app = express();
 import morgan from 'morgan';
 app.use(morgan('dev', {
   skip: (req, res) => {
-    // Solo loggear errores (4xx, 5xx) y archivos estáticos importantes
+    // Filtrar solicitudes de Chrome DevTools
+    if (req.url.includes('/.well-known/') || 
+        req.url.includes('/favicon.ico') ||
+        req.url.includes('.map')) {
+      return true;
+    }
+    // Solo loggear errores (4xx, 5xx) y requests importantes
     return res.statusCode < 400 && !req.url.includes('/panel');
   }
 }));
