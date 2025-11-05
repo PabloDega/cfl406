@@ -535,6 +535,10 @@ header.desborda-x #hambHeader {
     background-color: var(--color2);
     outline: 3px black solid;
 }
+.btnDisabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 .formHeader{
     justify-content: center;
     padding: 1em;

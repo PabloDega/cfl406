@@ -1,0 +1,298 @@
+{
+  "CABA": [
+    {
+      "id": 1,
+      "nombre": "Agronomía"
+    },
+    {
+      "id": 2,
+      "nombre": "Almagro"
+    },
+    {
+      "id": 3,
+      "nombre": "Balvanera"
+    },
+    {
+      "id": 4,
+      "nombre": "Barracas"
+    },
+    {
+      "id": 5,
+      "nombre": "Belgrano"
+    },
+    {
+      "id": 6,
+      "nombre": "Boedo"
+    },
+    {
+      "id": 7,
+      "nombre": "Caballito"
+    },
+    {
+      "id": 8,
+      "nombre": "Chacarita"
+    },
+    {
+      "id": 9,
+      "nombre": "Coghlan"
+    },
+    {
+      "id": 10,
+      "nombre": "Colegiales"
+    },
+    {
+      "id": 11,
+      "nombre": "Constitución"
+    },
+    {
+      "id": 12,
+      "nombre": "Flores"
+    },
+    {
+      "id": 13,
+      "nombre": "Floresta"
+    },
+    {
+      "id": 14,
+      "nombre": "La Boca"
+    },
+    {
+      "id": 15,
+      "nombre": "La Paternal"
+    },
+    {
+      "id": 16,
+      "nombre": "Liniers"
+    },
+    {
+      "id": 17,
+      "nombre": "Mataderos"
+    },
+    {
+      "id": 18,
+      "nombre": "Monserrat"
+    },
+    {
+      "id": 19,
+      "nombre": "Monte Castro"
+    },
+    {
+      "id": 20,
+      "nombre": "Núñez"
+    },
+    {
+      "id": 21,
+      "nombre": "Palermo"
+    },
+    {
+      "id": 22,
+      "nombre": "Parque Avellaneda"
+    },
+    {
+      "id": 23,
+      "nombre": "Parque Chacabuco"
+    },
+    {
+      "id": 24,
+      "nombre": "Parque Chas"
+    },
+    {
+      "id": 25,
+      "nombre": "Parque Patricios"
+    },
+    {
+      "id": 26,
+      "nombre": "Puerto Madero"
+    },
+    {
+      "id": 27,
+      "nombre": "Recoleta"
+    },
+    {
+      "id": 28,
+      "nombre": "Retiro"
+    },
+    {
+      "id": 29,
+      "nombre": "Saavedra"
+    },
+    {
+      "id": 30,
+      "nombre": "San Cristóbal"
+    },
+    {
+      "id": 31,
+      "nombre": "San Nicolás"
+    },
+    {
+      "id": 32,
+      "nombre": "San Telmo"
+    },
+    {
+      "id": 33,
+      "nombre": "Vélez Sarsfield"
+    },
+    {
+      "id": 34,
+      "nombre": "Versalles"
+    },
+    {
+      "id": 35,
+      "nombre": "Villa Crespo"
+    },
+    {
+      "id": 36,
+      "nombre": "Villa del Parque"
+    },
+    {
+      "id": 37,
+      "nombre": "Villa Devoto"
+    },
+    {
+      "id": 38,
+      "nombre": "Villa General Mitre"
+    },
+    {
+      "id": 39,
+      "nombre": "Villa Lugano"
+    },
+    {
+      "id": 40,
+      "nombre": "Villa Luro"
+    },
+    {
+      "id": 41,
+      "nombre": "Villa Ortúzar"
+    },
+    {
+      "id": 42,
+      "nombre": "Villa Pueyrredón"
+    },
+    {
+      "id": 43,
+      "nombre": "Villa Real"
+    },
+    {
+      "id": 44,
+      "nombre": "Villa Riachuelo"
+    },
+    {
+      "id": 45,
+      "nombre": "Villa Santa Rita"
+    },
+    {
+      "id": 46,
+      "nombre": "Villa Soldati"
+    },
+    {
+      "id": 47,
+      "nombre": "Villa Urquiza"
+    },
+    {
+      "id": 48,
+      "nombre": "Parque Patricios"
+    }
+  ],
+  "GBA": [
+    {
+      "id": 1,
+      "nombre": "Almirante Brown"
+    },
+    {
+      "id": 2,
+      "nombre": "Avellaneda"
+    },
+    {
+      "id": 3,
+      "nombre": "Berazategui"
+    },
+    {
+      "id": 4,
+      "nombre": "Esteban Echeverría"
+    },
+    {
+      "id": 5,
+      "nombre": "Ezeiza"
+    },
+    {
+      "id": 6,
+      "nombre": "Florencio Varela"
+    },
+    {
+      "id": 7,
+      "nombre": "General San Martín"
+    },
+    {
+      "id": 8,
+      "nombre": "Hurlingham"
+    },
+    {
+      "id": 9,
+      "nombre": "Ituzaingó"
+    },
+    {
+      "id": 10,
+      "nombre": "José C. Paz"
+    },
+    {
+      "id": 11,
+      "nombre": "La Matanza"
+    },
+    {
+      "id": 12,
+      "nombre": "Lanús"
+    },
+    {
+      "id": 13,
+      "nombre": "Lomas de Zamora"
+    },
+    {
+      "id": 14,
+      "nombre": "Malvinas Argentinas"
+    },
+    {
+      "id": 15,
+      "nombre": "Merlo"
+    },
+    {
+      "id": 16,
+      "nombre": "Moreno"
+    },
+    {
+      "id": 17,
+      "nombre": "Morón"
+    },
+    {
+      "id": 18,
+      "nombre": "Presidente Perón"
+    },
+    {
+      "id": 19,
+      "nombre": "Quilmes"
+    },
+    {
+      "id": 20,
+      "nombre": "San Fernando"
+    },
+    {
+      "id": 21,
+      "nombre": "San Isidro"
+    },
+    {
+      "id": 22,
+      "nombre": "San Miguel"
+    },
+    {
+      "id": 23,
+      "nombre": "Tigre"
+    },
+    {
+      "id": 24,
+      "nombre": "Tres de Febrero"
+    },
+    {
+      "id": 25,
+      "nombre": "Vicente López"
+    }
+  ]
+}
