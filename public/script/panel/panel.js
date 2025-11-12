@@ -2,6 +2,8 @@ console.log("Panel script loaded");
 
 import { ABMCursos } from "./cursos.js";
 import { postAgregarCurso } from "./agregar-curso.js";
+import { guardarEnLS, mostrarError } from "../mostrar.js";
+import { limpiarCortina } from "../cortina.js";
 
 document.querySelectorAll(".panelCont").forEach((panel) => {
   panel.addEventListener("click", (e) => {
@@ -35,13 +37,32 @@ document.querySelector("#agregarCurso")?.addEventListener("click", (e) => {
 });
 
 document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) => {
-  if (e.target.dataset.accion) {
-    let envio = await postAgregarCurso(e.target.dataset.accion);
+  if (e.target.dataset.accion === "modificar") {
+    e.stopPropagation(); // Prevenir que otros event listeners se ejecuten
+    // leer todos los inputs del modal
+    let data = {};
+    document.querySelectorAll("#modal input").forEach((input) => {
+      data[input.id] = input.value;
+    });
+    
+    // Capturar el ID del dataset del botón
+    if (e.target.dataset.id) {
+      data.id = parseInt(e.target.dataset.id);
+    }
+    
+    console.log("Datos para modificar curso (con ID):", data);
+    
+    // Llamar a postAgregarCurso con acción 'update'
+    let envio = await postAgregarCurso(data, 'update');
+    console.log('Resultado de postAgregarCurso:', envio);
+    
     if (!envio.error) {
+      // Limpiar el modal manualmente después de éxito
+      limpiarCortina();
       guardarEnLS("flashMessage", envio.msg);
       window.location.reload();
     } else {
-      mostrarError("Error al ejecutar la acción", 1);
+      mostrarError(new Error("No se pudo modificar el curso: " + envio.msg), 5);
       return;
     }
   }

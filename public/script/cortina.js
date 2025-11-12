@@ -1,5 +1,3 @@
-import { mostrarError, mostrarInfo, guardarEnLS } from "./mostrar.js";
-
 let cortina = document.querySelector(".cortina");
 
 // capturar el evento wheel sobre la cortina para evitar el scroll del fondo, pero permitirlo en el modal
@@ -31,6 +29,10 @@ export function mostrarCortinaConModal(data, accion, avoid, clase) {
     document.querySelector("#btnPopUpCancelar").style.display = "block";
     document.querySelector("#btnPopUpCancelar").dataset.accion = "modificar";
     document.querySelector("#btnPopUpAceptar").dataset.accion = "modificar";
+    // Guardar el ID en el botón para poder recuperarlo después
+    if (data.id) {
+      document.querySelector("#btnPopUpAceptar").dataset.id = data.id;
+    }
   }
   cortina.style.display = "flex";
   let modalHTML = `<h2>${data.curso}</h2>`;
@@ -71,22 +73,34 @@ document.querySelectorAll(".cortina .btn").forEach((btn) => {
     // limpiar los data-atributos de los botones si se cierra el popup con cancelar
     if( e.target.id === "btnPopUpCancelar" && e.target.dataset.accion) {
       e.target.removeAttribute("data-accion");
-      document.querySelector("#btnPopUpAceptar").removeAttribute("data-accion");
+      const btnAceptar = document.querySelector("#btnPopUpAceptar");
+      btnAceptar.removeAttribute("data-accion");
+      btnAceptar.removeAttribute("data-id");
     }
     // limpiar la cortina
-    cortina.style.display = "none";
-    document.querySelector(".cortina #txt").innerHTML = "";
-    document.querySelector(".cortina #modal").innerHTML = "";
-    document.querySelector("#btnPopUpCancelar").style.display = "none";
+    limpiarCortina();
     return e.target.dataset.resp;
   });
 });
 
-document.querySelector(".popup").addEventListener("click", (e) => {
-  if (e.target.classList.contains("popup")) {
-    cortina.style.display = "none";
+// Cerrar modal solo si se hace clic en el fondo (cortina)
+cortina.addEventListener("click", (e) => {
+  // Solo cerrar si se hace clic directamente en la cortina o popupCortina, no en el contenido
+  if (e.target.classList.contains("cortina") || e.target.classList.contains("popupCortina")) {
+    limpiarCortina();
+  }
+});
+
+// Prevenir que clics dentro del popup cierren el modal
+document.querySelector(".popup > span").addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+export function limpiarCortina() {
+  setTimeout(() => {
+    document.querySelector(".cortina").style.display = "none";
     document.querySelector(".cortina #txt").innerHTML = "";
     document.querySelector(".cortina #modal").innerHTML = "";
     document.querySelector("#btnPopUpCancelar").style.display = "none";
-  }
-});
+  }, 500);
+}

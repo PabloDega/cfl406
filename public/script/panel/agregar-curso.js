@@ -97,43 +97,63 @@ function validarCamposObligatorios(data) {
     return true;
 }
 
-export async function postAgregarCurso(data) {
+export async function postAgregarCurso(data, accion = 'insert') {
+    console.log(`Enviando datos para ${accion === 'insert' ? 'agregar' : 'modificar'} curso:`, data);
     try {
         // Mostrar loading
-        const submitBtn = document.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = '⏳ Guardando...';
-        submitBtn.disabled = true;
+        const submitBtn = document.querySelector('#btnPopUpAceptar') || document.querySelector('button[type="submit"]');
+        const originalText = submitBtn?.textContent || 'Guardar';
+        if (submitBtn) {
+            submitBtn.textContent = '⏳ Guardando...';
+            submitBtn.disabled = true;
+        }
         
-        const response = await fetch('/panel/cursos/agregar', {
+        // Construir URL según la acción
+        let url = '/panel/cursos/agregar';
+        if (accion === 'update' && data.id) {
+            url = `/panel/cursos/modificar/${data.id}`;
+        }
+        
+        const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({...data, accion})
         });
         
         const result = await response.json();
+        console.log('Respuesta del servidor:', result);
         
         if (result.error) {
             mostrarError('Error: ' + result.msg, 5);
+            if (submitBtn) {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+            return {error: true, msg: result.msg};
         } else {
-            mostrarInfo('Curso agregado exitosamente', 3);
+            const mensaje = accion === 'insert' ? 'Curso agregado exitosamente' : 'Curso modificado exitosamente';
+            mostrarInfo(mensaje, 3);
             
             // Guardar mensaje para mostrar en el panel
-            localStorage.setItem('flashMessage', 'Curso agregado exitosamente');
+            localStorage.setItem('flashMessage', mensaje);
             
+            // Redirigir al panel después de un breve retraso
             setTimeout(() => {
                 window.location.href = '/panel';
             }, 1500);
+            return {error: false, msg: mensaje};
         }
     } catch (error) {
         console.error('Error:', error);
         mostrarError('Error al enviar el formulario. Verifique su conexión.', 5);
+        return {error: true, msg: 'Error de conexión'};
     } finally {
         // Restaurar botón
-        const submitBtn = document.querySelector('button[type="submit"]');
+        const submitBtn = document.querySelector('#btnPopUpAceptar') || document.querySelector('button[type="submit"]');
         if (submitBtn) {
+            const originalText = submitBtn.getAttribute('data-original-text') || 'Guardar';
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }

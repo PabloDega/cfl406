@@ -20,7 +20,7 @@
                     <td><%= curso.año %></td>
                     <td><%= curso.sede %></td>
                     <td><%= curso.curso %></td>
-                    <td><%= curso.inicio %></td>
+                    <td><%= new Date(curso.inicio).toLocaleDateString("es-AR") %></td>
                     <td><%= curso.duracion %></td>
                     <td>
                         <div class="acciones">

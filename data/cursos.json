@@ -1,120 +1,27 @@
 {
   "cursos": [
     {
-      "curso": "Programación Web",
-      "codigo": 1,
-      "id": 1,
-      "activo": false,
-      "area": "Informática",
-      "sede": "San Miguel",
-      "sedeId": 2,
-      "año": 2025,
-      "inicio": "30/03/2025",
-      "fin": "20/12/2025",
-      "cierreInscripciones": "15/04/2025",
-      "duracion": "Anual",
-      "dias": [
-        "Martes",
-        "Jueves"
-      ],
-      "horario": "13:00 a 16:30",
-      "idProfesor": 1,
-      "profesor": "Pablo Deganis",
-      "descripcion": "Curso de introducción a la programación web, abarcando HTML, CSS y JavaScript.",
-      "titulo": "Oficial",
-      "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
-      ]
-    },
-    {
-      "curso": "Electricidad Básica Domiciliaria",
-      "codigo": 2,
-      "id": 2,
-      "area": "Oficios",
-      "activo": true,
-      "sede": "San Martín",
-      "sedeId": 1,
-      "año": 2025,
-      "inicio": "20/03/2025",
-      "fin": "20/07/2025",
-      "cierreInscripciones": "15/04/2025",
-      "duracion": "Cuatrimestral",
-      "dias": [
-        "Lunes",
-        "Miércoles"
-      ],
-      "horario": "14:30 a 17:00",
-      "idProfesor": 1,
-      "profesor": "Rodolfo Barcasia",
-      "descripcion": "Curso de introducción a la electricidad domiciliaria, abarcando circuitos básicos y seguridad eléctrica.",
-      "titulo": "CFL406",
-      "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
-      ]
-    },
-    {
-      "curso": "Electricidad Básica Domiciliaria",
-      "codigo": 3,
-      "id": 3,
-      "area": "Oficios",
-      "activo": true,
-      "sede": "San Miguel",
-      "sedeId": 2,
-      "año": 2025,
-      "inicio": "05/08/2025",
-      "fin": "03/12/2025",
-      "cierreInscripciones": "20/08/2025",
-      "duracion": "Cuatrimestral",
-      "dias": [
-        "Martes",
-        "Jueves"
-      ],
-      "horario": "15:00 a 17:00",
-      "idProfesor": 1,
-      "profesor": "Rodolfo Barcasia",
-      "descripcion": "Curso de introducción a la electricidad domiciliaria, abarcando circuitos básicos y seguridad eléctrica.",
-      "titulo": "CFL406",
-      "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
-      ]
-    },
-    {
       "curso": "Excel",
-      "codigo": 4,
+      "codigo": "4",
       "id": 4,
       "activo": true,
       "area": "Informática",
       "sede": "San Martín",
       "sedeId": 1,
-      "año": 2025,
-      "inicio": "11/05/2025",
-      "fin": "11/05/2025",
-      "cierreInscripciones": "28/05/2025",
+      "año": "2025",
+      "inicio": "2025-05-11",
+      "fin": "2025-05-11",
+      "cierreInscripciones": "2025-05-28",
       "duracion": "Bimestral",
-      "dias": [
-        "Lunes",
-        "Miércoles"
-      ],
+      "dias": [],
       "horario": "18:00 a 20:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
       "descripcion": "Curso de introducción a Excel, abarcando funciones básicas y avanzadas, tablas dinámicas y gráficos.",
       "titulo": "CFL406",
       "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
-      ]
+      "requisitos": [],
+      "inscripcion": false
     },
     {
       "curso": "Excel",
@@ -125,9 +32,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "11/05/2025",
-      "fin": "11/05/2025",
-      "cierreInscripciones": "28/05/2025",
+      "inicio": "2025-05-11",
+      "fin": "2025-05-11",
+      "cierreInscripciones": "2025-05-28",
       "duracion": "Bimestral",
       "dias": [
         "Viernes"
@@ -142,7 +49,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Manicuría",
@@ -153,9 +61,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "08/08/2025",
-      "fin": "08/08/2025",
-      "cierreInscripciones": "30/08/2025",
+      "inicio": "2025-08-08",
+      "fin": "2025-08-08",
+      "cierreInscripciones": "2025-08-30",
       "duracion": "Cuatrimestral",
       "dias": [
         "Miércoles",
@@ -171,7 +79,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Manicuría",
@@ -182,9 +91,9 @@
       "sede": "San Miguel",
       "sedeId": 2,
       "año": 2025,
-      "inicio": "08/08/2025",
-      "fin": "08/12/2025",
-      "cierreInscripciones": "30/08/2025",
+      "inicio": "2025-08-08",
+      "fin": "2025-12-08",
+      "cierreInscripciones": "2025-08-30",
       "duracion": "Cuatrimestral",
       "dias": [
         "Miércoles",
@@ -200,24 +109,25 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Peluquero",
-      "codigo": 8,
+      "codigo": "8",
       "activo": true,
       "id": 8,
       "area": "Estética",
       "sede": "San Martín",
       "sedeId": 1,
-      "año": 2025,
-      "inicio": "11/03/2025",
-      "fin": "26/11/2026",
-      "cierreInscripciones": "26/03/2025",
+      "año": "2025",
+      "inicio": "2025-03-11",
+      "fin": "2026-11-26",
+      "cierreInscripciones": "2025-03-26",
       "duracion": "2 años",
       "dias": [
-        "Martes",
-        "Jueves"
+        "Miércoles",
+        "Viernes"
       ],
       "horario": "18:00 a 20:00",
       "idProfesor": 1,
@@ -229,7 +139,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Maquillaje Profesional",
@@ -240,9 +151,9 @@
       "sede": "San Miguel",
       "sedeId": 2,
       "año": 2025,
-      "inicio": "04/03/2024",
-      "fin": "26/11/2025",
-      "cierreInscripciones": "19/03/2024",
+      "inicio": "2024-03-04",
+      "fin": "2025-11-26",
+      "cierreInscripciones": "2024-03-19",
       "duracion": "2 años",
       "dias": [
         "Lunes",
@@ -258,7 +169,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Liquidación de Sueldos",
@@ -269,9 +181,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "04/03/2024",
-      "fin": "26/11/2025",
-      "cierreInscripciones": "19/03/2024",
+      "inicio": "2024-03-04",
+      "fin": "2025-11-26",
+      "cierreInscripciones": "2024-03-19",
       "duracion": "2 años",
       "dias": [
         "Lunes",
@@ -287,7 +199,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Liquidación de Sueldos para Delegados",
@@ -298,9 +211,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "08/08/2025",
-      "fin": "08/10/2025",
-      "cierreInscripciones": "23/08/2025",
+      "inicio": "2025-08-08",
+      "fin": "2025-10-08",
+      "cierreInscripciones": "2025-08-23",
       "duracion": "Bimestral",
       "dias": [
         "Viernes"
@@ -315,7 +228,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Ser delegado del S.E.C."
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Liquidación de Sueldos para Delegados",
@@ -326,9 +240,9 @@
       "sede": "San Miguel",
       "sedeId": 2,
       "año": 2025,
-      "inicio": "08/08/2025",
-      "fin": "08/08/2025",
-      "cierreInscripciones": "23/08/2025",
+      "inicio": "2025-08-08",
+      "fin": "2025-08-08",
+      "cierreInscripciones": "2025-08-23",
       "duracion": "Bimestral",
       "dias": [
         "Martes"
@@ -343,7 +257,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Ser delegado del S.E.C."
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Taller de Impresión 3D",
@@ -354,9 +269,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "11/08/2025",
-      "fin": "17/09/2025",
-      "cierreInscripciones": "20/08/2025",
+      "inicio": "2025-08-11",
+      "fin": "2025-09-17",
+      "cierreInscripciones": "2025-08-20",
       "duracion": "Bimestral",
       "dias": [
         "Lunes",
@@ -372,7 +287,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Liquidación De Impuestos",
@@ -383,9 +299,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "05/03/2025",
-      "fin": "19/05/2025",
-      "cierreInscripciones": "20/03/2025",
+      "inicio": "2025-03-05",
+      "fin": "2025-05-19",
+      "cierreInscripciones": "2025-03-20",
       "duracion": "Bimestral",
       "dias": [
         "Lunes",
@@ -401,7 +317,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Marketing De Productos ",
@@ -412,9 +329,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "21/05/2025",
-      "fin": "10/09/2025",
-      "cierreInscripciones": "05/06/2025",
+      "inicio": "2025-05-21",
+      "fin": "2025-09-10",
+      "cierreInscripciones": "2025-06-05",
       "duracion": "Cuatrimestral",
       "dias": [
         "Lunes",
@@ -430,7 +347,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Marketing De Servicios",
@@ -441,9 +359,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "15/09/2025",
-      "fin": "29/12/2025",
-      "cierreInscripciones": "30/09/2025",
+      "inicio": "2025-09-15",
+      "fin": "2025-12-29",
+      "cierreInscripciones": "2025-09-30",
       "duracion": "Cuatrimestral",
       "dias": [
         "Lunes",
@@ -459,7 +377,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Administración De Pymes",
@@ -470,9 +389,9 @@
       "sede": "San Miguel",
       "sedeId": 2,
       "año": 2025,
-      "inicio": "05/03/2025",
-      "fin": "08/12/2025",
-      "cierreInscripciones": "20/03/2025",
+      "inicio": "2025-03-05",
+      "fin": "2025-12-08",
+      "cierreInscripciones": "2025-03-20",
       "duracion": "Anual",
       "dias": [
         "Lunes",
@@ -488,7 +407,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Administración y Conducción de RRHH",
@@ -499,9 +419,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2025,
-      "inicio": "06/03/2025",
-      "fin": "18/12/2025",
-      "cierreInscripciones": "23/03/2025",
+      "inicio": "2025-03-06",
+      "fin": "2025-12-18",
+      "cierreInscripciones": "2025-03-23",
       "duracion": "Cuatrimestral",
       "dias": [
         "Martes",
@@ -517,7 +437,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Ser delegado del S.E.C."
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Programación Web",
@@ -528,9 +449,9 @@
       "sede": "San Miguel",
       "sedeId": 2,
       "año": 2026,
-      "inicio": "30/03/2026",
-      "fin": "20/12/2026",
-      "cierreInscripciones": "15/04/2026",
+      "inicio": "2026-03-30",
+      "fin": "2026-12-20",
+      "cierreInscripciones": "2026-04-15",
       "duracion": "Anual",
       "dias": [
         "Martes",
@@ -546,7 +467,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     },
     {
       "curso": "Electricidad Básica Domiciliaria",
@@ -557,9 +479,9 @@
       "sede": "San Martín",
       "sedeId": 1,
       "año": 2026,
-      "inicio": "20/03/2026",
-      "fin": "20/07/2026",
-      "cierreInscripciones": "15/04/2026",
+      "inicio": "2026-03-20",
+      "fin": "2026-07-20",
+      "cierreInscripciones": "2026-04-15",
       "duracion": "Cuatrimestral",
       "dias": [
         "Lunes",
@@ -575,7 +497,8 @@
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
         "Presentar titulo primario/secundario completo"
-      ]
+      ],
+      "inscripcion": false
     }
   ]
 }
