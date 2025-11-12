@@ -503,7 +503,7 @@ header.desborda-x #hambHeader {
 }
 .formulario select{
     padding: 0.5em;
-    border-radius: 0.5em;
+    border-radius: 0.5em 0.5em 0 0;
     border: 1px gray solid;
     width: 100%;
 }
@@ -592,15 +592,19 @@ header.desborda-x #hambHeader {
 }
 #formDetallesCurso{
     border: 2px solid var(--color2);
-    padding: 1em;
-    border-radius: 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
     font-size: 0.9rem;
     gap: 0.5em;
     background-color: var(--color1);
+    margin-top: -1rem;
+    border-collapse: collapse;
 }
-#formDetallesCurso> span > span:first-child{
+#formDetallesCurso tr td{
+    padding: 0.4em 1em;
+}
+#formDetallesCurso tr > td:first-child{
     font-weight: 600;
-    border-bottom: 2px solid black;
+    background-color: var(--color2);
 }
 @media only screen and (max-width: 925px) {
     .landPublicacion img{
