@@ -203,6 +203,11 @@ input{
     min-width: 250px;
     transition: 3s;
 }
+
+.card.cardAgregarCurso{
+    max-width: none;
+    width: 100%;
+}
 .card h1{
     font-size: 1.5em;
     color: var(--color3);

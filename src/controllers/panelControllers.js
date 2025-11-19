@@ -112,6 +112,7 @@ export const agregarCurso = async (req, res) => {
                 data[key] = null;
             }
         });
+        //data.activo = true; // Por defecto activo en true para nuevos cursos
 
         console.log("Datos recibidos para nuevo curso:", data);
         

@@ -499,6 +499,29 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false
+    },
+    {
+      "id": null,
+      "curso": "Electricidad Básica DomiciliariaSSSS",
+      "codigo": 1005,
+      "activo": true,
+      "area": "Informática",
+      "sede": "San Martín",
+      "año": 2025,
+      "inicio": "2025-11-20",
+      "fin": "2025-11-21",
+      "cierreInscripciones": "2025-11-19",
+      "duracion": "Cuatrimestral",
+      "dias": [
+        "lunes"
+      ],
+      "horario": "14:30 a 17:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": "adfadasdasd",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": []
     }
   ]
 }

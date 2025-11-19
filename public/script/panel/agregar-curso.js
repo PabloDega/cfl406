@@ -41,12 +41,18 @@ function inicializarFormulario() {
         const data = {};
         for (let [key, value] of formData.entries()) {
             if (key === 'activo') {
-                data[key] = value === 'true';
+                // El checkbox envía 'on' cuando está marcado, no 'true'
+                data[key] = value === 'on' || value === true;
             } else if (key === 'codigo' || key === 'año' || key === 'idProfesor') {
                 data[key] = parseInt(value);
             } else {
                 data[key] = value;
             }
+        }
+        
+        // Si el checkbox no está marcado, no aparecerá en FormData, así que lo ponemos en false
+        if (!formData.has('activo')) {
+            data.activo = false;
         }
         
         // Validar campos obligatorios
@@ -97,7 +103,7 @@ function validarCamposObligatorios(data) {
     return true;
 }
 
-export async function postAgregarCurso(data, accion = 'insert') {
+export const postAgregarCurso = async (data, accion = 'insert') => {
     console.log(`Enviando datos para ${accion === 'insert' ? 'agregar' : 'modificar'} curso:`, data);
     try {
         // Mostrar loading
