@@ -1,4 +1,4 @@
-<h1>Lista de cursos <div class="btn small" id="agregarCurso">Agregar curso</div></h1>
+<h1>Lista de cursos <div class="btn small" id="agregarCurso"><span>➕</span>Agregar curso</div></h1>
 
 <% if (cursos && cursos.length > 0) { %>
     <table class="tabla">
@@ -24,10 +24,10 @@
                     <td><%= curso.duracion %></td>
                     <td>
                         <div class="acciones">
-                            <div class="btn small" data-id="<%= curso.id %>" data-accion="ver" data-tabla="cursos">Ver</div>
-                            <div class="btn small" data-id="<%= curso.id %>" data-accion="editar" data-tabla="cursos">Editar</div>
-                            <div class="btn small" data-id="<%= curso.id %>" data-accion="inscribir" data-tabla="cursos">Alumnos</div>
-                            <div class="btn small" data-id="<%= curso.id %>" data-accion="eliminar" data-tabla="cursos">Eliminar</div>
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="ver" data-tabla="cursos"><span>👁️</span> Ver</div>
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="editar" data-tabla="cursos"><span>✏️</span> Editar</div>
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="inscribir" data-tabla="cursos"><span>👥</span> Alumnos</div>
+                            <div class="btn small" data-id="<%= curso.id %>" data-accion="eliminar" data-tabla="cursos"><span>🗑️</span> Eliminar</div>
                         </div>
                     </td>
                 </tr>

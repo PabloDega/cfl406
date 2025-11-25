@@ -131,7 +131,7 @@ export const agregarCurso = async (req, res) => {
         // Procesar campos especiales
         if (typeof data.dias === 'string') {
             try {
-                data.dias = JSON.parse(data.dias);
+                data.dias = data.dias.split(",");
             } catch (e) {
                 data.dias = [];
             }

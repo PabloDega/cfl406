@@ -10,10 +10,13 @@
       "sedeId": 1,
       "año": "2025",
       "inicio": "2025-05-11",
-      "fin": "2025-05-11",
+      "fin": "2025-05-13",
       "cierreInscripciones": "2025-05-28",
       "duracion": "Bimestral",
-      "dias": [],
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
       "horario": "18:00 a 20:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
@@ -25,13 +28,13 @@
     },
     {
       "curso": "Excel",
-      "codigo": 5,
+      "codigo": "5",
       "id": 5,
       "activo": true,
       "area": "Informática",
       "sede": "San Martín",
       "sedeId": 1,
-      "año": 2025,
+      "año": "2025",
       "inicio": "2025-05-11",
       "fin": "2025-05-11",
       "cierreInscripciones": "2025-05-28",
@@ -48,19 +51,19 @@
       "requisitos": [
         "Ser Mayor de 18 años",
         "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
+        "Presentar titulo primario/secundario completo",
       ],
       "inscripcion": false
     },
     {
       "curso": "Manicuría",
-      "codigo": 6,
+      "codigo": "6",
       "activo": true,
       "id": 6,
       "area": "Estética",
       "sede": "San Martín",
       "sedeId": 1,
-      "año": 2025,
+      "año": "2025",
       "inicio": "2025-08-08",
       "fin": "2025-08-08",
       "cierreInscripciones": "2025-08-30",
@@ -75,11 +78,7 @@
       "descripcion": "Curso de manicuría, abarcando técnicas de esmaltado, cuidado de uñas y diseño.",
       "titulo": "Oficial",
       "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
-      ],
+      "requisitos": [],
       "inscripcion": false
     },
     {
@@ -521,7 +520,8 @@
       "descripcion": "adfadasdasd",
       "titulo": "CFL406",
       "modalidad": "Presencial",
-      "requisitos": []
+      "requisitos": [],
+      "inscripcion": false
     }
   ]
 }

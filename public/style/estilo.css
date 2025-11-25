@@ -106,6 +106,10 @@ input{
     color: white;
     transition: 0.5s;
     width: fit-content;
+    white-space: nowrap;
+    display: flex;
+    gap: 0.5em;
+    text-decoration: none;
 }
 .btn:hover{
     background-color: gray;
@@ -353,11 +357,11 @@ input{
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    overflow-y: auto;
 }
 .cortina #modal{
     min-width: 500px;
     gap: 1em;
+    overflow-y: auto;
 }
 .cortina #modal span{
     display: flex;
@@ -370,6 +374,12 @@ input{
 }
 .cortina #modal span input{
     flex-grow: 2;
+}
+.cortina #modal #requisitos{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    gap: 0.5em;
 }
 .popupCortina{
     background-color: rgba(0, 0, 0, 0.5);
@@ -567,6 +577,7 @@ header.desborda-x #hambHeader {
     padding: 1em;
     flex-grow: 1;
     overflow-y: auto;
+    align-items: center;
 }
 .small{
     font-size: 0.8rem;
@@ -611,6 +622,11 @@ header.desborda-x #hambHeader {
     font-weight: 600;
     background-color: var(--color2);
 }
+.max-800{
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
 @media only screen and (max-width: 925px) {
     .landPublicacion img{
         opacity: 0.6;
@@ -643,8 +659,4 @@ header.desborda-x #hambHeader {
     padding: 1em;
     background: linear-gradient(105deg, #f8f9fa, #e9ecef);
     border-bottom: 2px solid var(--color2);
-}
-
-.header-simplificado img {
-    width: 150px;
 }
