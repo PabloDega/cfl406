@@ -1,5 +1,6 @@
-import { getCursos, getCurso, eliminarCurso, guardarDatosCursos } from "../services/cursosService.js";
+import { getCursos, getCurso, eliminarCurso, guardarDatosCursos, getCursosSinProcesar } from "../services/cursosService.js";
 import { getClases } from "../services/clasesService.js";
+import { crearFecha } from "../utils/dates.js";
 
 export const panelIndex = async (req, res) => {
     try {
@@ -50,7 +51,6 @@ export const cursosAcciones = async (req, res) => {
     try {
         const { accion, id } = req.params;
         const cursoId = parseInt(id);
-        console.log(accion, id)
         // Validar parámetros
         if (!accion || isNaN(cursoId)) {
             return res.status(400).json({
@@ -68,7 +68,7 @@ export const cursosAcciones = async (req, res) => {
                 return res.status(400).json(resultado);
             }
             return res.json(resultado);
-        } else if(accion === "ver" || accion === "editar"){
+        } else if(accion === "ver" || accion === "modificar"){
             const curso = await getCurso(cursoId);
             return res.send({error: false, data: curso});
         } else if(accion === "inscribir"){
@@ -102,9 +102,7 @@ export const agregarCurso = async (req, res) => {
         const clase = await getClases();
         const keys = Object.keys(clase.cursos);
         const data = {};
-        
-        console.log("req.body:", req.body);
-        
+                
         keys.forEach(key => {
             if (req.body[key] !== undefined && req.body[key] !== null && req.body[key] !== '') {
                 data[key] = req.body[key];
@@ -113,8 +111,6 @@ export const agregarCurso = async (req, res) => {
             }
         });
         //data.activo = true; // Por defecto activo en true para nuevos cursos
-
-        console.log("Datos recibidos para nuevo curso:", data);
         
         // Campos obligatorios específicos
         const camposObligatorios = ['curso', 'codigo', 'area', 'sede', 'año', 'inicio', 'fin', 'cierreInscripciones', 'duracion', 'horario', 'profesor', 'descripcion', 'titulo', 'modalidad'];
@@ -144,10 +140,19 @@ export const agregarCurso = async (req, res) => {
                 data.requisitos = [];
             }
         }
+
+        // Normalizar campos booleanos (pueden venir como string 'true'/'false' o boolean true/false)
+        if (data.activo !== undefined && data.activo !== null) {
+            data.activo = data.activo === true || data.activo === 'true';
+        }
         
+        // Eliminar inscripcion del data si viene, ya que se calcula automáticamente
+        delete data.inscripcion;
+
         // Discriminar entre INSERT y UPDATE
         const accion = req.body.accion || 'insert';
-        const cursos = await getCursos();
+        // Usar getCursosSinProcesar para no recalcular inscripcion automáticamente
+        const cursos = await getCursosSinProcesar();
         let resultado;
         let mensaje;
         let cursoResultado;
@@ -155,7 +160,7 @@ export const agregarCurso = async (req, res) => {
         if (accion === 'update') {
             // LÓGICA PARA ACTUALIZAR (UPDATE)
             console.log("Ejecutando UPDATE para curso ID:", data.id);
-            
+            console.log("Datos recibidos para actualización:", data);
             if (!data.id) {
                 return res.status(400).json({
                     error: true,
@@ -197,6 +202,13 @@ export const agregarCurso = async (req, res) => {
                 });
             }
 
+            // Calcular inscripcion automáticamente antes de guardar
+            cursosModificados.forEach(curso => {
+                const fechaCierre = crearFecha(curso.cierreInscripciones);
+                const hoy = new Date();
+                curso.inscripcion = fechaCierre >= hoy;
+            });
+
             resultado = await guardarDatosCursos(cursosModificados);
             cursoResultado = cursosModificados.find(c => c.id === cursoId);
             mensaje = "Curso modificado exitosamente";
@@ -205,16 +217,19 @@ export const agregarCurso = async (req, res) => {
             // LÓGICA PARA AGREGAR (INSERT)
             console.log("Ejecutando INSERT para nuevo curso");
             
-            // Convertir activo a boolean solo para INSERT
-            if (data.activo !== undefined && data.activo !== null) {
-                data.activo = data.activo === true || data.activo === 'true';
-            } else {
-                // Si no viene, por defecto es true
+            // Si activo no viene definido, por defecto es true
+            if (data.activo === undefined || data.activo === null) {
                 data.activo = true;
             }
             
             const nuevoId = cursos.length > 0 ? Math.max(...cursos.map(c => c.id)) + 1 : 1;
             cursoResultado = { id: nuevoId, ...data };
+            
+            // Calcular inscripcion automáticamente
+            const fechaCierre = crearFecha(cursoResultado.cierreInscripciones);
+            const hoy = new Date();
+            cursoResultado.inscripcion = fechaCierre >= hoy;
+            
             cursos.push(cursoResultado);
             
             resultado = await guardarDatosCursos(cursos);

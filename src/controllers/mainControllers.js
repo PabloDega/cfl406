@@ -38,7 +38,6 @@ export const formulario = async (req, res) => {
 
 export const postFormulario = async (req, res) => {
   try {
-    console.log(req.body);
     //const { nombre, email, curso } = req.body;
     // Aquí puedes manejar la lógica para procesar el formulario
     //console.log("Datos del formulario:", { nombre, email, curso });

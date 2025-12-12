@@ -174,7 +174,6 @@ document.querySelectorAll("#paso3 .formItems input, #paso3 .formItems select").f
   
   input.addEventListener(eventType, function (e) {
     if (this.value === "") {
-      console.log("Campo vacío:", this.name);
       // eliminar del formulario
       delete formulario[this.name];
       localStorage.setItem("formularioInscripcion", JSON.stringify(formulario));
@@ -267,7 +266,6 @@ document.querySelector("#btnEnviarFormulario").addEventListener("click", async (
   e.preventDefault();
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData);
-  console.log("Datos del formulario:", data);
   // Aquí puedes enviar los datos a tu servidor
   let resp = await fetch("/formulario", {
     method: "POST",
@@ -283,7 +281,6 @@ document.querySelector("#btnEnviarFormulario").addEventListener("click", async (
   }
 
   resp = await resp.json();
-  console.log("Respuesta del servidor:", resp);
   return { error: false, msg: "Formulario enviado con éxito" };
 } );
 
@@ -404,7 +401,6 @@ function mostrarDetallesCurso(cursoId) {
   const detallesCurso = document.querySelector("#formDetallesCurso");
   const curso = window.cursos.find(curso => curso.id.toString() === cursoId.toString());
   if (curso) {
-    console.log("Detalles del curso:", curso);
     document.querySelector("#areaCurso").textContent = curso.area;
     document.querySelector("#inicioCurso").textContent = curso.inicio;
     document.querySelector("#finCurso").textContent = curso.fin;

@@ -24,6 +24,7 @@ function renderCursos(){
     window.cursos.sort((a, b) => a.curso.localeCompare(b.curso));
     window.cursos.forEach((curso) => {
         if(!curso.activo){return}
+        if(curso.año !== 2026){return} // mostrar solo cursos del año 2026
         let estado = {
             visibilidad: "",
             estado: "✔ Inscripciones abiertas",

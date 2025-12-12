@@ -8,14 +8,15 @@ export const ABMCursos = async (accion, url) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      //console.log("Data received:", data);
+      console.log("Data received:", data);
       if (data.error) {
         mostrarErrores([new Error(data.msg)]);
-      } else if (accion === "ver" || accion === "editar") {
+      } else if (accion === "ver" || accion === "modificar") {
         // Aquí puedes manejar la visualización o edición del curso
         //console.log("Curso data:", data.data);
         // Por ejemplo, podrías abrir un modal con la información del curso
-        mostrarCortinaConModal(data.data, accion, ["id", "activo", "idProfesor", "inscripcion"], window.clases.cursos);
+        // inscripcion se excluye porque se calcula automáticamente en base a la fecha de cierre
+        mostrarCortinaConModal(data.data, accion, ["id", "activo", "sedeId", "idProfesor", "inscripcion"], window.clases.cursos);
       } else if (accion === "inscribir") {
         if (data.redirect) {
           window.location.href = data.redirect;

@@ -104,7 +104,6 @@ function validarCamposObligatorios(data) {
 }
 
 export const postAgregarCurso = async (data, accion = 'insert') => {
-    console.log(`Enviando datos para ${accion === 'insert' ? 'agregar' : 'modificar'} curso:`, data);
     try {
         // Mostrar loading
         const submitBtn = document.querySelector('#btnPopUpAceptar') || document.querySelector('button[type="submit"]');

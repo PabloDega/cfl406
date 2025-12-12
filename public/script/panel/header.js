@@ -8,7 +8,7 @@ function simplificarHeaderEnPaginasEspecificas() {
     // Páginas donde ocultar la botonera del panel
     const paginasSinBotonera = [
         '/panel/cursos/agregar',
-        '/panel/cursos/editar',
+        '/panel/cursos/modificar',
         '/panel/alumnos/agregar',
         '/panel/profesores/agregar'
     ];

@@ -371,6 +371,11 @@ input{
 .cortina #modal span input{
     flex-grow: 2;
 }
+.cortina #modal span input[type="checkbox"]{
+    flex-grow: unset;
+    width: 20px;
+    cursor: pointer;
+}
 .popupCortina{
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;

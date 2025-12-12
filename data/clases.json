@@ -8,6 +8,7 @@
     "sede": "string",
     "año": "number",
     "inicio": "date",
+    "inscripcion": "boolean",
     "fin": "date",
     "cierreInscripciones": "date",
     "duracion": "string",

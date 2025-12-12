@@ -4,7 +4,7 @@
       "curso": "Excel",
       "codigo": "4",
       "id": 4,
-      "activo": true,
+      "activo": false,
       "area": "Informática",
       "sede": "San Martín",
       "sedeId": 1,
@@ -21,7 +21,7 @@
       "titulo": "CFL406",
       "modalidad": "Presencial",
       "requisitos": [],
-      "inscripcion": false
+      "inscripcion": true
     },
     {
       "curso": "Excel",
@@ -521,7 +521,8 @@
       "descripcion": "adfadasdasd",
       "titulo": "CFL406",
       "modalidad": "Presencial",
-      "requisitos": []
+      "requisitos": [],
+      "inscripcion": false
     }
   ]
 }

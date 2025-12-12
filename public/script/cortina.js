@@ -23,7 +23,7 @@ export function mostrarCortinaConMsg(txt, btncancelar) {
 
 export function mostrarCortinaConModal(data, accion, avoid, clase) {
   console.log(clase)
-  let editable = accion === "editar";
+  let editable = accion === "modificar";
   let disableInput = accion === "ver" ? "readonly" : "";
   if (editable) {
     document.querySelector("#btnPopUpCancelar").style.display = "block";
@@ -40,6 +40,7 @@ export function mostrarCortinaConModal(data, accion, avoid, clase) {
     if (avoid && avoid.includes(key)) continue;
     let tipoDato = "text";
     let valor = data[key];
+    let checked = "";
     // Si el dato es una fecha en formato DD/MM/YYYY, cambiar el input a type="date"
     if (editable) {
       tipoDato = clase[key] || "text";
@@ -49,8 +50,13 @@ export function mostrarCortinaConModal(data, accion, avoid, clase) {
         const [day, month, year] = valor.split("/");
         valor = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
       }
+      if(tipoDato === "boolean") {
+        tipoDato = "checkbox";
+        valor = "true";
+        checked = data[key] ? "checked" : "";
+      }
     }
-    modalHTML += `<span><strong>${key}:</strong><input id="${key}" type="${tipoDato}" value="${valor}" ${disableInput}></span>`;
+    modalHTML += `<span><strong>${key}:</strong><input id="${key}" type="${tipoDato}" value="${valor}" ${checked} ${disableInput}></span>`;
   }
   document.querySelector(".cortina #modal").innerHTML = modalHTML;
 }

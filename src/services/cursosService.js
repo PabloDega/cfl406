@@ -128,7 +128,25 @@ export const getCursosRaw = async () => {
     throw {
       error: true,
       msg: "Error al obtener cursos sin filtrar",
-      codigo: "GCR01"
+      codigo: "GCSR01"
+    };
+  }
+};
+
+// Función para obtener cursos sin calcular estado de inscripción (para edición)
+export const getCursosSinProcesar = async () => {
+  try {
+    let cursosRaw = await leerDatosCursos();
+    return cursosRaw.cursos; // Devolver array directo sin procesar
+  } catch (error) {
+    console.error("Error en getCursosSinProcesar:", error);
+    if (error.error) {
+      throw error;
+    }
+    throw {
+      error: true,
+      msg: "Error al obtener cursos sin procesar",
+      codigo: "GCSP01"
     };
   }
 };

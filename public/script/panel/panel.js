@@ -18,7 +18,6 @@ document.querySelectorAll(".acciones > .btn").forEach((accion) => {
     const accion = this.getAttribute("data-accion");
     const id = this.getAttribute("data-id");
     const url = `/panel/${tabla}/${accion}/${id}`;
-    console.log(`llamando a: ${url}`);
     if (accion === "eliminar") {
       if (!confirm("¿Estás seguro de que deseas eliminar este curso? Esta acción no se puede deshacer.")) {
         return false; // Prevent default action
@@ -32,7 +31,6 @@ document.querySelectorAll(".acciones > .btn").forEach((accion) => {
 document.querySelector("#agregarCurso")?.addEventListener("click", (e) => {
   e.stopPropagation();
   const url = "/panel/cursos/agregar";
-  console.log(`Redirecting to: ${url}`);
   window.location.href = url;
 });
 
@@ -43,6 +41,9 @@ document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) 
     let data = {};
     document.querySelectorAll("#modal input").forEach((input) => {
       data[input.id] = input.value;
+      if( input.type === "checkbox" ) {
+        data[input.id] = input.checked;
+      }
     });
     
     // Capturar el ID del dataset del botón
@@ -51,7 +52,7 @@ document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) 
     }
     
     console.log("Datos para modificar curso (con ID):", data);
-    
+
     // Llamar a postAgregarCurso con acción 'update'
     let envio = await postAgregarCurso(data, 'update');
     console.log('Resultado de postAgregarCurso:', envio);
