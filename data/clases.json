@@ -20,5 +20,10 @@
     "titulo": "string",
     "modalidad": "string",
     "requisitos": "object"
-  }
+  },
+  "requisitos":[
+    "Ser mayor de 18 años",
+    "Presentar DNI vigente",
+    "Presentar titulo primario/secundario completo"
+  ]
 }

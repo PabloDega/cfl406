@@ -1,4 +1,4 @@
-import { mostrarCortinaConModal } from "../cortina.js";
+import { mostrarCortinaConModal } from "./modales.js";
 import { guardarEnLS, mostrarErrores } from "../mostrar.js";
 
 export const ABMCursos = async (accion, url) => {

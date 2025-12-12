@@ -3,7 +3,7 @@ console.log("Panel script loaded");
 import { ABMCursos } from "./cursos.js";
 import { postAgregarCurso } from "./agregar-curso.js";
 import { guardarEnLS, mostrarError } from "../mostrar.js";
-import { limpiarCortina } from "../cortina.js";
+import { limpiarCortina } from "./modales.js";
 
 document.querySelectorAll(".panelCont").forEach((panel) => {
   panel.addEventListener("click", (e) => {
@@ -45,7 +45,26 @@ document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) 
         data[input.id] = input.checked;
       }
     });
-    
+
+    // capturar los checkbox de dias y reemplazar el objeto data.dias por un array con los dias seleccionados
+    const diasSeleccionados = [];
+    document.querySelectorAll("#modal #dias input[type='checkbox']").forEach((checkbox) => {
+      if (checkbox.checked) {
+        diasSeleccionados.push(checkbox.value);
+      }
+    });
+    data.dias = diasSeleccionados;
+
+    // campturar los input de requisitos y convertirlos en un array
+    const requisitos = [];
+    document.querySelectorAll("#modal #requisitos input[type='text']").forEach((input) => {
+      // si el array.value no está vacío agregarlo al array
+      if (input.value.trim() !== ""){
+        requisitos.push(input.value);
+      }
+    });
+    data.requisitos = requisitos;
+
     // Capturar el ID del dataset del botón
     if (e.target.dataset.id) {
       data.id = parseInt(e.target.dataset.id);

@@ -12,7 +12,7 @@ cortina.addEventListener("wheel",  (e) => {
   { passive: false }
 );
 
-// cortina
+// Función para mostrar mensajes simples en la cortina (usado en landing y páginas públicas)
 export function mostrarCortinaConMsg(txt, btncancelar) {
   cortina.style.display = "flex";
   if (btncancelar) {
@@ -62,27 +62,8 @@ export function mostrarCortinaConModal(data, accion, avoid, clase) {
 }
 
 // agregar evento a los botones de la cortina
-
 document.querySelectorAll(".cortina .btn").forEach((btn) => {
-  btn.addEventListener("click", async (e) => {
-    /* if( e.target.id === "btnPopUpAceptar" && e.target.dataset.accion) {
-      let envio = await enviarFormulario(e.target.dataset.accion);
-      if(!envio.error) {
-        guardarEnLS("flashMessage", envio.msg);
-        window.location.reload();
-      } else {
-        mostrarError("Error al ejecutar la acción", 1);
-        return;
-      }
-    } */
-
-    // limpiar los data-atributos de los botones si se cierra el popup con cancelar
-    if( e.target.id === "btnPopUpCancelar" && e.target.dataset.accion) {
-      e.target.removeAttribute("data-accion");
-      const btnAceptar = document.querySelector("#btnPopUpAceptar");
-      btnAceptar.removeAttribute("data-accion");
-      btnAceptar.removeAttribute("data-id");
-    }
+  btn.addEventListener("click", (e) => {
     // limpiar la cortina
     limpiarCortina();
     return e.target.dataset.resp;
@@ -101,12 +82,3 @@ cortina.addEventListener("click", (e) => {
 document.querySelector(".popup > span").addEventListener("click", (e) => {
   e.stopPropagation();
 });
-
-export function limpiarCortina() {
-  setTimeout(() => {
-    document.querySelector(".cortina").style.display = "none";
-    document.querySelector(".cortina #txt").innerHTML = "";
-    document.querySelector(".cortina #modal").innerHTML = "";
-    document.querySelector("#btnPopUpCancelar").style.display = "none";
-  }, 500);
-}
