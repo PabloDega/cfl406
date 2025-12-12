@@ -222,7 +222,7 @@ export const agregarCurso = async (req, res) => {
                 data.activo = true;
             }
             
-            const nuevoId = cursos.length > 0 ? Math.max(...cursos.map(c => c.id)) + 1 : 1;
+            const nuevoId = data.codigo;
             cursoResultado = { id: nuevoId, ...data };
             
             // Calcular inscripcion automáticamente
