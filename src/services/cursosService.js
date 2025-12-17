@@ -210,6 +210,15 @@ export const validarCurso = (curso) => {
   return true;
 };
 
+// Funcion temporal hasta usar BD
+export const getLastId = async() => {
+  let cursos = await leerDatosCursos();
+  cursos = cursos.cursos;
+  if(cursos.length === 0) return 0;
+  const ids = cursos.map(curso => curso.id);
+  return Math.max(...ids);
+}
+
 /* export const getClase = async () => {
   try {
     let cursosRaw = await leerDatosCursos();
