@@ -236,6 +236,7 @@ input{
 .card .btn{
     flex-grow: 1;
     text-align: center;
+    justify-content: center;
 }
 .card .btnInscripcion {
     width: 100%;

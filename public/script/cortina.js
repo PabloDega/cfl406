@@ -1,3 +1,5 @@
+import { limpiarCortina } from "./panel/modales.js";
+
 let cortina = document.querySelector(".cortina");
 
 // capturar el evento wheel sobre la cortina para evitar el scroll del fondo, pero permitirlo en el modal
