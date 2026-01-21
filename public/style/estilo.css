@@ -357,6 +357,7 @@ input{
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    overflow-y: auto;
 }
 .cortina #modal{
     min-width: 500px;
@@ -407,6 +408,7 @@ input{
     flex-direction: column;
     gap: 1em;
     max-height: 80vh;
+    max-width: 80%;
 }
 #btnPopUpCancelar{
     display: none;

@@ -98,9 +98,9 @@ function mostrarMasInfo(curso){
               <span>✔ Curso ${curso.curso}</span>
               <span>✔ Titulo ${curso.titulo}</span>
               <span>✔ Duración: ${curso.duracion}</span>
-              <span>✔ Inicio: ${curso.inicio}</span>
-              <span>✔ Fin: ${curso.fin}</span>
-              <span>✔ Cierre de inscripciones: ${curso.cierreInscripciones}</span>
+              <span>✔ Inicio: ${new Date(curso.inicio).toLocaleDateString("es-AR")}</span>
+              <span>✔ Fin: ${new Date(curso.fin).toLocaleDateString("es-AR")}</span>
+              <span>✔ Cierre de inscripciones: ${new Date(curso.cierreInscripciones).toLocaleDateString("es-AR")}</span>
               <span>✔ Horario: ${curso.dias.join(" y ")} de ${curso.horario}</span>
               <span>✔ Modalidad: ${curso.modalidad}</span>
               <span>✔ Descripción: ${curso.descripcion}</span>`;

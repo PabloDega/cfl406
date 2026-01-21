@@ -4,7 +4,7 @@ let cortina = document.querySelector(".cortina");
 
 export function mostrarCortinaConModal(data, accion, avoid, clase) {
   //console.log(clase)
-  let editable = accion === "editar";
+  let editable = accion === "modificar";
   let disableInput = accion === "ver" ? "readonly" : "";
   document.querySelector(".cortina #txt").innerHTML = `<h1>${accion} curso</h1>`
   if (editable) {
