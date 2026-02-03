@@ -103,6 +103,11 @@ function mostrarMasInfo(curso){
               <span>✔ Cierre de inscripciones: ${new Date(curso.cierreInscripciones).toLocaleDateString("es-AR")}</span>
               <span>✔ Horario: ${curso.dias.join(" y ")} de ${curso.horario}</span>
               <span>✔ Modalidad: ${curso.modalidad}</span>
-              <span>✔ Descripción: ${curso.descripcion}</span>`;
+              <span>✔ Descripción: ${curso.descripcion}</span>
+              <span>✔ Temario:</span>
+              <ul>
+              ${curso.temario.map((tema) => `<li>${tema}</li>`).join("")}
+              </ul>
+              `;
     mostrarCortinaConMsg(txt, false)
 }
