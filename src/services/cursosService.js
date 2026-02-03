@@ -23,7 +23,9 @@ const leerDatosCursos = async () => {
 export const guardarDatosCursos = async (cursos) => {
   try {
     const cursosPath = path.join(__dirname, "/data/cursos.json");
-    await fs.promises.writeFile(cursosPath, JSON.stringify({ cursos }, null, 2), "utf-8");
+    const jsonString = JSON.stringify({ cursos }, null, 2)
+      .replace(/\\u[\dA-F]{4}/gi, (match) => String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16)));
+    await fs.promises.writeFile(cursosPath, jsonString, "utf-8");
     return {
       error: false,
       msg: "Datos de cursos guardados con éxito"

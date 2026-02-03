@@ -55,7 +55,7 @@ document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) 
     });
     data.dias = diasSeleccionados;
 
-    // campturar los input de requisitos y convertirlos en un array
+    // capturar los input de requisitos y convertirlos en un array
     const requisitos = [];
     document.querySelectorAll("#modal #requisitos input[type='text']").forEach((input) => {
       // si el array.value no está vacío agregarlo al array
@@ -64,6 +64,16 @@ document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) 
       }
     });
     data.requisitos = requisitos;
+
+    // capturar los input de temario y convertirlos en un array
+    const temario = [];
+    document.querySelectorAll("#modal #temario input[type='text']").forEach((input) => {
+      // si el array.value no está vacío agregarlo al array
+      if (input.value.trim() !== ""){
+        temario.push(input.value);
+      }
+    });
+    data.temario = temario;
 
     // Capturar el ID del dataset del botón
     if (e.target.dataset.id) {

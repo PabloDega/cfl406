@@ -692,6 +692,14 @@ header.desborda-x #hambHeader {
     animation: spin 1s linear infinite;
 }
 
+.formulario #requisitos,
+.formulario #temario{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
