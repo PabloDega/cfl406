@@ -98,9 +98,10 @@ document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) 
   }
 });
 
-
 async function ABMtabla(accion, url, tabla) {
   if (tabla === "cursos") {
     return await ABMCursos(accion, url);
   }
 }
+
+document.querySelector(".popup").classList.add("no-cerrar");

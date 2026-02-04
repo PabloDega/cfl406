@@ -158,6 +158,7 @@ document.querySelector("#btnPopUpCancelar")?.addEventListener("click", (e) => {
 cortina.addEventListener("click", (e) => {
   // Solo cerrar si se hace clic directamente en la cortina o popupCortina, no en el contenido
   if (e.target.classList.contains("cortina") || e.target.classList.contains("popupCortina") || e.target.classList.contains("popup")) {
+    if(e.target.classList.contains("no-cerrar")) return; // si tiene la clase no-cerrar no cerrar{
     // Limpiar los data-atributos antes de cerrar
     const btnCancelar = document.querySelector("#btnPopUpCancelar");
     const btnAceptar = document.querySelector("#btnPopUpAceptar");
