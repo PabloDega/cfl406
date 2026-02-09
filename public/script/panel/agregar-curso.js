@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Inicializar validaciones de fecha
-    inicializarValidacionesFecha();
+    //inicializarValidacionesFecha();
 });
 
 function inicializarFormulario() {
@@ -170,7 +170,7 @@ function inicializarValidacionesFecha() {
     const finInput = document.getElementById('fin');
     const cierreInput = document.getElementById('cierreInscripciones');
     
-    if (inicioInput) {
+   if (inicioInput) {
         inicioInput.addEventListener('change', function() {
             const inicioDate = new Date(this.value);
             
