@@ -42,8 +42,34 @@ export const sessionConfig = {
 };
 
 export const rateLimitConfig = {
-  windowMs: 1 * 60 * 1000,
-  limit: 100,
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  limit: 100, // 100 peticiones por IP cada 15 minutos
+  standardHeaders: true, // Retorna info en los headers `RateLimit-*`
+  legacyHeaders: false, // Desactiva headers `X-RateLimit-*`
+  message: 'Demasiadas peticiones desde esta IP, por favor intente más tarde.',
+  // Excluir rutas estáticas del rate limit
+  skip: (req) => {
+    const staticExtensions = ['.css', '.js', '.jpg', '.jpeg', '.png', '.gif', '.ico', '.svg', '.woff', '.woff2', '.ttf', '.eot'];
+    return staticExtensions.some(ext => req.path.endsWith(ext));
+  }
+};
+
+// Rate limiter estricto para login (prevenir fuerza bruta)
+export const loginLimiterConfig = {
+  windowMs: 15 * 60 * 1000, // 15 minutos
+  limit: 5, // Solo 5 intentos de login cada 15 minutos
   standardHeaders: true,
   legacyHeaders: false,
+  message: 'Demasiados intentos de inicio de sesión. Por favor, intente de nuevo en 15 minutos.',
+  skipSuccessfulRequests: true // No contar intentos exitosos
+};
+
+// Rate limiter para 404s (bloquear scanners agresivos)
+export const notFoundLimiterConfig = {
+  windowMs: 5 * 60 * 1000, // 5 minutos
+  limit: 10, // Solo 10 peticiones 404 cada 5 minutos
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: 'Demasiadas peticiones a recursos inexistentes. Acceso temporalmente bloqueado.',
+  skipSuccessfulRequests: true // Solo contar 404s, no peticiones exitosas
 };

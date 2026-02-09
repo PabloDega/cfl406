@@ -236,6 +236,7 @@ input{
 .card .btn{
     flex-grow: 1;
     text-align: center;
+    justify-content: center;
 }
 .card .btnInscripcion {
     width: 100%;
@@ -357,6 +358,7 @@ input{
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+    overflow-y: auto;
 }
 .cortina #modal{
     min-width: 500px;
@@ -407,6 +409,7 @@ input{
     flex-direction: column;
     gap: 1em;
     max-height: 80vh;
+    max-width: 80%;
 }
 #btnPopUpCancelar{
     display: none;
@@ -687,6 +690,14 @@ header.desborda-x #hambHeader {
     border-top: 6px solid var(--color2);
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+.formulario #requisitos,
+.formulario #temario{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
 }
 
 @keyframes spin {
