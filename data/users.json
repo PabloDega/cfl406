@@ -2,13 +2,8 @@
     "users": [
         {
             "username": "admin",
-            "password": "admin123",
+            "password": "compartir406",
             "rol": "admin"
-        },
-        {
-            "username": "user",
-            "password": "user123",
-            "rol": "user"
         }
     ]
 }

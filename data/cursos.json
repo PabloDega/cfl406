@@ -29,7 +29,7 @@
       "temario": []
     },
     {
-      "curso": "Excell",
+      "curso": "Excel",
       "codigo": "5",
       "id": 5,
       "activo": true,
@@ -273,13 +273,13 @@
     },
     {
       "curso": "Taller de Impresión 3D",
-      "codigo": 13,
+      "codigo": "13",
       "activo": true,
       "id": 13,
       "area": "Informática",
       "sede": "San Martín",
       "sedeId": 1,
-      "año": 2025,
+      "año": "2025",
       "inicio": "2025-08-11",
       "fin": "2025-09-17",
       "cierreInscripciones": "2025-08-20",
@@ -500,7 +500,7 @@
       "inicio": "2026-03-20",
       "fin": "2026-07-20",
       "cierreInscripciones": "2026-04-15",
-      "duracion": "Cuatrimestral",
+      "duracion": "4 Meses",
       "dias": [
         "Lunes",
         "Miércoles"
@@ -508,7 +508,7 @@
       "horario": "15:00 a 17:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
-      "descripcion": "ELECTRICIDAD DOMICILIARIA  1  Introducción a la electricidad domiciliaria Conceptos básicos de electricidad. Seguridad y alcances del trabajo eléctrico en el hogar. 2  Normas de seguridad eléctrica Riesgos eléctricos. Uso de elementos de protección personal y medidas preventivas. 3  Conceptos eléctricos fundamentales Tensión, corriente, resistencia y potencia. Ley de Ohm aplicada a la vivienda. 4  Herramientas y materiales eléctricos Herramientas manuales. Conductores, caños, cajas, llaves, tomacorrientes y térmicas. 5  Conductores y canalizaciones Tipos de cables, colores normalizados, secciones y formas de instalación. 6  Circuitos eléctricos domiciliarios Circuitos de iluminación y tomacorrientes. Esquemas básicos y conexionado. 7  Tablero eléctrico domiciliario Interruptor general, térmicas y disyuntor diferencial. Función y ubicación. 8  Instalación de puntos eléctricos Colocación y conexión de llaves, tomas, portalámparas y luminarias. 9  Detección de fallas y mantenimiento básico Cortes de luz, cortocircuitos, sobrecargas y soluciones simples. 10  Mantenimiento, normativa y salida laboral Mantenimiento preventivo. Normativa básica (AEA). Trabajo seguro y recomendaciones finales.",
+      "descripcion": ".",
       "titulo": "CFL406",
       "modalidad": "Presencial",
       "requisitos": [
@@ -517,7 +517,18 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Introducción a la electricidad domiciliaria. Conceptos básicos de electricidad. Seguridad y alcances del trabajo eléctrico en el hogar.",
+        "2 Normas de seguridad eléctrica. Riesgos eléctricos. Uso de elementos de protección personal y medidas preventivas.",
+        "3 Conceptos eléctricos fundamentales. Tensión, corriente, resistencia y potencia. Ley de Ohm aplicada a la vivienda.",
+        "4 Herramientas y materiales eléctricos. Herramientas manuales. Conductores, caños, cajas, llaves, tomacorrientes y térmicas.",
+        "5 Conductores y canalizaciones. Tipos de cables, colores normalizados, secciones y formas de instalación.",
+        "6 Circuitos eléctricos domiciliarios. Circuitos de iluminación y tomacorrientes. Esquemas básicos y conexionado.",
+        "7 Tablero eléctrico domiciliario. Interruptor general, térmicas y disyuntor diferencial. Función y ubicación.",
+        "8 Instalación de puntos eléctricos. Colocación y conexión de llaves, tomas, portalámparas y luminarias.",
+        "9 Detección de fallas y mantenimiento básico. Cortes de luz, cortocircuitos, sobrecargas y soluciones simples.",
+        "10 Mantenimiento, normativa y salida laboral. Mantenimiento preventivo. Normativa básica (AEA). Trabajo seguro y recomendaciones finales."
+      ]
     },
     {
       "id": 22,
@@ -531,11 +542,14 @@
       "fin": "2026-07-17",
       "cierreInscripciones": "2026-04-10",
       "duracion": "4 meses",
-      "dias": [],
+      "dias": [
+        "Miércoles",
+        "Viernes"
+      ],
       "horario": "14:00 a 16:40",
       "idProfesor": 1,
       "profesor": "Dolores Dalinda Ferrer",
-      "descripcion": "1 Introducción a la manicuría profesional Rol de la manicura. Ética profesional, presentación personal y atención al cliente. 2 Anatomía y fisiología de la uña Partes de la uña, crecimiento, funciones y tipos de uñas. 3 Higiene, bioseguridad y esterilización Normas de higiene. Desinfección de herramientas, prevención de infecciones y cuidados sanitarios. 4 Preparación de la uña natural Limado correcto, cutículas, pulido y preparación previa al esmaltado. 5 Manicuría tradicional Técnicas clásicas. Esmaltado común, sellado y terminaciones prolijas. Tratamientos de fango y parafina para el cuidado de las manos 6 Tipos de servicios para extensión de la uña  Todo en esculpido gel, Poly gel 7 Esmaltado semipermanente Productos, pasos, uso de cabina LED/UV, retirado seguro del esmalte. 8 Kapping y refuerzo de uñas Uso de gel, acrílico o polygel para reforzar la uña natural. 9 Diseño y decoración básica de uñas Nail art inicial: líneas, puntos, degradé, stickers y combinaciones de colores. 10 Mantenimiento y reparación de uñas Service, rellenos, arreglos, retiro correcto de productos y cuidados post-servicio. 11 Gestión del servicio y salida laboral Armado de turnos, precios, redes sociales, trato con clientes y fidelización.",
+      "descripcion": ".",
       "titulo": "Manicuría ",
       "modalidad": "Presencial",
       "requisitos": [
@@ -544,7 +558,19 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Introducción a la manicuría profesional. Rol de la manicura. Ética profesional, presentación personal y atención al cliente.",
+        "2 Anatomía y fisiología de la uña. Partes de la uña, crecimiento, funciones y tipos de uñas.",
+        "3 Higiene, bioseguridad y esterilización. Normas de higiene. Desinfección de herramientas, prevención de infecciones y cuidados ",
+        "4 Preparación de la uña natural. Limado correcto, cutículas, pulido y preparación previa al esmaltado.",
+        "5 Manicuría tradicional. Técnicas clásicas. Esmaltado común, sellado y terminaciones prolijas. Tratamientos de fango y parafina para el cuidado de las manos.",
+        "6 Tipos de servicios para extensión de la uña.  Todo en esculpido gel, Poly gel.",
+        "7 Esmaltado semipermanente. Productos, pasos, uso de cabina LED/UV, retirado seguro del esmalte.",
+        "8 Kapping y refuerzo de uñas. Uso de gel, acrílico o polygel para reforzar la uña natural.",
+        "9 Diseño y decoración básica de uñas. Nail art inicial: líneas, puntos, degradé, stickers y combinaciones de colores.",
+        "10 Mantenimiento y reparación de uñas. Service, rellenos, arreglos, retiro correcto de productos y cuidados post-servicio.",
+        "11 Gestión del servicio y salida laboral. Armado de turnos, precios, redes sociales, trato con clientes y fidelización."
+      ]
     },
     {
       "id": 23,
@@ -558,11 +584,14 @@
       "fin": "2026-12-11",
       "cierreInscripciones": "2026-09-04",
       "duracion": "4 meses",
-      "dias": [],
+      "dias": [
+        "Miércoles",
+        "Viernes"
+      ],
       "horario": "14:00 a 16:40",
       "idProfesor": 1,
       "profesor": "Dolores Dalinda Ferrer",
-      "descripcion": "1 Introducción a la manicuría profesional Rol de la manicura. Ética profesional, presentación personal y atención al cliente. 2 Anatomía y fisiología de la uña Partes de la uña, crecimiento, funciones y tipos de uñas. 3 Higiene, bioseguridad y esterilización Normas de higiene. Desinfección de herramientas, prevención de infecciones y cuidados sanitarios. 4 Preparación de la uña natural Limado correcto, cutículas, pulido y preparación previa al esmaltado. 5 Manicuría tradicional Técnicas clásicas. Esmaltado común, sellado y terminaciones prolijas. Tratamientos de fango y parafina para el cuidado de las manos 6 Tipos de servicios para extensión de la uña  Todo en esculpido gel, Poly gel 7 Esmaltado semipermanente Productos, pasos, uso de cabina LED/UV, retirado seguro del esmalte. 8 Kapping y refuerzo de uñas Uso de gel, acrílico o polygel para reforzar la uña natural. 9 Diseño y decoración básica de uñas Nail art inicial: líneas, puntos, degradé, stickers y combinaciones de colores. 10 Mantenimiento y reparación de uñas Service, rellenos, arreglos, retiro correcto de productos y cuidados post-servicio. 11 Gestión del servicio y salida laboral Armado de turnos, precios, redes sociales, trato con clientes y fidelización.",
+      "descripcion": ".",
       "titulo": "Manicuría ",
       "modalidad": "Presencial",
       "requisitos": [
@@ -571,7 +600,19 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Introducción a la manicuría profesional. Rol de la manicura. Ética profesional, presentación personal y atención al cliente.",
+        "2 Anatomía y fisiología de la uña. Partes de la uña, crecimiento, funciones y tipos de uñas.",
+        "3 Higiene, bioseguridad y esterilización. Normas de higiene. Desinfección de herramientas, prevención de infecciones y cuidados sanitarios.",
+        "4 Preparación de la uña natural. Limado correcto, cutículas, pulido y preparación previa al esmaltado.",
+        "5 Manicuría tradicional. Técnicas clásicas. Esmaltado común, sellado y terminaciones prolijas. Tratamientos de fango y parafina para el cuidado de las manos.",
+        "6 Tipos de servicios para extensión de la uña. Todo en esculpido gel, Poly gel.",
+        "7 Esmaltado semipermanente. Productos, pasos, uso de cabina LED/UV, retirado seguro del esmalte.",
+        "8 Kapping y refuerzo de uñas. Uso de gel, acrílico o polygel para reforzar la uña natural.",
+        "9 Diseño y decoración básica de uñas. Nail art inicial: líneas, puntos, degradé, stickers y combinaciones de colores.",
+        "10 Mantenimiento y reparación de uñas. Service, rellenos, arreglos, retiro correcto de productos y cuidados post-servicio.",
+        "11 Gestión del servicio y salida laboral. Armado de turnos, precios, redes sociales, trato con clientes y fidelización."
+      ]
     },
     {
       "id": 24,
@@ -585,11 +626,14 @@
       "fin": "2026-07-16",
       "cierreInscripciones": "2026-04-08",
       "duracion": "4 meses",
-      "dias": [],
+      "dias": [
+        "Lunes",
+        "Jueves"
+      ],
       "horario": "9:30 a 12:10",
       "idProfesor": 1,
       "profesor": "Maria Paula Lopez",
-      "descripcion": "1 Introducción a la pedicuría profesional Rol del pedicuro/a. Ética, atención al cliente y ámbito de trabajo. 2 Anatomía del pie y la uña Estructura del pie, la piel y las uñas. Funciones y cuidados básicos. 3 Higiene, bioseguridad y esterilización Normas sanitarias. Limpieza y esterilización de herramientas. Prevención de infecciones. 4 Evaluación del pie y diagnóstico básico Observación inicial. Identificación de afecciones comunes (no patológicas). 5 Pedicuría estética Corte y limado de uñas. Tratamiento de cutículas. Hidratación y masaje. 6 Tratamiento de durezas y callosidades Uso correcto de bisturí/torno (según normativa). Técnicas seguras y cuidados posteriores. 7 Uñas encarnadas: abordaje básico Causas, prevención y tratamiento inicial. Cuándo derivar al profesional de la salud. 8 Alteraciones comunes del pie Hongos superficiales, grietas, hiperqueratosis y onicogrifosis (nociones generales). 9 Uso de herramientas, productos y aparatología Instrumental manual y eléctrico. Cremas, queratolíticos y productos específicos. 10 Gestión del servicio y salida laboral Turnos, precios, cuidados post-atención, fidelización y trabajo independiente.",
+      "descripcion": ".",
       "titulo": "Pedicuro/a Profesional",
       "modalidad": "Presencial",
       "requisitos": [
@@ -598,7 +642,18 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Introducción a la pedicuría profesional. Rol del pedicuro/a. Ética, atención al cliente y ámbito de trabajo.",
+        "2 Anatomía del pie y la uña. Estructura del pie, la piel y las uñas. Funciones y cuidados básicos.",
+        "3 Higiene, bioseguridad y esterilización. Normas sanitarias. Limpieza y esterilización de herramientas. Prevención de infecciones.",
+        "4 Evaluación del pie y diagnóstico básico. Observación inicial. Identificación de afecciones comunes (no patológicas).",
+        "5 Pedicuría estética. Corte y limado de uñas. Tratamiento de cutículas. Hidratación y masaje.",
+        "6 Tratamiento de durezas y callosidades. Uso correcto de bisturí/torno (según normativa). Técnicas seguras y cuidados posteriores.",
+        "7 Uñas encarnadas: abordaje básico. Causas, prevención y tratamiento inicial. Cuándo derivar al profesional de la salud.",
+        "8 Alteraciones comunes del pie. Hongos superficiales, grietas, hiperqueratosis y onicogrifosis (nociones generales).",
+        "9 Uso de herramientas, productos y aparatología. Instrumental manual y eléctrico. Cremas, queratolíticos y productos específicos.",
+        "10 Gestión del servicio y salida laboral. Turnos, precios, cuidados post-atención, fidelización y trabajo independiente."
+      ]
     },
     {
       "id": 25,
@@ -612,11 +667,14 @@
       "fin": "2026-12-10",
       "cierreInscripciones": "2026-08-03",
       "duracion": "4 meses",
-      "dias": [],
-      "horario": "9:30 a 12:10",
+      "dias": [
+        "Lunes",
+        "Jueves"
+      ],
+      "horario": "9:30 - 12:10",
       "idProfesor": 1,
       "profesor": "Maria Paula Lopez",
-      "descripcion": "1 Introducción a la pedicuría profesional Rol del pedicuro/a. Ética, atención al cliente y ámbito de trabajo. 2 Anatomía del pie y la uña Estructura del pie, la piel y las uñas. Funciones y cuidados básicos. 3 Higiene, bioseguridad y esterilización Normas sanitarias. Limpieza y esterilización de herramientas. Prevención de infecciones. 4 Evaluación del pie y diagnóstico básico Observación inicial. Identificación de afecciones comunes (no patológicas). 5 Pedicuría estética Corte y limado de uñas. Tratamiento de cutículas. Hidratación y masaje. 6 Tratamiento de durezas y callosidades Uso correcto de bisturí/torno (según normativa). Técnicas seguras y cuidados posteriores. 7 Uñas encarnadas: abordaje básico Causas, prevención y tratamiento inicial. Cuándo derivar al profesional de la salud. 8 Alteraciones comunes del pie Hongos superficiales, grietas, hiperqueratosis y onicogrifosis (nociones generales). 9 Uso de herramientas, productos y aparatología Instrumental manual y eléctrico. Cremas, queratolíticos y productos específicos. 10 Gestión del servicio y salida laboral Turnos, precios, cuidados post-atención, fidelización y trabajo independiente.",
+      "descripcion": ".",
       "titulo": "Pedicuro/a Profesional",
       "modalidad": "Presencial",
       "requisitos": [
@@ -625,7 +683,18 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Introducción a la pedicuría profesional. Rol del pedicuro/a. Ética, atención al cliente y ámbito de trabajo.",
+        "2 Anatomía del pie y la uña. Estructura del pie, la piel y las uñas. Funciones y cuidados básicos.",
+        "3 Higiene, bioseguridad y esterilización. Normas sanitarias. Limpieza y esterilización de herramientas. Prevención de infecciones.",
+        "4 Evaluación del pie y diagnóstico básico. Observación inicial. Identificación de afecciones comunes (no patológicas).",
+        "5 Pedicuría estética. Corte y limado de uñas. Tratamiento de cutículas. Hidratación y masaje.",
+        "6 Tratamiento de durezas y callosidades. Uso correcto de bisturí/torno (según normativa). Técnicas seguras y cuidados posteriores.",
+        "7 Uñas encarnadas: abordaje básico. Causas, prevención y tratamiento inicial. Cuándo derivar al profesional de la salud.",
+        "8 Alteraciones comunes del pie. Hongos superficiales, grietas, hiperqueratosis y onicogrifosis (nociones generales).",
+        "9 Uso de herramientas, productos y aparatología. Instrumental manual y eléctrico. Cremas, queratolíticos y productos específicos.",
+        "10 Gestión del servicio y salida laboral. Turnos, precios, cuidados post-atención, fidelización y trabajo independiente."
+      ]
     },
     {
       "id": 26,
@@ -639,11 +708,14 @@
       "fin": "2026-08-20",
       "cierreInscripciones": "2026-04-16",
       "duracion": "5 Meses",
-      "dias": [],
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
       "horario": "17:20 a 20:00",
       "idProfesor": 1,
       "profesor": "Daiana Melina Biaggini",
-      "descripcion": "1 Introducción a la gestión de Recursos Humanos Funciones del área. Rol estratégico y operativo de RR.HH. 2 Estructura organizacional y puestos de trabajo Descripción y análisis de puestos. 3 Reclutamiento y selección de personal Detección de necesidades. Fuentes de reclutamiento. Proceso de selección completo. Tipos de entrevistas. Proceso de selección.  4 Ingreso, inducción y desvinculación Proceso de onboarding. Altas, bajas y documentación laboral. 5 Legislación laboral básica Contrato de trabajo. Derechos y obligaciones. Convenio comercio. 6 Administración de personal Legajos, control de asistencia, licencias y ausentismo. 8 Capacitación y desarrollo del personal Detección de necesidades. Planes de capacitación y evaluación. 9 Clima laboral y comunicación interna Motivación, liderazgo, trabajo en equipo y resolución de conflictos. 10 Evaluación de desempeño y salida laboral Métodos básicos de evaluación. Rol del auxiliar de RR.HH. y ética profesional.",
+      "descripcion": ".",
       "titulo": "Administración y Conducción de Recursos Humanos",
       "modalidad": "Presencial",
       "requisitos": [
@@ -652,7 +724,18 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Introducción a la gestión de Recursos Humanos. Funciones del área. Rol estratégico y operativo de RR.HH.",
+        "2 Estructura organizacional y puestos de trabajo. Descripción y análisis de puestos.",
+        "3 Reclutamiento y selección de personal. Detección de necesidades. Fuentes de reclutamiento. Proceso de selección completo. Tipos de entrevistas. Proceso de selección. ",
+        "4 Ingreso, inducción y desvinculación. Proceso de onboarding. Altas, bajas y documentación laboral.",
+        "5 Legislación laboral básica. Contrato de trabajo. Derechos y obligaciones. Convenio comercio.",
+        "6 Administración de personal. Legajos, control de asistencia, licencias y ausentismo.",
+        "7 Liquidación básica de sueldos. Conceptos remunerativos y no remunerativos. Aportes y contribuciones.",
+        "8 Capacitación y desarrollo del personal. Detección de necesidades. Planes de capacitación y evaluación.",
+        "9 Clima laboral y comunicación interna. Motivación, liderazgo, trabajo en equipo y resolución de conflictos.",
+        "10 Evaluación de desempeño y salida laboral. Métodos básicos de evaluación. Rol del auxiliar de RR.HH. y ética profesional."
+      ]
     },
     {
       "id": 27,
@@ -666,11 +749,14 @@
       "fin": "2026-12-03",
       "cierreInscripciones": "2026-09-24",
       "duracion": "3 Meses",
-      "dias": [],
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
       "horario": "17:20 a 20:00",
       "idProfesor": 1,
       "profesor": "Daiana Melina Biaggini",
-      "descripcion": "1 Introducción a las Relaciones Públicas Qué son las RR.PP. Funciones, objetivos y rol del relacionista público. 2 Comunicación institucional Identidad, imagen y reputación corporativa. Comunicación interna y externa. 3 Públicos y stakeholders Identificación y análisis de públicos internos y externos. Mapa de públicos. 4 Planificación en Relaciones Públicas Diagnóstico, objetivos, estrategias y planes de acción. 5 Redacción institucional y mensajes clave Comunicados, gacetillas, discursos y mensajes corporativos. 6 Relación con los medios de comunicación Prensa escrita, radio, TV y medios digitales. Armado de press kits. 7 Organización de eventos y acciones institucionales Eventos corporativos, protocolares, ferias y acciones promocionales. 8 Relaciones Públicas digitales Redes sociales, reputación online y manejo de comunidades. 9 Gestión de crisis y comunicación de contingencia Tipos de crisis. Vocería, mensajes y control de daños. 10 Evaluación de resultados y salida laboral Indicadores de gestión. Ética profesional y campos de trabajo.",
+      "descripcion": ".",
       "titulo": "Relaciones Públicas",
       "modalidad": "Presencial",
       "requisitos": [
@@ -679,7 +765,18 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Introducción a las Relaciones Públicas. Qué son las RR.PP. Funciones, objetivos y rol del relacionista público.",
+        "2 Comunicación institucional. Identidad, imagen y reputación corporativa. Comunicación interna y externa.",
+        "3 Públicos y stakeholders. Identificación y análisis de públicos internos y externos. Mapa de públicos.",
+        "4 Planificación en Relaciones Públicas. Diagnóstico, objetivos, estrategias y planes de acción.",
+        "5 Redacción institucional y mensajes clave. Comunicados, gacetillas, discursos y mensajes corporativos.",
+        "6 Relación con los medios de comunicación. Prensa escrita, radio, TV y medios digitales. Armado de press kits.",
+        "7 Organización de eventos y acciones institucionales. Eventos corporativos, protocolares, ferias y acciones promocionales.",
+        "8 Relaciones Públicas digitales. Redes sociales, reputación online y manejo de comunidades.",
+        "9 Gestión de crisis y comunicación de contingencia. Tipos de crisis. Vocería, mensajes y control de daños.",
+        "10 Evaluación de resultados y salida laboral. Indicadores de gestión. Ética profesional y campos de trabajo."
+      ]
     },
     {
       "id": 28,
@@ -689,13 +786,13 @@
       "area": "Administración",
       "sede": "San Martín",
       "año": "2026",
-      "inicio": "2026-03-05",
-      "fin": "2026-11-19",
+      "inicio": "2026-03-09",
+      "fin": "2026-11-25",
       "cierreInscripciones": "2026-04-04",
       "duracion": "8 Meses",
       "dias": [
-        "lunes",
-        "miércoles"
+        "Lunes",
+        "Miércoles"
       ],
       "horario": "17:00 a 20:00",
       "idProfesor": 1,
@@ -724,9 +821,10 @@
       "cierreInscripciones": "2026-03-28",
       "duracion": "2 Meses",
       "dias": [
-        "viernes"
+        "Lunes",
+        "Miércoles"
       ],
-      "horario": "13:20 a 15:40",
+      "horario": "13:20 - 15:40",
       "idProfesor": 1,
       "profesor": "Silvia Lelia Cejas",
       "descripcion": ".",
@@ -743,20 +841,20 @@
     {
       "id": 30,
       "curso": "Auxiliar en Marketing de Productos",
-      "codigo": 30,
+      "codigo": "30",
       "activo": true,
       "area": "Administración",
       "sede": "San Miguel",
-      "año": 2026,
+      "año": "2026",
       "inicio": "2026-05-20",
       "fin": "2026-09-07",
       "cierreInscripciones": "2026-05-11",
       "duracion": "3 Meses",
       "dias": [
-        "lunes",
-        "miércoles"
+        "Lunes",
+        "Miércoles"
       ],
-      "horario": "13:20 a 15:40",
+      "horario": "13:20 - 15:40",
       "idProfesor": 1,
       "profesor": "Silvia Lelia Cejas",
       "descripcion": ".",
@@ -773,20 +871,20 @@
     {
       "id": 31,
       "curso": "Auxiliar en Marketing de Servicios",
-      "codigo": 31,
+      "codigo": "31",
       "activo": true,
       "area": "Administración",
       "sede": "San Miguel",
-      "año": 2026,
+      "año": "2026",
       "inicio": "2026-09-09",
       "fin": "2026-12-16",
       "cierreInscripciones": "2026-09-08",
       "duracion": "3 Meses",
       "dias": [
-        "lunes",
-        "miércoles"
+        "Lunes",
+        "Miércoles"
       ],
-      "horario": "13:20 a 15:40",
+      "horario": "13:20 - 15:40",
       "idProfesor": 1,
       "profesor": "Silvia Lelia Cejas",
       "descripcion": ".",
@@ -803,18 +901,18 @@
     {
       "id": 32,
       "curso": "Programación Web",
-      "codigo": 32,
+      "codigo": "32",
       "activo": true,
       "area": "Informática",
       "sede": "San Martín",
-      "año": 2026,
+      "año": "2026",
       "inicio": "2026-03-10",
       "fin": "2026-12-17",
       "cierreInscripciones": "2026-03-09",
       "duracion": "9 Meses",
       "dias": [
-        "martes",
-        "jueves"
+        "Martes",
+        "Jueves"
       ],
       "horario": "14:00 a 17:20",
       "idProfesor": 1,
@@ -828,25 +926,32 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 HTML",
+        "2 CSS",
+        "3 Javascript",
+        "4 NodeJS",
+        "5 Express",
+        "6 SCP"
+      ]
     },
     {
       "curso": "Impresión 3D",
-      "codigo": 33,
+      "codigo": "33",
       "id": 33,
       "activo": true,
       "area": "Informática",
       "sede": "San Martín",
-      "año": 2026,
+      "año": "2026",
       "inicio": "2026-04-01",
       "fin": "2026-06-01",
       "cierreInscripciones": "2026-04-10",
-      "duracion": "Bimestral",
+      "duracion": "2 Meses",
       "dias": [
-        "[\"lunes\"",
-        "\"miércoles\"]"
+        "Lunes",
+        "Miércoles"
       ],
-      "horario": "10:00 a 12:00",
+      "horario": "10:00 - 12:00",
       "idProfesor": 1,
       "profesor": "Deganis Pablo",
       "descripcion": "Impresión de piezas 3D en máquina de filamento",
@@ -858,7 +963,13 @@
         "Presentar titulo primario/secundario completo"
       ],
       "inscripcion": false,
-      "temario": []
+      "temario": [
+        "1 Tipos de impresoras",
+        "2 Formatos de archivos 3D",
+        "3 Software slicer",
+        "4 Filamentos (PLA, PETG, TPU)",
+        "5 Práctica"
+      ]
     },
     {
       "curso": "Liquidación de Sueldos",
@@ -868,103 +979,18 @@
       "area": "Administración",
       "sede": "San Martín",
       "año": "2026",
-      "inicio": "2026-03-01",
-      "fin": "2026-07-15",
+      "inicio": "2026-03-10",
+      "fin": "2026-07-16",
       "cierreInscripciones": "2026-04-01",
-      "duracion": "Cuatrimestral",
-      "dias": [],
-      "horario": "15:00 - 17:00",
-      "idProfesor": 1,
-      "profesor": "Rodolfo Barcasia",
-      "descripcion": "1 Introducción a la liquidación de sueldos en el sector comercio Rol del liquidador. Marco legal laboral básico. 2 Convenio Colectivo de Trabajo 130/75 (Empleados de Comercio) Categorías laborales, funciones y escalas salariales. 3 Jornada laboral y modalidades de contratación Horarios, horas extras, trabajo en feriados y domingos. Contratos y tipos de jornada. 4 Conceptos remunerativos y no remunerativos Sueldo básico, presentismo, antigüedad, adicionales y acuerdos paritarios. 5 Descuentos legales y aportes Jubilación, obra social, sindicato, FAECyS y otros descuentos habituales. 6 Licencias y ausencias Vacaciones, enfermedad, maternidad/paternidad, licencias especiales y suspensiones. 7 Cálculo de vacaciones y SAC (aguinaldo) Determinación de días, cálculo proporcional y liquidaciones especiales. 8 Liquidaciones finales y especiales Renuncia, despido, indemnizaciones, preaviso e integración mes de despido. 9 Recibos de sueldo y registraciones Armado del recibo. Libro de sueldos digital y obligaciones formales. 10 Práctica integral de liquidación en comercio Casos prácticos completos. Errores frecuentes y control de liquidaciones.",
-      "titulo": "CFL406",
-      "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
-      ],
-      "inscripcion": false,
-      "temario": []
-    },
-    {
-      "curso": "Liquidación de Sueldos",
-      "codigo": "35",
-      "id": 35,
-      "activo": true,
-      "area": "Administración",
-      "sede": "San Miguel",
-      "año": "2026",
-      "inicio": "2026-03-01",
-      "fin": "2026-07-15",
-      "cierreInscripciones": "2026-04-01",
-      "duracion": "Cuatrimestral",
-      "dias": [],
-      "horario": "10:30 - 12:30",
-      "idProfesor": 1,
-      "profesor": "Rodolfo Barcasia",
-      "descripcion": "1 Introducción a la liquidación de sueldos en el sector comercio Rol del liquidador. Marco legal laboral básico. 2 Convenio Colectivo de Trabajo 130/75 (Empleados de Comercio) Categorías laborales, funciones y escalas salariales. 3 Jornada laboral y modalidades de contratación Horarios, horas extras, trabajo en feriados y domingos. Contratos y tipos de jornada. 4 Conceptos remunerativos y no remunerativos Sueldo básico, presentismo, antigüedad, adicionales y acuerdos paritarios. 5 Descuentos legales y aportes Jubilación, obra social, sindicato, FAECyS y otros descuentos habituales. 6 Licencias y ausencias Vacaciones, enfermedad, maternidad/paternidad, licencias especiales y suspensiones. 7 Cálculo de vacaciones y SAC (aguinaldo) Determinación de días, cálculo proporcional y liquidaciones especiales. 8 Liquidaciones finales y especiales Renuncia, despido, indemnizaciones, preaviso e integración mes de despido. 9 Recibos de sueldo y registraciones Armado del recibo. Libro de sueldos digital y obligaciones formales. 10 Práctica integral de liquidación en comercio Casos prácticos completos. Errores frecuentes y control de liquidaciones.",
-      "titulo": "CFL406",
-      "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo"
-      ],
-      "inscripcion": false,
-      "temario": []
-    },
-    {
-      "curso": "Liquidación de Sueldos (exclusivo para delegados)",
-      "codigo": "36",
-      "id": 36,
-      "activo": true,
-      "area": "Administración",
-      "sede": "San Martín",
-      "año": "2026",
-      "inicio": "2026-03-01",
-      "fin": "2026-07-15",
-      "cierreInscripciones": "2026-04-01",
-      "duracion": "Cuatrimestral",
-      "dias": [
-        "Lunes",
-        "Miércoles"
-      ],
-      "horario": "15:00 - 17:00",
-      "idProfesor": 1,
-      "profesor": "Rodolfo Barcasia",
-      "descripcion": "1 Introducción a la liquidación de sueldos en el sector comercio Rol del liquidador. Marco legal laboral básico. 2 Convenio Colectivo de Trabajo 130/75 (Empleados de Comercio) Categorías laborales, funciones y escalas salariales. 3 Jornada laboral y modalidades de contratación Horarios, horas extras, trabajo en feriados y domingos. Contratos y tipos de jornada. 4 Conceptos remunerativos y no remunerativos Sueldo básico, presentismo, antigüedad, adicionales y acuerdos paritarios. 5 Descuentos legales y aportes Jubilación, obra social, sindicato, FAECyS y otros descuentos habituales. 6 Licencias y ausencias Vacaciones, enfermedad, maternidad/paternidad, licencias especiales y suspensiones. 7 Cálculo de vacaciones y SAC (aguinaldo) Determinación de días, cálculo proporcional y liquidaciones especiales. 8 Liquidaciones finales y especiales Renuncia, despido, indemnizaciones, preaviso e integración mes de despido. 9 Recibos de sueldo y registraciones Armado del recibo. Libro de sueldos digital y obligaciones formales. 10 Práctica integral de liquidación en comercio Casos prácticos completos. Errores frecuentes y control de liquidaciones.",
-      "titulo": "CFL406",
-      "modalidad": "Presencial",
-      "requisitos": [
-        "Ser Mayor de 18 años",
-        "Presentar DNI vigente",
-        "Presentar titulo primario/secundario completo",
-        "Ser delegado del SEC San Martin"
-      ],
-      "inscripcion": false,
-      "temario": []
-    },
-    {
-      "curso": "Excel",
-      "codigo": "37",
-      "id": 37,
-      "activo": true,
-      "area": "Informática",
-      "sede": "San Martín",
-      "año": "2026",
-      "inicio": "2026-03-01",
-      "fin": "2026-07-01",
-      "cierreInscripciones": "2026-04-01",
-      "duracion": "Cuatrimestral",
+      "duracion": "4 Meses",
       "dias": [
         "Martes",
         "Jueves"
       ],
-      "horario": "18:00 - 20:00",
+      "horario": "15:00 - 17:00",
       "idProfesor": 1,
       "profesor": "Rodolfo Barcasia",
-      "descripcion": "1 Introducción a Excel y al entorno de trabajo Qué es Excel. Libros, hojas, celdas, filas y columnas. Interfaz y funciones básicas. 2 Ingreso y edición de datos Tipos de datos (texto, números, fechas). Edición, copiado, pegado y autocompletar. 3 Formato de celdas y hojas Formatos numéricos, fuentes, bordes, colores y alineación. Ajuste de filas y columnas. 4 Fórmulas básicas Uso del signo igual. Operaciones matemáticas simples (suma, resta, multiplicación y división). 5 Funciones básicas SUMA, PROMEDIO, MAX, MIN, CONTAR y CONTARA. Aplicaciones prácticas. 6 Ordenar y filtrar datos Ordenamiento ascendente y descendente. Filtros automáticos. 7 Tablas en Excel Creación de tablas. Ventajas y uso básico y avanzado para organizar información y creación de reportes – Análisis de datos 8 Impresión y configuración de página Vista previa, márgenes, orientación, encabezados y pies de página. 10 Aplicaciones prácticas para el trabajo diario Presupuestos simples, control de gastos, listas, registros y reportes básicos. Con 20 ejercicios prácticos diferentes.",
+      "descripcion": ".",
       "titulo": "CFL406",
       "modalidad": "Presencial",
       "requisitos": [
@@ -974,9 +1000,139 @@
       ],
       "inscripcion": false,
       "temario": [
-        "tema 1",
-        "tema 2",
-        "tema 3"
+        "1 introducción a la liquidación de sueldos en el sector comercio. Rol del liquidador. Marco legal laboral básico.",
+        "2 Convenio Colectivo de Trabajo 130/75 (Empleados de Comercio). Categorías laborales, funciones y escalas salariales.",
+        "3 Jornada laboral y modalidades de contratación. Horarios, horas extras, trabajo en feriados y domingos. Contratos y tipos de jornada.",
+        "4 Conceptos remunerativos y no remunerativos. Sueldo básico, presentismo, antigüedad, adicionales y acuerdos paritarios.",
+        "5 Descuentos legales y aportes. Jubilación, obra social, sindicato, FAECyS y otros descuentos habituales.",
+        "6 Licencias y ausencias. Vacaciones, enfermedad, maternidad/paternidad, licencias especiales y suspensiones.",
+        "7 Cálculo de vacaciones y SAC (aguinaldo). Determinación de días, cálculo proporcional y liquidaciones especiales.",
+        "8 Liquidaciones finales y especiales. Renuncia, despido, indemnizaciones, preaviso e integración mes de despido.",
+        "9 Recibos de sueldo y registraciones. Armado del recibo. Libro de sueldos digital y obligaciones formales.",
+        "10 Práctica integral de liquidación en comercio. Casos prácticos completos. Errores frecuentes y control de liquidaciones."
+      ]
+    },
+    {
+      "curso": "Liquidación de Sueldos",
+      "codigo": "35",
+      "id": 35,
+      "activo": true,
+      "area": "Administración",
+      "sede": "San Miguel",
+      "año": "2026",
+      "inicio": "2026-03-09",
+      "fin": "2026-07-15",
+      "cierreInscripciones": "2026-04-01",
+      "duracion": "4 Meses",
+      "dias": [
+        "Lunes",
+        "Miércoles"
+      ],
+      "horario": "10:30 - 12:30",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": ".",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ],
+      "inscripcion": false,
+      "temario": [
+        "1 introducción a la liquidación de sueldos en el sector comercio. Rol del liquidador. Marco legal laboral básico.",
+        "2 Convenio Colectivo de Trabajo 130/75 (Empleados de Comercio). Categorías laborales, funciones y escalas salariales.",
+        "3 Jornada laboral y modalidades de contratación. Horarios, horas extras, trabajo en feriados y domingos. Contratos y tipos de jornada.",
+        "4 Conceptos remunerativos y no remunerativos. Sueldo básico, presentismo, antigüedad, adicionales y acuerdos paritarios.",
+        "5 Descuentos legales y aportes. Jubilación, obra social, sindicato, FAECyS y otros descuentos habituales.",
+        "6 Licencias y ausencias. Vacaciones, enfermedad, maternidad/paternidad, licencias especiales y suspensiones.",
+        "7 Cálculo de vacaciones y SAC (aguinaldo). Determinación de días, cálculo proporcional y liquidaciones especiales.",
+        "8 Liquidaciones finales y especiales. Renuncia, despido, indemnizaciones, preaviso e integración mes de despido.",
+        "9 Recibos de sueldo y registraciones. Armado del recibo. Libro de sueldos digital y obligaciones formales.",
+        "10 Práctica integral de liquidación en comercio. Casos prácticos completos. Errores frecuentes y control de liquidaciones."
+      ]
+    },
+    {
+      "curso": "Liquidación de Sueldos (exclusivo para delegados)",
+      "codigo": "36",
+      "id": 36,
+      "activo": true,
+      "area": "Administración",
+      "sede": "San Martín",
+      "año": "2026",
+      "inicio": "2026-03-13",
+      "fin": "2026-07-17",
+      "cierreInscripciones": "2026-04-01",
+      "duracion": "4 Meses",
+      "dias": [
+        "Viernes"
+      ],
+      "horario": "9:00 - 12:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": ".",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo",
+        "Ser delegado del SEC San Martin"
+      ],
+      "inscripcion": false,
+      "temario": [
+        "1 introducción a la liquidación de sueldos en el sector comercio. Rol del liquidador. Marco legal laboral básico.",
+        "2 Convenio Colectivo de Trabajo 130/75 (Empleados de Comercio). Categorías laborales, funciones y escalas salariales.",
+        "3 Jornada laboral y modalidades de contratación. Horarios, horas extras, trabajo en feriados y domingos. Contratos y tipos de jornada.",
+        "4 Conceptos remunerativos y no remunerativos. Sueldo básico, presentismo, antigüedad, adicionales y acuerdos paritarios.",
+        "5 Descuentos legales y aportes. Jubilación, obra social, sindicato, FAECyS y otros descuentos habituales.",
+        "6 Licencias y ausencias. Vacaciones, enfermedad, maternidad/paternidad, licencias especiales y suspensiones.",
+        "7 Cálculo de vacaciones y SAC (aguinaldo). Determinación de días, cálculo proporcional y liquidaciones especiales.",
+        "8 Liquidaciones finales y especiales. Renuncia, despido, indemnizaciones, preaviso e integración mes de despido.",
+        "9 Recibos de sueldo y registraciones. Armado del recibo. Libro de sueldos digital y obligaciones formales.",
+        "10 Práctica integral de liquidación en comercio. Casos prácticos completos. Errores frecuentes y control de liquidaciones."
+      ]
+    },
+    {
+      "curso": "Excel",
+      "codigo": "37",
+      "id": 37,
+      "activo": true,
+      "area": "Informática",
+      "sede": "San Martín",
+      "año": "2026",
+      "inicio": "2026-03-10",
+      "fin": "2026-07-16",
+      "cierreInscripciones": "2026-04-01",
+      "duracion": "4 Meses",
+      "dias": [
+        "Martes",
+        "Jueves"
+      ],
+      "horario": "18:00 - 20:00",
+      "idProfesor": 1,
+      "profesor": "Rodolfo Barcasia",
+      "descripcion": ".",
+      "titulo": "CFL406",
+      "modalidad": "Presencial",
+      "requisitos": [
+        "Ser Mayor de 18 años",
+        "Presentar DNI vigente",
+        "Presentar titulo primario/secundario completo"
+      ],
+      "inscripcion": false,
+      "temario": [
+        "1 Introducción a Excel y al entorno de trabajo. Qué es Excel. Libros, hojas, celdas, filas y columnas. Interfaz y funciones básicas.",
+        "2 Ingreso y edición de datos. Tipos de datos (texto, números, fechas). Edición, copiado, pegado y autocompletar.",
+        "3 Formato de celdas y hojas. Formatos numéricos, fuentes, bordes, colores y alineación. Ajuste de filas y columnas.",
+        "4 Fórmulas básicas. Uso del signo igual. Operaciones matemáticas simples (suma, resta, multiplicación y división).",
+        "5 Funciones básicas. Suma, promedio, max, min, contar. Aplicaciones prácticas.",
+        "6 Ordenar y filtrar datos. Ordenamiento ascendente y descendente. Filtros automáticos.",
+        "7 Tablas en Excel. Creación de tablas. Ventajas y uso básico y avanzado para organizar información y creación de reportes – Análisis de datos",
+        "8 Impresión y configuración de página. Vista previa, márgenes, orientación, encabezados y pies de página.",
+        "9  Aplicaciones prácticas para el trabajo diario. Presupuestos simples, control de gastos, listas, registros y reportes básicos. Con 20 ejercicios prácticos diferentes.",
+        "10 Gráficos básicos. Gráficos de columnas, barras y tortas. Interpretación de datos."
       ]
     }
   ]

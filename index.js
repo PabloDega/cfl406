@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import fs from "fs";
 
 // Validar variables de entorno
 if (!process.env.SESSION_SECRET) {
@@ -16,18 +17,19 @@ const app = express();
 
 // Logger HTTP - Solo errores y requests importantes
 import morgan from 'morgan';
-app.use(morgan('dev', {
-  skip: (req, res) => {
-    // Filtrar solicitudes de Chrome DevTools
-    if (req.url.includes('/.well-known/') || 
-        req.url.includes('/favicon.ico') ||
-        req.url.includes('.map')) {
-      return true;
-    }
-    // Solo loggear errores (4xx, 5xx) y requests importantes
-    return res.statusCode < 400 && !req.url.includes('/panel');
-  }
-}));
+
+const format = process.env.NODE_ENV === "production" ? "combined" : "dev";
+
+const skip = (req, res) => {
+  if (req.url.includes("/.well-known/") || req.url.includes("/favicon.ico") || req.url.includes(".map")) return true;
+  return res.statusCode < 400 && !req.url.includes("/panel");
+};
+
+const stream = process.env.NODE_ENV === "production"
+  ? fs.createWriteStream("logs/info/access.log", { flags: "a" })
+  : process.stdout;
+
+app.use(morgan(format, { stream, skip }));
 
 // Configuración de Helmet para seguridad
 import helmet from 'helmet';

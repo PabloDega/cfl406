@@ -1,10 +1,11 @@
 import { getUsers } from "../services/loginServices.js";
+import logger from "../utils/logger.js";
 
 export const login = async (req, res) => {
   try {
     return res.render("pages/login", { layout: "layouts/login" });
   } catch (error) {
-    console.error("Error en login controller:", error);
+    logger.error("Error al render login controller:", error);
     return res.status(500).render('error', { 
       message: 'Error interno del servidor',
       layout: 'layouts/main'
@@ -48,7 +49,7 @@ export const postLogin = async (req, res) => {
       // Regenerar ID de sesión por seguridad
       req.session.regenerate((err) => {
         if (err) {
-          console.error('Error regenerando sesión:', err);
+          logger.error('Error regenerando sesión:', err);
         }
       });
       
@@ -64,7 +65,7 @@ export const postLogin = async (req, res) => {
 
     return res.json({ success: false, message: "Credenciales incorrectas" });
   } catch (error) {
-    console.error("Error en postLogin controller:", error);
+    logger.error("Error en postLogin controller:", error);
     return res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 }
@@ -80,15 +81,12 @@ function generateSessionToken() {
 export const logout = async (req, res) => {
   try {
     req.session.destroy((err) => {
-      if (err) {
-        console.error('Error al cerrar sesión:', err);
-        return res.status(500).json({ success: false, message: "Error al cerrar sesión" });
-      }
+      if (err) throw err;
       res.clearCookie('sessionId'); // Limpiar cookie de sesión
       return res.json({ success: true, message: "Sesión cerrada exitosamente" });
     });
   } catch (error) {
-    console.error("Error en logout controller:", error);
+    logger.error("Error en logout controller:", error);
     return res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 }
