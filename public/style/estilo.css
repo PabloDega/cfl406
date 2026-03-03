@@ -8,8 +8,66 @@
     --color1: #bbb;
     --color2: rgb(0, 140, 255);
     --color3: rgb(222, 122, 0);
-    
 }
+
+/* ============ */
+/*  GENERALES   */
+/* ============ */
+
+.flexH{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+.flexV{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.flex-row{
+    flex-direction: row;
+}
+.flex-column{
+    flex-direction: column;
+}
+.spacer{
+    flex-grow: 1;
+}
+.btn{
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    background-color: var(--color2);
+    font-weight: 600;
+    color: white;
+    transition: 0.5s;
+    width: fit-content;
+    white-space: nowrap;
+    display: flex;
+    gap: 0.5em;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: gray;
+}
+.p-xs{
+    padding: 0.25em;
+}
+.p-sm{
+    padding: 0.5em;
+}
+.p-md{
+    padding: 1em;
+}
+.p-lg{
+    padding: 1.5em;
+}
+.p-xl{
+    padding: 2em;
+}
+
+/* ============ */
+
 body{
     background-color: var(--color1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -43,16 +101,7 @@ header > span:hover{
     border-bottom: 2px solid black;
     padding-bottom: 4px;
 }
-.flexH{
-    display: flex;
-    gap: 1em;
-    align-items: center;
-}
-.flexV{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
+
 #cont2{
     flex-grow: 1;
     padding-top: 1em;
@@ -69,6 +118,7 @@ footer.flexV{
     font-size: 1.5em;
     gap: 1em;
     padding-top: 2em;
+    position: relative;
 }
 footer > span{
     display: flex;
@@ -89,30 +139,23 @@ footer #contactos svg{
     cursor: pointer;
     fill: white;
 }
+footer #login-puerta img{
+    width: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    filter: invert(1);
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    opacity: 0.2;
+}
+footer #login-puerta img:hover{
+    opacity: 1;
+}
 input{
     padding: 0.5em;
     border-radius: 0.5em;
     border: 1px gray solid;
-}
-.spacer{
-    flex-grow: 1;
-}
-.btn{
-    cursor: pointer;
-    padding: 0.5em;
-    border-radius: 0.5em;
-    background-color: var(--color2);
-    font-weight: 600;
-    color: white;
-    transition: 0.5s;
-    width: fit-content;
-    white-space: nowrap;
-    display: flex;
-    gap: 0.5em;
-    text-decoration: none;
-}
-.btn:hover{
-    background-color: gray;
 }
 .btnNaranja{
     background-color: var(--color3);
@@ -252,22 +295,6 @@ input{
     animation-iteration-count: infinite;
 }
 
-@keyframes cardSeleccionado {
-    0% {
-        outline: 3px darkorange solid;
-        box-shadow: 0 0 0 20px rgba(255, 140, 0, 0) ;
-    }
-    20% {
-        outline: 3px darkorange solid;
-    }
-    60% {
-        outline: 7px darkorange solid;
-    }
-    100% {
-        outline: 3px darkorange solid;
-        box-shadow: 0 0 0 3px rgba(255, 140, 0, 1);
-    }
-}
 
 #landBtnFiltrar{
     font-size: 1rem;
@@ -347,6 +374,7 @@ input{
     width: 85%;
     transform: translateY(2em);
     border-radius: 1em;
+    z-index: 100;
 }
 .accion .btn{
     border: 2px solid white;
@@ -483,10 +511,7 @@ header.desborda-x #hambHeader {
     animation-direction: normal;
     animation-fill-mode: forwards;
 }
-@keyframes barraLoad {
-    0% { width: 0; }
-    100% { width: 100%; }
-}
+
 #resultados{
     position: absolute;
     top: 100%;
@@ -588,9 +613,15 @@ header.desborda-x #hambHeader {
     width: 100%;
     border-collapse: collapse;
 }
+.tabla tr:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
 .tabla th, .tabla td{
     padding: 0.5em;
     border: 1px solid var(--color2);
+}
+.tabla .inactivo{
+    opacity: 0.5;
 }
 .acciones{
     display: flex;
@@ -628,31 +659,6 @@ header.desborda-x #hambHeader {
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
-}
-@media only screen and (max-width: 925px) {
-    .landPublicacion img{
-        opacity: 0.6;
-    }
-}
-@media only screen and (max-width: 750px) {
-    .landPublicacion{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .landPublicacion span{
-        max-height: 200px;
-    }
-    .landLogos{
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .landLogos img{
-        max-height: 50px;
-    }
-    .accion{
-        flex-direction: column;
-        gap: 1em;
-    }
 }
 
 /* Header simplificado para páginas específicas del panel */
@@ -700,7 +706,79 @@ header.desborda-x #hambHeader {
     gap: 1rem;
 }
 
+/* ============ */
+/*   KEYFRAMES  */
+/* ============ */
+
+@keyframes cardSeleccionado {
+    0% {
+        outline: 3px darkorange solid;
+        box-shadow: 0 0 0 20px rgba(255, 140, 0, 0) ;
+    }
+    20% {
+        outline: 3px darkorange solid;
+    }
+    60% {
+        outline: 7px darkorange solid;
+    }
+    100% {
+        outline: 3px darkorange solid;
+        box-shadow: 0 0 0 3px rgba(255, 140, 0, 1);
+    }
+}
+
+@keyframes barraLoad {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* ============ */
+/* MEDIA QUERYS */
+/* ============ */
+
+@media only screen and (max-width: 925px) {
+    .landPublicacion img{
+        opacity: 0.6;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .landPublicacion{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .landPublicacion span{
+        max-height: 200px;
+    }
+    .landLogos{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .landLogos img{
+        max-height: 50px;
+    }
+    .accion{
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .landOferta {
+        flex-direction: column;
+    }
+    .landOferta .card {
+        max-width: none;
+        width: 100%;
+        padding: 2em;
+    }
+    .btn.mapa{
+        flex-grow: 1;
+        justify-content: center;
+    }
 }

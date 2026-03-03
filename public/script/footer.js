@@ -29,3 +29,7 @@ document.querySelectorAll("footer #contactos svg").forEach(svg => {
         }
     });
 });
+
+document.querySelector("#login-puerta img").addEventListener("click", () => {
+    window.location.href = "/login";
+});
