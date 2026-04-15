@@ -15,7 +15,7 @@
         </thead>
         <tbody>
         <% cursos.forEach(curso => { %>
-                <tr>
+                <tr <%= new Date(curso.fin) > new Date() ? 'class=activo' : 'class=inactivo' %>>
                     <td><%= curso.codigo %></td>
                     <td><%= curso.año %></td>
                     <td><%= curso.sede %></td>
