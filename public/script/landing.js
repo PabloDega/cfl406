@@ -29,8 +29,8 @@ function renderCursos(){
             visibilidad: "",
             estado: "✔ Inscripciones abiertas",
         }
-        let cierreInscripciones = curso.cierreInscripciones.split("/")
-        cierreInscripciones = new Date(cierreInscripciones[2], cierreInscripciones[1]-1, cierreInscripciones[0])
+        let cierreInscripciones = curso.cierreInscripciones.split("-")
+        cierreInscripciones = new Date(+cierreInscripciones[0], +cierreInscripciones[1]-1, +cierreInscripciones[2])
         if(cierreInscripciones < new Date()){
             estado.visibilidad = "oculto";
             estado.estado = "X Inscripciones cerradas";

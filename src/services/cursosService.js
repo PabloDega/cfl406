@@ -54,8 +54,10 @@ const agregarEstadoInscripcion = (cursos) => {
 
 export const getCursos = async () => {
   try {
-    let cursosRaw = await leerDatosCursos();
-    cursosRaw = cursosRaw.cursos;
+    /* let cursosRaw = await leerDatosCursos();
+    cursosRaw = cursosRaw.cursos; */
+
+    const cursosRaw = await nuevaFucnion();
     // Filtrar cursos activos
     const cursosActivos = cursosRaw.filter((curso) => curso.activo);
     
