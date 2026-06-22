@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { __dirname } from "../../index.js";
-import { crearFecha } from "../utils/dates.js";
+import { crearFecha } from "../utils/dates.utils.js";
+import { Curso } from "../models/index.model.js";
 
 // Función auxiliar para leer datos de cursos
 const leerDatosCursos = async () => {
@@ -54,12 +55,11 @@ const agregarEstadoInscripcion = (cursos) => {
 
 export const getCursos = async () => {
   try {
-    /* let cursosRaw = await leerDatosCursos();
-    cursosRaw = cursosRaw.cursos; */
-
-    const cursosRaw = await nuevaFucnion();
+    const cursos = await Curso.findAll();
+    console.log("Cursos obtenidos de la base de datos:", cursos);
+    return cursos;
     // Filtrar cursos activos
-    const cursosActivos = cursosRaw.filter((curso) => curso.activo);
+    //const cursosActivos = cursosRaw.filter((curso) => curso.activo);
     
     if (cursosActivos.length === 0) {
       throw {
@@ -87,8 +87,9 @@ export const getCursos = async () => {
 
 export const getCurso = async (id) => {
   try {
-    let cursosRaw = await leerDatosCursos();
-    cursosRaw = cursosRaw.cursos;    
+    const curso = await Curso.findByPk(id);
+    console.log("Curso obtenido de la base de datos:", curso);
+    return curso;  
     // Buscar curso por ID
     const cursoEncontrado = cursosRaw.find((curso) => curso.id === id);
     
@@ -117,7 +118,7 @@ export const getCurso = async (id) => {
   }
 };
 
-export const getCursosRaw = async () => {
+/* export const getCursosRaw = async () => {
   try {
     let cursosRaw = await leerDatosCursos();
     cursosRaw = cursosRaw.cursos;    
@@ -135,7 +136,7 @@ export const getCursosRaw = async () => {
       codigo: "GCSR01"
     };
   }
-};
+}; */
 
 // Función para obtener cursos sin calcular estado de inscripción (para edición)
 export const getCursosSinProcesar = async () => {

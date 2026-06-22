@@ -1,4 +1,4 @@
-import { getCursos } from "../services/cursosService.js";
+import { getCursos } from "../services/cursos.service.js";
 
 export const index = async (req, res) => {
   try {

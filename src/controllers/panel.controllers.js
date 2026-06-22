@@ -1,6 +1,6 @@
-import { getCursos, getCurso, eliminarCurso, guardarDatosCursos, getCursosSinProcesar, getLastId } from "../services/cursosService.js";
-import { getClases } from "../services/clasesService.js";
-import { crearFecha } from "../utils/dates.js";
+import { getCursos, getCurso, eliminarCurso, guardarDatosCursos, getCursosSinProcesar, getLastId } from "../services/cursos.service.js";
+import { getClases } from "../services/clases.service.js";
+import { crearFecha } from "../utils/dates.utils.js";
 
 export const panelIndex = async (req, res) => {
     try {

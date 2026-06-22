@@ -1,5 +1,5 @@
-import { getUsers } from "../services/loginServices.js";
-import logger from "../utils/logger.js";
+import { getUsers } from "../services/login.services.js";
+import logger from "../utils/logger.utils.js";
 
 export const login = async (req, res) => {
   try {

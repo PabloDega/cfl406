@@ -98,11 +98,11 @@ app.use((req, res, next) => {
 });
 
 // Configuración de la ruta principal
-import * as mainRoutes from "./src/routes/mainRoutes.js";
+import * as mainRoutes from "./src/routes/main.routes.js";
 app.use("/", mainRoutes.router);
 
-import * as panelRoutes from "./src/routes/panelRoutes.js";
-import { checkLogin } from "./src/middlewares/auth.js";
+import * as panelRoutes from "./src/routes/panel.routes.js";
+import { checkLogin } from "./src/middlewares/auth.middleware.js";
 app.use("/panel", checkLogin, panelRoutes.router);
 
 app.use(express.static("public"));

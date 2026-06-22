@@ -1,6 +1,6 @@
 import express from "express"
 export const router = express.Router();
-import * as panelControllers from "../controllers/panelControllers.js";
+import * as panelControllers from "../controllers/panel.controllers.js";
 
 router.get("/", panelControllers.panelIndex);
 

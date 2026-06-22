@@ -1,13 +1,13 @@
 import { Sequelize } from 'sequelize';
 
-import defineArea from './area.js';
-import defineClase from './clase.js';
-import defineCurso from './curso.js';
-import defineDocente from './docente.js';
-import defineModalidad from './modalidad.js';
-import defineSede from './sede.js';
-import defineTitulo from './titulo.js';
-import defineUser from './user.js';
+import defineArea from './area.model.js';
+import defineClase from './clase.model.js';
+import defineCurso from './curso.model.js';
+import defineDocente from './docente.model.js';
+import defineModalidad from './modalidad.model.js';
+import defineSede from './sede.model.js';
+import defineTitulo from './titulo.model.js';
+import defineUser from './user.model.js';
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
