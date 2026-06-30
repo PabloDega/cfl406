@@ -1,27 +1,19 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) => sequelize.define(
-  'Docente',
+  'Areas',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    nombre: {
+    area: {
       type: DataTypes.STRING(255),
       allowNull: false
     },
-    contacto: {
-      type: DataTypes.TEXT('long'),
-      allowNull: true
-    },
-    direccion: {
-      type: DataTypes.TEXT('long'),
-      allowNull: true
-    },
     observaciones: {
-      type: DataTypes.TEXT('long'),
+      type: DataTypes.JSON,
       allowNull: true
     },
     eliminado: {
@@ -31,7 +23,7 @@ export default (sequelize) => sequelize.define(
     }
   },
   {
-    tableName: 'docentes',
+    tableName: 'areas',
     timestamps: false
   }
 );

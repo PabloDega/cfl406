@@ -1,13 +1,13 @@
 import { Sequelize } from 'sequelize';
 
-import defineArea from './area.model.js';
-import defineClase from './clase.model.js';
-import defineCurso from './curso.model.js';
-import defineDocente from './docente.model.js';
-import defineModalidad from './modalidad.model.js';
-import defineSede from './sede.model.js';
-import defineTitulo from './titulo.model.js';
-import defineUser from './user.model.js';
+import defineAreas from './Areas.model.js';
+import defineClase from './Clase.model.js';
+import defineCursos from './Cursos.model.js';
+import defineDocentes from './Docentes.model.js';
+import defineModalidad from './Modalidad.model.js';
+import defineSede from './Sede.model.js';
+import defineTitulo from './Titulo.model.js';
+import defineUser from './Users.model.js';
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
@@ -22,35 +22,35 @@ const sequelize = new Sequelize(
   }
 );
 
-const Area = defineArea(sequelize);
+const Areas = defineAreas(sequelize);
 const Clase = defineClase(sequelize);
-const Curso = defineCurso(sequelize);
-const Docente = defineDocente(sequelize);
+const Cursos = defineCursos(sequelize);
+const Docentes = defineDocentes(sequelize);
 const Modalidad = defineModalidad(sequelize);
 const Sede = defineSede(sequelize);
 const Titulo = defineTitulo(sequelize);
-const User = defineUser(sequelize);
+const Users = defineUser(sequelize);
 
-Curso.belongsTo(Area, { foreignKey: 'area' });
-Curso.belongsTo(Sede, { foreignKey: 'sede' });
-Curso.belongsTo(Titulo, { foreignKey: 'titulo' });
-Curso.belongsTo(Modalidad, { foreignKey: 'modalidad' });
-Curso.belongsTo(Docente, { foreignKey: 'docente_id' });
+Cursos.belongsTo(Areas, { foreignKey: 'areas' });
+Cursos.belongsTo(Sede, { foreignKey: 'sede' });
+Cursos.belongsTo(Titulo, { foreignKey: 'titulo' });
+Cursos.belongsTo(Modalidad, { foreignKey: 'modalidad' });
+Cursos.belongsTo(Docentes, { foreignKey: 'docente_id' });
 
-Area.hasMany(Curso, { foreignKey: 'area' });
-Sede.hasMany(Curso, { foreignKey: 'sede' });
-Titulo.hasMany(Curso, { foreignKey: 'titulo' });
-Modalidad.hasMany(Curso, { foreignKey: 'modalidad' });
-Docente.hasMany(Curso, { foreignKey: 'docente_id' });
+Areas.hasMany(Cursos, { foreignKey: 'areas' });
+Sede.hasMany(Cursos, { foreignKey: 'sede' });
+Titulo.hasMany(Cursos, { foreignKey: 'titulo' });
+Modalidad.hasMany(Cursos, { foreignKey: 'modalidad' });
+Docentes.hasMany(Cursos, { foreignKey: 'docente_id' });
 
 export {
   sequelize,
-  Area,
+  Areas,
   Clase,
-  Curso,
-  Docente,
+  Cursos,
+  Docentes,
   Modalidad,
   Sede,
   Titulo,
-  User
+  Users
 };

@@ -2,11 +2,12 @@ import fs from "fs";
 import path from "path";
 import { __dirname } from "../../index.js";
 import { crearFecha } from "../utils/dates.utils.js";
-import { Curso } from "../models/index.model.js";
+import { Cursos } from "../models/index.model.js";
 
 // Función auxiliar para leer datos de cursos
 const leerDatosCursos = async () => {
   try {
+    console.log("Leyendo datos de cursos desde archivo JSON...");
     const cursosPath = path.join(__dirname, "/data/cursos.json");
     const cursosData = await fs.promises.readFile(cursosPath, "utf-8");
     return JSON.parse(cursosData);
@@ -23,10 +24,14 @@ const leerDatosCursos = async () => {
 // Función auxiliar para guardar datos de cursos
 export const guardarDatosCursos = async (cursos) => {
   try {
-    const cursosPath = path.join(__dirname, "/data/cursos.json");
+    /* const cursosPath = path.join(__dirname, "/data/cursos.json");
     const jsonString = JSON.stringify({ cursos }, null, 2)
       .replace(/\\u[\dA-F]{4}/gi, (match) => String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16)));
-    await fs.promises.writeFile(cursosPath, jsonString, "utf-8");
+    await fs.promises.writeFile(cursosPath, jsonString, "utf-8"); */
+    // Guardar en la base de datos usando Sequelize
+    for (const curso of cursos) {
+      await Cursos.upsert(curso); // upsert: inserta o actualiza según la existencia
+    }
     return {
       error: false,
       msg: "Datos de cursos guardados con éxito"
@@ -55,11 +60,11 @@ const agregarEstadoInscripcion = (cursos) => {
 
 export const getCursos = async () => {
   try {
-    const cursos = await Curso.findAll();
+    const cursos = await Cursos.findAll();
     console.log("Cursos obtenidos de la base de datos:", cursos);
-    return cursos;
-    // Filtrar cursos activos
-    //const cursosActivos = cursosRaw.filter((curso) => curso.activo);
+    return agregarEstadoInscripcion(cursos);
+    /* // Filtrar cursos activos
+    const cursosActivos = cursos.filter((curso) => curso.activo);
     
     if (cursosActivos.length === 0) {
       throw {
@@ -70,8 +75,7 @@ export const getCursos = async () => {
     }
     
     // Agregar estado de inscripción
-    return agregarEstadoInscripcion(cursosActivos);
-    
+    return agregarEstadoInscripcion(cursosActivos); */
   } catch (error) {
     console.error("Error en getCursos:", error);
     if (error.error) {
@@ -87,7 +91,7 @@ export const getCursos = async () => {
 
 export const getCurso = async (id) => {
   try {
-    const curso = await Curso.findByPk(id);
+    const curso = await Cursos.findByPk(id);
     console.log("Curso obtenido de la base de datos:", curso);
     return curso;  
     // Buscar curso por ID
@@ -183,7 +187,7 @@ export const eliminarCurso = async (id) => {
     
     return {
       error: false,
-      msg: "Curso eliminado con éxito"
+      msg: "Cursos eliminado con éxito"
     };
     
   } catch (error) {

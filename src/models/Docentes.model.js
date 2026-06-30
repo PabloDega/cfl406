@@ -1,25 +1,24 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) => sequelize.define(
-  'User',
+  'Docentes',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    user: {
-      type: DataTypes.STRING(100),
-      allowNull: false,
-      unique: true
-    },
-    password: {
+    nombre: {
       type: DataTypes.STRING(255),
       allowNull: false
     },
-    rol: {
-      type: DataTypes.STRING(100),
-      allowNull: false
+    contacto: {
+      type: DataTypes.TEXT('long'),
+      allowNull: true
+    },
+    direccion: {
+      type: DataTypes.TEXT('long'),
+      allowNull: true
     },
     observaciones: {
       type: DataTypes.TEXT('long'),
@@ -32,10 +31,7 @@ export default (sequelize) => sequelize.define(
     }
   },
   {
-    tableName: 'users',
-    timestamps: false,
-    indexes: [
-      { unique: true, fields: ['user'] }
-    ]
+    tableName: 'docentes',
+    timestamps: false
   }
 );

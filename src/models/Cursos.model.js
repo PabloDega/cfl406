@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) => sequelize.define(
-  'Curso',
+  'Cursos',
   {
     id: {
       type: DataTypes.INTEGER,

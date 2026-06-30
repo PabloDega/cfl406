@@ -22,7 +22,30 @@
     "requisitos": "object",
     "temario": "object"
   },
-  "requisitos":[
+  "cursos_required": {
+    "curso": true,
+    "codigo": true,
+    "id": true,
+    "activo": true,
+    "area": true,
+    "sede": true,
+    "año": true,
+    "inicio": true,
+    "inscripcion": true,
+    "fin": true,
+    "cierreInscripciones": true,
+    "duracion": true,
+    "dias": false,
+    "horario": true,
+    "idProfesor": false,
+    "profesor": true,
+    "descripcion": true,
+    "titulo": true,
+    "modalidad": true,
+    "requisitos": false,
+    "temario": false
+  },
+  "requisitos": [
     "Ser mayor de 18 años",
     "Presentar DNI vigente",
     "Presentar titulo primario/secundario completo"

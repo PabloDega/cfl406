@@ -1,36 +1,23 @@
-import fs from "fs";
-import path from "path";
-import { __dirname } from "../../index.js";
-
-// Función auxiliar para leer datos de clases
-const leerDatosClases = async () => {
-  try {
-    const clasesPath = path.join(__dirname, "/data/clases.json");
-    const clasesData = await fs.promises.readFile(clasesPath, "utf-8");
-    return JSON.parse(clasesData);
-  } catch (error) {
-    console.error("Error leyendo datos de clases:", error);
-    throw {
-      error: true,
-      msg: "Error al acceder a los datos de clases",
-      codigo: "LDC01"
-    };
-  }
-};
+import { Clase } from '../models/index.model.js'
 
 export const getClases = async () => {
   try {
-    let clasesRaw = await leerDatosClases();
-    return clasesRaw;
+    const clases = await Clase.findAll();
+    console.log("Clases obtenidas: ", JSON.stringify(clases, null, 2));
+    return clases;
   } catch (error) {
-    console.error("Error en getCursosRaw:", error);
-    if (error.error) {
-      throw error; // Re-lanzar errores estructurados
-    }
-    throw {
-      error: true,
-      msg: "Error al obtener cursos sin filtrar",
-      codigo: "GCR01"
-    };
+    console.error("Error obteniendo clases:", error);
+    throw error;
   }
 };
+
+export const upsertClase = async (claseData) => {
+  try {
+    const [clase, created] = await Clase.upsert(claseData, { returning: true });
+    console.log(`Clase ${created ? 'creada' : 'actualizada'}: `, JSON.stringify(clase, null, 2));
+    return { clase, created };
+  } catch (error) {
+    console.error("Error upserting clase:", error);
+    throw error;
+  } 
+}

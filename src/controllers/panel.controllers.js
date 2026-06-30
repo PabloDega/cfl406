@@ -101,8 +101,10 @@ export const agregarCurso = async (req, res) => {
         // Si es POST, procesar el formulario
         const clase = await getClases();
         const keys = Object.keys(clase.cursos);
+        const camposCursoRequired = clase.cursos_required || [];
         const data = {};
-                
+        
+        // Validar y asignar campos recibidos
         keys.forEach(key => {
             if (req.body[key] !== undefined && req.body[key] !== null && req.body[key] !== '') {
                 data[key] = req.body[key];
@@ -113,7 +115,7 @@ export const agregarCurso = async (req, res) => {
         //data.activo = true; // Por defecto activo en true para nuevos cursos
         
         // Campos obligatorios específicos
-        const camposObligatorios = ['curso', 'codigo', 'area', 'sede', 'año', 'inicio', 'fin', 'cierreInscripciones', 'duracion', 'horario', 'profesor', 'descripcion', 'titulo', 'modalidad'];
+        const camposObligatorios = Object.keys(camposCursoRequired).filter(key => camposCursoRequired[key] === true);
         const faltantes = camposObligatorios.filter(campo => !data[campo]);
         console.log("Campos faltantes:", faltantes);
         if (faltantes.length > 0) {

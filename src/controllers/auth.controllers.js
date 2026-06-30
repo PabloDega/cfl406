@@ -27,7 +27,7 @@ export const postLogin = async (req, res) => {
       return res.status(400).json({ success: false, message: "Faltan datos de usuario." });
     }
     
-    const user = users.find(user => user.username === username && user.password === password);
+    const user = users.find(user => user.user === username && user.password === password);
     
     if (user) {
       // Generar token único para la sesión
@@ -36,7 +36,7 @@ export const postLogin = async (req, res) => {
       const expiresAt = loginTime + (24 * 60 * 60 * 1000); // 24 horas desde ahora
       
       req.session.auth = {
-        username: user.username,
+        username: user.user,
         login: true,
         rol: user.rol || "user",
         sessionToken,
@@ -57,7 +57,7 @@ export const postLogin = async (req, res) => {
         success: true, 
         message: "Login exitoso",
         user: {
-          username: user.username,
+          username: user.user,
           rol: user.rol
         }
       });

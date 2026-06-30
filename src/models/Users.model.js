@@ -1,19 +1,28 @@
 import { DataTypes } from 'sequelize';
 
 export default (sequelize) => sequelize.define(
-  'Area',
+  'Users',
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    area: {
+    user: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+      unique: true
+    },
+    password: {
       type: DataTypes.STRING(255),
       allowNull: false
     },
+    rol: {
+      type: DataTypes.STRING(100),
+      allowNull: false
+    },
     observaciones: {
-      type: DataTypes.JSON,
+      type: DataTypes.TEXT('long'),
       allowNull: true
     },
     eliminado: {
@@ -23,7 +32,10 @@ export default (sequelize) => sequelize.define(
     }
   },
   {
-    tableName: 'areas',
-    timestamps: false
+    tableName: 'users',
+    timestamps: false,
+    indexes: [
+      { unique: true, fields: ['user'] }
+    ]
   }
 );
