@@ -31,13 +31,13 @@ const Sede = defineSede(sequelize);
 const Titulo = defineTitulo(sequelize);
 const Users = defineUser(sequelize);
 
-Cursos.belongsTo(Areas, { foreignKey: 'areas' });
+Cursos.belongsTo(Areas, { foreignKey: 'area' });
 Cursos.belongsTo(Sede, { foreignKey: 'sede' });
 Cursos.belongsTo(Titulo, { foreignKey: 'titulo' });
 Cursos.belongsTo(Modalidad, { foreignKey: 'modalidad' });
 Cursos.belongsTo(Docentes, { foreignKey: 'docente_id' });
 
-Areas.hasMany(Cursos, { foreignKey: 'areas' });
+Areas.hasMany(Cursos, { foreignKey: 'area' });
 Sede.hasMany(Cursos, { foreignKey: 'sede' });
 Titulo.hasMany(Cursos, { foreignKey: 'titulo' });
 Modalidad.hasMany(Cursos, { foreignKey: 'modalidad' });

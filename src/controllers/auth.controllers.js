@@ -1,5 +1,6 @@
-import { getUsers } from "../services/login.services.js";
+import { getUsers } from "../services/users.services.js";
 import logger from "../utils/logger.utils.js";
+import { generateSessionToken } from "../middlewares/auth.middleware.js";
 
 export const login = async (req, res) => {
   try {
@@ -70,14 +71,6 @@ export const postLogin = async (req, res) => {
   }
 }
 
-// Función para generar token único de sesión
-function generateSessionToken() {
-  const timestamp = Date.now().toString();
-  const random = Math.random().toString(36).substring(2);
-  return `${timestamp}-${random}`;
-}
-
-// Controlador para logout
 export const logout = async (req, res) => {
   try {
     req.session.destroy((err) => {
@@ -90,4 +83,3 @@ export const logout = async (req, res) => {
     return res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 }
-

@@ -2,7 +2,7 @@ import { Sede } from '../models/index.model.js'
 
 export const getSedes = async () => {
     try {
-        const sedes = await Sede.findAll();
+        const sedes = await Sede.findAll({ raw: true });
         console.log("Sedes obtenidas: ", JSON.stringify(sedes, null, 2));
         return sedes;
     } catch (error) {

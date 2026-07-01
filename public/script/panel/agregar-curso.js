@@ -43,7 +43,7 @@ function inicializarFormulario() {
             if (key === 'activo') {
                 // El checkbox envía 'on' cuando está marcado, no 'true'
                 data[key] = value === 'on' || value === true;
-            } else if (key === 'codigo' || key === 'año' || key === 'idProfesor') {
+            } else if (key === 'codigo' || key === 'anio' || key === 'idProfesor') {
                 data[key] = parseInt(value);
             } else {
                 data[key] = value;
@@ -57,6 +57,7 @@ function inicializarFormulario() {
         
         // Validar campos obligatorios
         if (!validarCamposObligatorios(data)) {
+            console.log("Validación de campos obligatorios fallida. No se enviará el formulario.");
             return;
         }
         
@@ -66,15 +67,14 @@ function inicializarFormulario() {
 }
 
 function validarCamposObligatorios(data) {
-    const camposObligatorios = [
-        'curso', 'codigo', 'titulo', 'area', 'modalidad', 'sede', 
-        'año', 'inicio', 'fin', 'cierreInscripciones', 'duracion', 
-        'horario', 'idProfesor', 'profesor', 'descripcion'
-    ];
+    const camposObligatorios = window.clases?.cursos_required || [];
+    // crear un array de campos obligatorios
+    const camposObligatoriosArray = Object.keys(camposObligatorios).filter(key => camposObligatorios[key] === true);
     
-    const camposFaltantes = camposObligatorios.filter(campo => 
-        !data[campo] || data[campo].toString().trim() === ''
-    );
+    const camposFaltantes = camposObligatoriosArray.filter(campo => !data[campo] || data[campo].toString().trim() === '' || (campo === 'dias' && JSON.parse(data.dias || '[]').length === 0));
+
+    console.log("Campos obligatorios:", camposObligatoriosArray);
+    console.log("Campos faltantes:", camposFaltantes);
     
     if (camposFaltantes.length > 0) {
         mostrarError(`Faltan campos obligatorios: ${camposFaltantes.join(', ')}`, 5);
@@ -168,7 +168,7 @@ export const postAgregarCurso = async (data, accion = 'insert') => {
 function inicializarValidacionesFecha() {
     const inicioInput = document.getElementById('inicio');
     const finInput = document.getElementById('fin');
-    const cierreInput = document.getElementById('cierreInscripciones');
+    const cierreInput = document.getElementById('cierre_inscripciones');
     
    if (inicioInput) {
         inicioInput.addEventListener('change', function() {
@@ -304,9 +304,9 @@ function limpiarFormulario() {
         });
         
         // Restaurar valores por defecto
-        const añoInput = document.getElementById('año');
-        if (añoInput) {
-            añoInput.value = new Date().getFullYear();
+        const anioInput = document.getElementById('anio');
+        if (anioInput) {
+            anioInput.value = new Date().getFullYear();
         }
         
         const activoInput = document.getElementById('activo');

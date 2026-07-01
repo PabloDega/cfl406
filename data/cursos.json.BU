@@ -11,7 +11,7 @@
       "año": "2025",
       "inicio": "2025-05-11",
       "fin": "2025-05-11",
-      "cierreInscripciones": "2025-05-28",
+      "cierre_inscripciones": "2025-05-28",
       "duracion": "Bimestral",
       "dias": [],
       "horario": "18:00 a 20:00",
@@ -34,7 +34,7 @@
       "año": "2025",
       "inicio": "2025-05-11",
       "fin": "2025-05-11",
-      "cierreInscripciones": "2025-05-28",
+      "cierre_inscripciones": "2025-05-28",
       "duracion": "Bimestral",
       "dias": [],
       "horario": "9:00 a 12:00",
@@ -57,7 +57,7 @@
       "año": 2025,
       "inicio": "2025-08-08",
       "fin": "2025-08-08",
-      "cierreInscripciones": "2025-08-30",
+      "cierre_inscripciones": "2025-08-30",
       "duracion": "Cuatrimestral",
       "dias": [
         "Miércoles",
@@ -87,7 +87,7 @@
       "año": 2025,
       "inicio": "2025-08-08",
       "fin": "2025-12-08",
-      "cierreInscripciones": "2025-08-30",
+      "cierre_inscripciones": "2025-08-30",
       "duracion": "Cuatrimestral",
       "dias": [
         "Miércoles",
@@ -117,7 +117,7 @@
       "año": "2025",
       "inicio": "2025-03-11",
       "fin": "2026-11-26",
-      "cierreInscripciones": "2025-03-26",
+      "cierre_inscripciones": "2025-03-26",
       "duracion": "2 años",
       "dias": [
         "Miércoles",
@@ -147,7 +147,7 @@
       "año": 2025,
       "inicio": "2024-03-04",
       "fin": "2025-11-26",
-      "cierreInscripciones": "2024-03-19",
+      "cierre_inscripciones": "2024-03-19",
       "duracion": "2 años",
       "dias": [
         "Lunes",
@@ -177,7 +177,7 @@
       "año": 2025,
       "inicio": "2024-03-04",
       "fin": "2025-11-26",
-      "cierreInscripciones": "2024-03-19",
+      "cierre_inscripciones": "2024-03-19",
       "duracion": "2 años",
       "dias": [
         "Lunes",
@@ -207,7 +207,7 @@
       "año": 2025,
       "inicio": "2025-08-08",
       "fin": "2025-10-08",
-      "cierreInscripciones": "2025-08-23",
+      "cierre_inscripciones": "2025-08-23",
       "duracion": "Bimestral",
       "dias": [
         "Viernes"
@@ -236,7 +236,7 @@
       "año": 2025,
       "inicio": "2025-08-08",
       "fin": "2025-08-08",
-      "cierreInscripciones": "2025-08-23",
+      "cierre_inscripciones": "2025-08-23",
       "duracion": "Bimestral",
       "dias": [
         "Martes"
@@ -265,7 +265,7 @@
       "año": 2025,
       "inicio": "2025-08-11",
       "fin": "2025-09-17",
-      "cierreInscripciones": "2025-08-20",
+      "cierre_inscripciones": "2025-08-20",
       "duracion": "Bimestral",
       "dias": [
         "Lunes",
@@ -295,7 +295,7 @@
       "año": 2025,
       "inicio": "2025-03-05",
       "fin": "2025-05-19",
-      "cierreInscripciones": "2025-03-20",
+      "cierre_inscripciones": "2025-03-20",
       "duracion": "Bimestral",
       "dias": [
         "Lunes",
@@ -325,7 +325,7 @@
       "año": 2025,
       "inicio": "2025-05-21",
       "fin": "2025-09-10",
-      "cierreInscripciones": "2025-06-05",
+      "cierre_inscripciones": "2025-06-05",
       "duracion": "Cuatrimestral",
       "dias": [
         "Lunes",
@@ -355,7 +355,7 @@
       "año": 2025,
       "inicio": "2025-09-15",
       "fin": "2025-12-29",
-      "cierreInscripciones": "2025-09-30",
+      "cierre_inscripciones": "2025-09-30",
       "duracion": "Cuatrimestral",
       "dias": [
         "Lunes",
@@ -385,7 +385,7 @@
       "año": "2025",
       "inicio": "2025-03-05",
       "fin": "2025-12-08",
-      "cierreInscripciones": "2025-03-20",
+      "cierre_inscripciones": "2025-03-20",
       "duracion": "Anual",
       "dias": [
         "Lunes",
@@ -411,7 +411,7 @@
       "año": 2025,
       "inicio": "2025-03-06",
       "fin": "2025-12-18",
-      "cierreInscripciones": "2025-03-23",
+      "cierre_inscripciones": "2025-03-23",
       "duracion": "Cuatrimestral",
       "dias": [
         "Martes",
@@ -441,7 +441,7 @@
       "año": 2026,
       "inicio": "2026-03-30",
       "fin": "2026-12-20",
-      "cierreInscripciones": "2026-04-15",
+      "cierre_inscripciones": "2026-04-15",
       "duracion": "Anual",
       "dias": [
         "Martes",
@@ -471,7 +471,7 @@
       "año": 2026,
       "inicio": "2026-03-20",
       "fin": "2026-07-20",
-      "cierreInscripciones": "2026-04-15",
+      "cierre_inscripciones": "2026-04-15",
       "duracion": "Cuatrimestral",
       "dias": [
         "Lunes",
@@ -500,7 +500,7 @@
       "año": "2026",
       "inicio": "2026-03-11",
       "fin": "2026-07-17",
-      "cierreInscripciones": "2026-04-10",
+      "cierre_inscripciones": "2026-04-10",
       "duracion": "4 meses",
       "dias": [
         "miércoles",
@@ -525,7 +525,7 @@
       "año": "2026",
       "inicio": "2026-08-05",
       "fin": "2026-12-11",
-      "cierreInscripciones": "2026-09-04",
+      "cierre_inscripciones": "2026-09-04",
       "duracion": "4 meses",
       "dias": [
         "miércoles",
@@ -550,7 +550,7 @@
       "año": "2026",
       "inicio": "2026-03-09",
       "fin": "2026-07-16",
-      "cierreInscripciones": "2026-04-08",
+      "cierre_inscripciones": "2026-04-08",
       "duracion": "4 meses",
       "dias": [
         "lunes",
@@ -575,7 +575,7 @@
       "año": "2026",
       "inicio": "2026-08-03",
       "fin": "2026-12-10",
-      "cierreInscripciones": "2026-08-03",
+      "cierre_inscripciones": "2026-08-03",
       "duracion": "4 meses",
       "dias": [
         "lunes",
@@ -600,7 +600,7 @@
       "año": "2026",
       "inicio": "2026-03-17",
       "fin": "2026-08-20",
-      "cierreInscripciones": "2026-04-16",
+      "cierre_inscripciones": "2026-04-16",
       "duracion": "5 Meses",
       "dias": [
         "martes",
@@ -625,7 +625,7 @@
       "año": "2026",
       "inicio": "2026-08-25",
       "fin": "2026-12-03",
-      "cierreInscripciones": "2026-09-24",
+      "cierre_inscripciones": "2026-09-24",
       "duracion": "3 Meses",
       "dias": [
         "martes",
@@ -650,7 +650,7 @@
       "año": "2026",
       "inicio": "2026-03-05",
       "fin": "2026-11-19",
-      "cierreInscripciones": "2026-04-04",
+      "cierre_inscripciones": "2026-04-04",
       "duracion": "8 Meses",
       "dias": [
         "lunes",
@@ -675,7 +675,7 @@
       "año": "2026",
       "inicio": "2026-03-02",
       "fin": "2026-05-18",
-      "cierreInscripciones": "2026-03-28",
+      "cierre_inscripciones": "2026-03-28",
       "duracion": "2 Meses",
       "dias": [
         "["
@@ -699,7 +699,7 @@
       "año": 2026,
       "inicio": "2026-05-20",
       "fin": "2026-09-07",
-      "cierreInscripciones": "2026-05-11",
+      "cierre_inscripciones": "2026-05-11",
       "duracion": "3 Meses",
       "dias": [
         "[\"lunes\"",
@@ -724,7 +724,7 @@
       "año": 2026,
       "inicio": "2026-09-09",
       "fin": "2026-12-16",
-      "cierreInscripciones": "2026-09-08",
+      "cierre_inscripciones": "2026-09-08",
       "duracion": "3 Meses",
       "dias": [
         "[\"lunes\"",
@@ -749,7 +749,7 @@
       "año": 2026,
       "inicio": "2026-03-10",
       "fin": "2026-12-17",
-      "cierreInscripciones": "2026-03-09",
+      "cierre_inscripciones": "2026-03-09",
       "duracion": "9 Meses",
       "dias": [
         "[\"martes\"",

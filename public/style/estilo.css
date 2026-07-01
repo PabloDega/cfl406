@@ -706,6 +706,13 @@ header.desborda-x #hambHeader {
     gap: 1rem;
 }
 
+form select,
+form textarea{
+    padding: 0.5em; 
+    border-radius: 0.5em; 
+    border: 1px gray solid;
+}
+
 /* ============ */
 /*   KEYFRAMES  */
 /* ============ */

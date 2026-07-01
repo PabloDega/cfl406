@@ -2,7 +2,7 @@
 
 let cortina = document.querySelector(".cortina");
 
-export function mostrarCortinaConModal(data, accion, avoid, clase) {
+export function mostrarModal(data, accion, avoid, clase) {
   //console.log(clase)
   let editable = accion === "modificar";
   let disableInput = accion === "ver" ? "readonly" : "";
@@ -30,6 +30,7 @@ export function mostrarCortinaConModal(data, accion, avoid, clase) {
     console.log({key, tipoDato, valor});
     if (editable && tipoDato === "object") {
       if (key === "dias") {
+        valor = Array.isArray(valor) ? valor : [];
         // crear checklist de lunes a viernes y precargar los valores
         let diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
         let checklistHTML = `<div id="${key}">`;
@@ -103,6 +104,10 @@ export function mostrarCortinaConModal(data, accion, avoid, clase) {
         continue; // saltar al siguiente campo
       }
       if(key === "temario"){
+        if(valor === null || valor === undefined || valor.length === 0) {
+          modalHTML += `<span><strong>${key}:</strong> No hay temario disponible</span>`;
+          continue; // saltar al siguiente campo
+        }
         // mostrar el temario como una lista
         let temarioHTML = `<ul>`;
         valor.forEach((punto) => {
@@ -113,6 +118,7 @@ export function mostrarCortinaConModal(data, accion, avoid, clase) {
         continue; // saltar al siguiente campo
       }
       if(key === "dias"){
+        console.log("Mostrando dias como lista:", valor);
         // mostrar los dias como una lista
         let diasHTML = `<ul>`;
         valor.forEach((dia) => {

@@ -24,7 +24,7 @@ export function mostrarCortinaConMsg(txt, btncancelar) {
 }
 
 export function mostrarCortinaConModal(data, accion, avoid, clase) {
-  console.log(clase)
+  console.log(data)
   let editable = accion === "modificar";
   let disableInput = accion === "ver" ? "readonly" : "";
   if (editable) {

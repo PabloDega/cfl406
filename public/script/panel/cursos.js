@@ -1,4 +1,4 @@
-import { mostrarCortinaConModal } from "./modales.js";
+import { mostrarModal } from "./modales.js";
 import { guardarEnLS, mostrarErrores } from "../mostrar.js";
 
 export const ABMCursos = async (accion, url) => {
@@ -16,7 +16,7 @@ export const ABMCursos = async (accion, url) => {
         //console.log("Curso data:", data.data);
         // Por ejemplo, podrías abrir un modal con la información del curso
         // inscripcion se excluye porque se calcula automáticamente en base a la fecha de cierre
-        mostrarCortinaConModal(data.data, accion, ["id", "activo", "sedeId", "idProfesor", "inscripcion"], window.clases.cursos);
+        mostrarModal(data.data, accion, ["id", "activo", "sedeId", "idProfesor", "inscripcion", "eliminado"], window.clases.cursos);
       } else if (accion === "inscribir") {
         if (data.redirect) {
           window.location.href = data.redirect;

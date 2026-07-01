@@ -43,45 +43,9 @@ export const requireRole = (role) => {
   };
 };
 
-// Middleware para verificar si es admin
-export const requireAdmin = requireRole('admin');
-
-// Middleware para API endpoints que devuelve JSON en lugar de redirect
-export const checkLoginAPI = (req, res, next) => {
-  if (!req.session || !req.session.auth || !req.session.auth.login) {
-    return res.status(401).json({
-      error: true,
-      message: "No autenticado. Inicie sesión.",
-      code: "AUTH_REQUIRED"
-    });
-  }
-  
-  const auth = req.session.auth;
-  const now = Date.now();
-  
-  // Verificar expiración
-  if (auth.expiresAt && now > auth.expiresAt) {
-    req.session.destroy();
-    return res.status(401).json({
-      error: true,
-      message: "Sesión expirada. Inicie sesión nuevamente.",
-      code: "SESSION_EXPIRED"
-    });
-  }
-  
-  // Verificar inactividad
-  /* const maxInactivity = 2 * 60 * 60 * 1000;
-  if (auth.lastActivity && (now - auth.lastActivity) > maxInactivity) {
-    req.session.destroy();
-    return res.status(401).json({
-      error: true,
-      message: "Sesión inactiva. Inicie sesión nuevamente.",
-      code: "SESSION_INACTIVE"
-    });
-  } */
-  
-  // Actualizar actividad
-  req.session.auth.lastActivity = now;
-  
-  next();
-};
+// Función para generar token único de sesión
+export const generateSessionToken = () => {
+  const timestamp = Date.now().toString();
+  const random = Math.random().toString(36).substring(2);
+  return `${timestamp}-${random}`;
+}

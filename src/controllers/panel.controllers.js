@@ -1,6 +1,10 @@
-import { getCursos, getCurso, eliminarCurso, guardarDatosCursos, getCursosSinProcesar, getLastId } from "../services/cursos.service.js";
+import { getCursos, getCurso, eliminarCurso, upsertCursos } from "../services/cursos.service.js";
 import { getClases } from "../services/clases.service.js";
-import { crearFecha } from "../utils/dates.utils.js";
+import { getSedes } from "../services/sede.services.js";
+import { getTitulos } from "../services/titulo.services.js";
+import { getAreas } from "../services/areas.services.js";
+import { getModalidades } from "../services/modalidad.services.js";
+import { getDocentes } from "../services/docentes.services.js";
 
 export const panelIndex = async (req, res) => {
     try {
@@ -29,11 +33,21 @@ export const panelIndex = async (req, res) => {
 export const mostrarFormularioAgregar = async (req, res) => {
     try {
         const clases = await getClases();
-        
+        const sedes = await getSedes();
+        const titulos = await getTitulos();
+        const areas = await getAreas();
+        const modalidades = await getModalidades();
+        const docentes = await getDocentes();
+
         return res.render("pages/agregar-curso", {
             layout: "layouts/panel",
             user: req.session.auth,
             clases,
+            sedes,
+            titulos,
+            areas,
+            modalidades,
+            docentes,
             title: "Agregar Nuevo Curso"
         });
         
@@ -99,9 +113,9 @@ export const agregarCurso = async (req, res) => {
         }
         
         // Si es POST, procesar el formulario
-        const clase = await getClases();
-        const keys = Object.keys(clase.cursos);
-        const camposCursoRequired = clase.cursos_required || [];
+        const clases = await getClases();
+        const keys = Object.keys(clases.cursos);
+        const camposCursoRequired = clases.cursos_required || [];
         const data = {};
         
         // Validar y asignar campos recibidos
@@ -127,7 +141,6 @@ export const agregarCurso = async (req, res) => {
         }
 
         // Procesar campos especiales
-        console.log("Datos recibidos antes de procesar campos especiales:", data);
         if (typeof data.dias === 'string' && data.dias.trim() !== '') {
             try {
                 if(typeof JSON.parse(data.dias) === 'object') {
@@ -155,103 +168,12 @@ export const agregarCurso = async (req, res) => {
         
         // Eliminar inscripcion del data si viene, ya que se calcula automáticamente
         delete data.inscripcion;
+        console.log("Datos procesados para agregar/actualizar curso:", data);
 
         // Discriminar entre INSERT y UPDATE
         const accion = req.body.accion || 'insert';
-        // Usar getCursosSinProcesar para no recalcular inscripcion automáticamente
-        const cursos = await getCursosSinProcesar();
-        let resultado;
-        let mensaje;
-        let cursoModificado;
-
-        if (accion === 'update') {
-            // LÓGICA PARA ACTUALIZAR (UPDATE)
-            console.log("Ejecutando UPDATE para curso ID:", data.id);
-            console.log("Datos recibidos para actualización:", data);
-            if (!data.id) {
-                return res.status(400).json({
-                    error: true,
-                    msg: "ID de curso requerido para actualizar",
-                    codigo: "AC03",
-                });
-            }
-
-            const cursoId = parseInt(data.id);
-            let cursoEncontrado = false;
-            
-            const cursosModificados = cursos.map((curso) => {
-                if (curso.id === cursoId) {
-                    cursoEncontrado = true;
-                    // Preservar campos que no vienen en data (como 'activo', 'idProfesor', 'inscripcion')
-                    // Solo actualizar los campos que sí vienen en data
-                    const cursoActualizado = { ...curso };
-                    
-                    // Actualizar solo los campos recibidos (no null/undefined)
-                    Object.keys(data).forEach(key => {
-                        if (data[key] !== null && data[key] !== undefined) {
-                            cursoActualizado[key] = data[key];
-                        }
-                    });
-                    
-                    // Mantener el ID original
-                    cursoActualizado.id = cursoId;
-                    
-                    return cursoActualizado;
-                }
-                return curso;
-            });
-
-            if (!cursoEncontrado) {
-                return res.status(404).json({
-                    error: true,
-                    msg: "Curso no encontrado",
-                    codigo: "AC04",
-                });
-            }
-
-            // Calcular inscripcion automáticamente antes de guardar
-            cursosModificados.forEach(curso => {
-                const fechaCierre = crearFecha(curso.cierreInscripciones);
-                const hoy = new Date();
-                curso.inscripcion = fechaCierre >= hoy;
-            });
-
-            resultado = await guardarDatosCursos(cursosModificados);
-            cursoModificado = cursosModificados.find(c => c.id === cursoId);
-            mensaje = "Curso modificado exitosamente";
-            
-        } else {
-            // LÓGICA PARA AGREGAR (INSERT)
-            console.log("Ejecutando INSERT para nuevo curso");
-            
-            // cargar id automáticamente
-            data.id = await getLastId() + 1;
-
-            // Si activo no viene definido, por defecto es true
-            if (data.activo === undefined || data.activo === null) {
-                data.activo = true;
-            }
-            
-            const cursoNuevo = data;
-
-            // Calcular inscripcion automáticamente
-            cursoNuevo.inscripcion = new Date(cursoNuevo.cierreInscripciones) >= new Date();
-
-            cursos.push(cursoNuevo);
-            
-            resultado = await guardarDatosCursos(cursos);
-            mensaje = "Curso agregado exitosamente";
-        }
-
-        if (resultado.error) {
-            return res.status(400).json(resultado);
-        }
-
-        return res.json({
-            error: false,
-            msg: mensaje,
-            data: cursoModificado
-        });
+        const resultado = await upsertCursos(data, accion);
+        res.status(200).json(resultado);
     } catch (error) {
         console.error("Error en agregarCurso:", error);
         return res.status(500).json({
@@ -311,7 +233,7 @@ export const modificarCurso = async (req, res) => {
             });
         }
 
-        const resultado = await guardarDatosCursos(cursosModificados);
+        const resultado = await upsertCursos(cursosModificados);
 
         if (resultado.error) {
             return res.status(400).json(resultado);

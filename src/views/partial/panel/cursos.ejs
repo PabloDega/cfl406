@@ -17,7 +17,7 @@
         <% cursos.forEach(curso => { %>
                 <tr <%= new Date(curso.fin) > new Date() ? 'class=activo' : 'class=inactivo' %>>
                     <td><%= curso.codigo %></td>
-                    <td><%= curso.año %></td>
+                    <td><%= curso.anio %></td>
                     <td><%= curso.sede %></td>
                     <td><%= curso.curso %></td>
                     <td><%= new Date(curso.inicio).toLocaleDateString("es-AR") %></td>

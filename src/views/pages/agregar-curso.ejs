@@ -33,17 +33,21 @@
                 <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
                     <div class="flexV grow">
                         <label for="titulo"><strong>Título/Certificación *</strong></label>
-                        <input type="text" id="titulo" name="titulo" required placeholder="Certificado en...">
+                        <select id="titulo" name="titulo" required>
+                            <option value="">Seleccionar título...</option>
+                            <% titulos.forEach(titulo => { %>
+                                <option value="<%= titulo.id %>"><%= titulo.titulo %></option>
+                            <% }); %>
+                        </select>
                     </div>
 
                     <div class="flexV grow">
                         <label for="area"><strong>Área *</strong></label>
-                        <select id="area" name="area" required style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid;">
+                        <select id="area" name="area" required>
                             <option value="">Seleccionar área...</option>
-                            <option value="Informática">Informática</option>
-                            <option value="Administración">Administración</option>
-                            <option value="Oficios">Oficios</option>
-                            <option value="Estética">Estética</option>
+                            <% areas.forEach(area => { %>
+                                <option value="<%= area.id %>"><%= area.area %></option>
+                            <% }); %>
                         </select>
                     </div>
                 </div>
@@ -51,17 +55,22 @@
                 <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
                     <div class="flexV grow">
                         <label for="modalidad"><strong>Modalidad *</strong></label>
-                        <select id="modalidad" name="modalidad" required style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid;">
+                        <select id="modalidad" name="modalidad" required>
                             <option value="">Seleccionar modalidad...</option>
-                            <option value="Presencial">Presencial</option>
-                            <option value="Virtual">Virtual</option>
-                            <option value="Híbrida">Híbrida</option>
+                            <% modalidades.forEach(modalidad => { %>
+                                <option value="<%= modalidad.id %>"><%= modalidad.modalidad %></option>
+                            <% }); %>
                         </select>
                     </div>
 
                     <div class="flexV grow">
                         <label for="sede"><strong>Sede *</strong></label>
-                        <input type="text" id="sede" name="sede" required placeholder="San Martín">
+                        <select id="sede" name="sede" required>
+                            <option value="">Seleccionar sede...</option>
+                            <% sedes.forEach(sede => { %>
+                                <option value="<%= sede.id %>"><%= sede.nombre %></option>
+                            <% }); %>
+                        </select>
                     </div>
                 </div>
 
@@ -72,8 +81,8 @@
 
                 <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
                     <div class="flexV">
-                        <label for="año"><strong>Año *</strong></label>
-                        <input type="number" id="año" name="año" value="2025" required style="min-width: 120px;">
+                        <label for="anio"><strong>Año *</strong></label>
+                        <input type="number" id="anio" name="anio" value="2025" required style="min-width: 120px;">
                     </div>
 
                     <div class="flexV grow">
@@ -89,8 +98,8 @@
 
                 <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
                     <div class="flexV grow">
-                        <label for="cierreInscripciones"><strong>Cierre de Inscripciones *</strong></label>
-                        <input type="date" id="cierreInscripciones" name="cierreInscripciones" required>
+                        <label for="cierre_inscripciones"><strong>Cierre de Inscripciones *</strong></label>
+                        <input type="date" id="cierre_inscripciones" name="cierre_inscripciones" required>
                     </div>
 
                     <div class="flexV grow">
@@ -141,17 +150,12 @@
                     👨‍🏫 Información del Profesor
                 </div>
 
-                <div class="flexH" style="flex-wrap: wrap; gap: 2em;">
-                    <div class="flexV">
-                        <label for="idProfesor"><strong>ID Profesor *</strong></label>
-                        <input type="number" id="idProfesor" name="idProfesor" required style="min-width: 120px;">
-                    </div>
-
-                    <div class="flexV grow">
-                        <label for="profesor"><strong>Nombre del Profesor *</strong></label>
-                        <input type="text" id="profesor" name="profesor" required placeholder="Nombre completo">
-                    </div>
-                </div>
+                <select id="docente" name="docente_id" required>
+                    <option value="">Seleccionar docente...</option>
+                    <% docentes.forEach(docente => { %>
+                        <option value="<%= docente.id %>"><%= docente.nombre %></option>
+                    <% }); %>
+                </select>
 
                 <!-- Sección: Detalles del Curso -->
                 <div class="landH">
@@ -161,14 +165,14 @@
                 <div class="flexV">
                     <label for="descripcion"><strong>Descripción *</strong></label>
                     <textarea id="descripcion" name="descripcion" required rows="4" 
-                              style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid; resize: vertical;"
+                              style="resize: vertical;"
                               placeholder="Descripción completa del curso..."></textarea>
                 </div>
 
                 <div class="flexV">
                     <label for="requisitos"><strong>Requisitos (uno por línea)</strong></label>
                     <textarea id="requisitos" name="requisitos" rows="3" 
-                              style="padding: 0.5em; border-radius: 0.5em; border: 1px gray solid; resize: vertical;"
+                              style=" resize: vertical;"
                               placeholder="Nivel secundario completo&#10;Conocimientos básicos de informática&#10;..."></textarea>
                 </div>
 
@@ -196,5 +200,8 @@
     </div>
 </div>
 
+<script>
+    window.clases = <%- JSON.stringify(clases) %>;
+</script>
 <!-- Script específico para agregar curso -->
 <script type="module" src="/script/panel/agregar-curso.js"></script>
