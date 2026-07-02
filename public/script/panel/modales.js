@@ -6,6 +6,9 @@ export function mostrarModal(data, accion, avoid, clase) {
   let editable = accion === "modificar";
   let disableInput = accion === "ver" ? "readonly" : "";
   document.querySelector(".cortina #txt").innerHTML = `<h1>${accion} curso</h1>`
+  cortina.style.display = "flex";
+  let modalHTML = `<h2>${data.curso}</h2>`;
+
   if (editable) {
     document.querySelector("#btnPopUpCancelar").style.display = "block";
     document.querySelector("#btnPopUpCancelar").dataset.accion = "modificar";
@@ -15,11 +18,11 @@ export function mostrarModal(data, accion, avoid, clase) {
       document.querySelector("#btnPopUpAceptar").dataset.id = data.id;
     }
   }
-  cortina.style.display = "flex";
-  let modalHTML = `<h2>${data.curso}</h2>`;
+  
   for (let key in data) {
     if (avoid && avoid.includes(key)) continue;
     let tipoDato = clase[key] || "text";
+    if (tipoDato === "string") tipoDato = "text";
     let valor = data[key];
     if(valor === null || valor === undefined) {
       valor = "";
@@ -133,8 +136,6 @@ export function mostrarModal(data, accion, avoid, clase) {
         continue; // saltar al siguiente campo
       }
     }
-
-    if (tipoDato === "string") tipoDato = "text";
     if (tipoDato === "number" && isNaN(parseInt(valor)) && editable) {
       if(key === "docente_id") key = "docente";
       // crear un select con las opciones de la clase correspondiente
