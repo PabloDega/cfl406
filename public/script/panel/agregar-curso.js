@@ -168,7 +168,7 @@ export const postAgregarCurso = async (data, accion = 'insert') => {
 function inicializarValidacionesFecha() {
     const inicioInput = document.getElementById('inicio');
     const finInput = document.getElementById('fin');
-    const cierreInput = document.getElementById('cierre_inscripciones');
+    const cierreInput = document.getElementById('cierre_inscripcion');
     
    if (inicioInput) {
         inicioInput.addEventListener('change', function() {

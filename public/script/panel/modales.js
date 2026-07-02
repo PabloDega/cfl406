@@ -3,7 +3,6 @@
 let cortina = document.querySelector(".cortina");
 
 export function mostrarModal(data, accion, avoid, clase) {
-  //console.log(clase)
   let editable = accion === "modificar";
   let disableInput = accion === "ver" ? "readonly" : "";
   document.querySelector(".cortina #txt").innerHTML = `<h1>${accion} curso</h1>`
@@ -22,12 +21,15 @@ export function mostrarModal(data, accion, avoid, clase) {
     if (avoid && avoid.includes(key)) continue;
     let tipoDato = clase[key] || "text";
     let valor = data[key];
+    if(valor === null || valor === undefined) {
+      valor = "";
+    }
     // Si el dato es una fecha en formato DD/MM/YYYY cambiar el formato a YYYY-MM-DD
     if (tipoDato === "date" && /^\d{2}\/\d{2}\/\d{4}$/.test(valor)) {
+      console.log(`Converting date format for key: ${key}, original value: ${valor}`);
       const [day, month, year] = valor.split("/");
       valor = `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
     }
-    console.log({key, tipoDato, valor});
     if (editable && tipoDato === "object") {
       if (key === "dias") {
         valor = Array.isArray(valor) ? valor : [];
@@ -65,7 +67,9 @@ export function mostrarModal(data, accion, avoid, clase) {
         continue; // saltar al siguiente campo
       }
       if(key === "temario"){
-        console.log(valor);
+        if(valor === null || valor === undefined) {
+          valor = [];
+        }
         // crear un input para cada tema en el array, mínimo 10 inputs
         let temarioHTML = `<div id="${key}">`;
         const minInputs = 10;
@@ -128,10 +132,23 @@ export function mostrarModal(data, accion, avoid, clase) {
         modalHTML += `<span><strong>${key}:</strong>${diasHTML}</span>`;
         continue; // saltar al siguiente campo
       }
-
     }
 
     if (tipoDato === "string") tipoDato = "text";
+    if (tipoDato === "number" && isNaN(parseInt(valor)) && editable) {
+      if(key === "docente_id") key = "docente";
+      // crear un select con las opciones de la clase correspondiente
+      modalHTML += `<span><strong>${key}:</strong><select id="${key}" ${disableInput}>`;
+      console.log(`Creating select for key: ${key}, value: ${valor}, options:`, window[key]);
+      for (let option in window[key]) {
+        let selected = valor == option ? "selected" : "";
+        const dato = window[key][option].area || window[key][option].nombre || window[key][option].modalidad || window[key][option].titulo || window[key][option].nombre;
+        modalHTML += `<option value="${option}" ${selected}>${dato}</option>`;
+      }
+      modalHTML += `</select></span>`;
+      continue; // saltar al siguiente campo
+    }
+    if (tipoDato === "number" && isNaN(parseInt(valor)) && !editable) tipoDato = "text";
 
     modalHTML += `<span><strong>${key}:</strong><input id="${key}" type="${tipoDato}" value="${valor}" ${disableInput}></span>`;
   }

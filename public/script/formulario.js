@@ -61,7 +61,7 @@ document.querySelectorAll(".select.selectCursoSede").forEach((select) => {
   // obtener sedeId del select
   const sedeId = select.dataset.sedeId;
   // filtrar solo cursos con inscripcion true
-  const cursosFiltrados = window.cursos.filter((curso) => curso.inscripcion && curso.sedeId.toString() === sedeId);
+  const cursosFiltrados = window.cursos.filter((curso) => curso.inscripcion && curso.sede.toString() === sedeId);
   // agregar opciones al select
   cursosFiltrados.forEach((curso) => {
     const option = document.createElement("option");

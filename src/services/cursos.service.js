@@ -33,7 +33,7 @@ const agregarEstadoInscripcion = (cursos) => {
   return cursos.map((curso) => {
     return {
       ...curso,
-      inscripcion: new Date(curso.cierre_inscripciones) >= new Date(),
+      inscripcion: new Date(curso.cierre_inscripcion) >= new Date(),
     };
   });
 };

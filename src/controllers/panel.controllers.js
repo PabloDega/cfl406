@@ -10,6 +10,11 @@ export const panelIndex = async (req, res) => {
     try {
         const cursos = await getCursos();
         const clases = await getClases();
+        const sedes = await getSedes();
+        const titulos = await getTitulos();
+        const areas = await getAreas();
+        const modalidades = await getModalidades();
+        const docentes = await getDocentes();
 
         // Una sola respuesta exitosa
         return res.render("pages/panel", {
@@ -17,6 +22,11 @@ export const panelIndex = async (req, res) => {
             user: req.session.auth,
             cursos,
             clases,
+            sedes,
+            titulos,
+            areas,
+            modalidades,
+            docentes
         });
         
     } catch (error) {

@@ -29,9 +29,8 @@ function renderCursos(){
             visibilidad: "",
             estado: "✔ Inscripciones abiertas",
         }
-        let cierre_inscripciones = curso.cierre_inscripciones.split("-")
-        cierre_inscripciones = new Date(+cierre_inscripciones[0], +cierre_inscripciones[1]-1, +cierre_inscripciones[2])
-        if(cierre_inscripciones < new Date()){
+        let cierre_inscripcion = new Date(curso.cierre_inscripcion);
+        if(cierre_inscripcion < new Date()){
             estado.visibilidad = "oculto";
             estado.estado = "X Inscripciones cerradas";
         }
@@ -100,13 +99,13 @@ function mostrarMasInfo(curso){
               <span>✔ Duración: ${curso.duracion}</span>
               <span>✔ Inicio: ${new Date(curso.inicio).toLocaleDateString("es-AR")}</span>
               <span>✔ Fin: ${new Date(curso.fin).toLocaleDateString("es-AR")}</span>
-              <span>✔ Cierre de inscripciones: ${new Date(curso.cierre_inscripciones).toLocaleDateString("es-AR")}</span>
+              <span>✔ Cierre de inscripciones: ${new Date(curso.cierre_inscripcion).toLocaleDateString("es-AR")}</span>
               <span>✔ Horario: ${curso.dias.join(" y ")} de ${curso.horario}</span>
               <span>✔ Modalidad: ${curso.modalidad}</span>
               <span>✔ Descripción: ${curso.descripcion}</span>
               <span>✔ Temario:</span>
               <ul>
-              ${curso.temario.map((tema) => `<li>${tema}</li>`).join("")}
+              ${curso.temario?.length && curso.temario.length > 0 ? curso.temario.map((tema) => `<li>${tema}</li>`).join("") : "<li>No hay temario disponible</li>"}
               </ul>
               `;
     mostrarCortinaConMsg(txt, false)

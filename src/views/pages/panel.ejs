@@ -29,7 +29,12 @@
 
 <!-- pasar a la vista las variables cursos y clases que se recibieron del servidor con el motor ejs -->
 
-<script>
+<script defer>
     window.cursos = <%- JSON.stringify(cursos) %>
     window.clases = <%- JSON.stringify(clases) %>
+    window.sede = <%- JSON.stringify(sedes) %>
+    window.titulo = <%- JSON.stringify(titulos) %>
+    window.area = <%- JSON.stringify(areas) %>
+    window.modalidad = <%- JSON.stringify(modalidades) %>
+    window.docente = <%- JSON.stringify(docentes) %>
 </script>

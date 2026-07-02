@@ -12,11 +12,8 @@ export const ABMCursos = async (accion, url) => {
       if (data.error) {
         mostrarErrores([new Error(data.msg)]);
       } else if (accion === "ver" || accion === "modificar") {
-        // Aquí puedes manejar la visualización o edición del curso
-        //console.log("Curso data:", data.data);
-        // Por ejemplo, podrías abrir un modal con la información del curso
-        // inscripcion se excluye porque se calcula automáticamente en base a la fecha de cierre
-        mostrarModal(data.data, accion, ["id", "activo", "sedeId", "idProfesor", "inscripcion", "eliminado"], window.clases.cursos);
+        data.data.docente_id = data.data.docente;
+        mostrarModal(data.data, accion, ["id", "docente", "inscripcion", "eliminado"], window.clases.cursos);
       } else if (accion === "inscribir") {
         if (data.redirect) {
           window.location.href = data.redirect;

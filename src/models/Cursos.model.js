@@ -42,7 +42,7 @@ export default (sequelize) => sequelize.define(
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-    cierre_inscripciones: {
+    cierre_inscripcion: {
       type: DataTypes.DATEONLY,
       allowNull: false
     },

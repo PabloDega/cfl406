@@ -32,10 +32,10 @@ export const normalizarGetCurso = (curso) => {
         ? (curso.docente = curso["Docente.nombre"])
         : null,
   };
-  delete curso.Area;
-  delete curso.Sede;
-  delete curso.Titulo;
-  delete curso.Modalidad;
-  delete curso.Docente;
+  delete normalizados["Area.area"];
+  delete normalizados["Sede.nombre"];
+  delete normalizados["Titulo.titulo"];
+  delete normalizados["Modalidad.modalidad"];
+  delete normalizados["Docente.nombre"];
   return normalizados;
 };
