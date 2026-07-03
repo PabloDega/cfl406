@@ -1,11 +1,13 @@
 import express from "express"
 export const router = express.Router();
 import * as panelControllers from "../controllers/panel.controllers.js";
+import * as cursosControllers from "../controllers/cursos.controllers.js";
 
-router.get("/", panelControllers.panelIndex);
+router.get("/", panelControllers.renderIndex);
 
-router.get("/cursos/agregar", panelControllers.mostrarFormularioAgregar);
-router.post("/cursos/agregar", panelControllers.agregarCurso);
-router.post("/cursos/modificar/:id", panelControllers.agregarCurso);
+router.get("/cursos", cursosControllers.renderCursos);
+router.get("/cursos/agregar", cursosControllers.mostrarFormularioAgregar);
+router.post("/cursos/agregar", cursosControllers.agregarCurso);
+router.post("/cursos/modificar/:id", cursosControllers.agregarCurso);
 
-router.get("/cursos/:accion/:id", panelControllers.cursosAcciones);
+router.get("/cursos/:accion/:id", cursosControllers.cursosAcciones);

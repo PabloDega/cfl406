@@ -4,8 +4,9 @@ let cortina = document.querySelector(".cortina");
 
 export function mostrarModal(data, accion, avoid, clase) {
   let editable = accion === "modificar";
+  const emoji = accion === "ver" ? "🔍" : accion === "modificar" ? "✏️" : accion === "inscribir" ? "📝" : accion === "eliminar" ? "❌" : "";
   let disableInput = accion === "ver" ? "readonly" : "";
-  document.querySelector(".cortina #txt").innerHTML = `<h1>${accion} curso</h1>`
+  document.querySelector(".cortina #txt").innerHTML = `${emoji} ${accion} curso`
   cortina.style.display = "flex";
   let modalHTML = `<h2>${data.curso}</h2>`;
 
@@ -36,11 +37,12 @@ export function mostrarModal(data, accion, avoid, clase) {
     if (editable && tipoDato === "object") {
       if (key === "dias") {
         valor = Array.isArray(valor) ? valor : [];
+        console.log("Creating checklist for dias with values:", valor);
         // crear checklist de lunes a viernes y precargar los valores
-        let diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+        let diasSemana = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"];
         let checklistHTML = `<div id="${key}">`;
         diasSemana.forEach((dia) => {
-          let checked = valor.includes(dia) ? "checked" : "";
+          let checked = valor.map(v => v.toLowerCase()).includes(dia.toLowerCase()) ? "checked" : "";
           checklistHTML += `<label><input type="checkbox" value="${dia}" ${checked}> ${dia}</label><br>`;
         });
         checklistHTML += `</div>`;
@@ -137,14 +139,14 @@ export function mostrarModal(data, accion, avoid, clase) {
       }
     }
     if (tipoDato === "number" && isNaN(parseInt(valor)) && editable) {
-      if(key === "docente_id") key = "docente";
+      //if(key === "docente_id") key = "docente";
       // crear un select con las opciones de la clase correspondiente
       modalHTML += `<span><strong>${key}:</strong><select id="${key}" ${disableInput}>`;
       console.log(`Creating select for key: ${key}, value: ${valor}, options:`, window[key]);
       for (let option in window[key]) {
         let selected = valor == option ? "selected" : "";
         const dato = window[key][option].area || window[key][option].nombre || window[key][option].modalidad || window[key][option].titulo || window[key][option].nombre;
-        modalHTML += `<option value="${option}" ${selected}>${dato}</option>`;
+        modalHTML += `<option value="${window[key][option].id}" ${selected}>${dato}</option>`;
       }
       modalHTML += `</select></span>`;
       continue; // saltar al siguiente campo

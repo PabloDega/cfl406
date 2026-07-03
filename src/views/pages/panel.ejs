@@ -1,40 +1,29 @@
-<div class="panelContent panelHome">
+<div class="panelContent" id="panelHome">
     <h1>Bienvenido al Panel de Control</h1>
     <p>Selecciona una opción del menú para comenzar.</p>
 </div>
 
-<div class="panelContent panelCursos" style="display: none;">
-    <%- include('../partial/panel/cursos') %>
+<!-- <div class="panelContent" id="panelCursos" style="display: none;">
+    
 </div>
 
-<div class="panelContent panelAlumnos" style="display: none;">
+<div class="panelContent" id="panelAlumnos" style="display: none;">
     <h1>Alumnos</h1>
     <p>Contenido relacionado con alumnos.</p>
 </div>
 
-<div class="panelContent panelProfesores" style="display: none;">
+<div class="panelContent" id="panelProfesores" style="display: none;">
     <h1>Profesores</h1>
     <p>Contenido relacionado con profesores.</p>
 </div>
 
-<div class="panelContent panelSedes" style="display: none;">
+<div class="panelContent" id="panelSedes" style="display: none;">
     <h1>Sedes</h1>
     <p>Contenido relacionado con sedes.</p>
 </div>
 
-<div class="panelContent panelFormularios" style="display: none;">
+<div class="panelContent" id="panelFormularios" style="display: none;">
     <h1>Formularios</h1>
     <p>Contenido relacionado con formularios.</p>
-</div>
+</div> -->
 
-<!-- pasar a la vista las variables cursos y clases que se recibieron del servidor con el motor ejs -->
-
-<script defer>
-    window.cursos = <%- JSON.stringify(cursos) %>
-    window.clases = <%- JSON.stringify(clases) %>
-    window.sede = <%- JSON.stringify(sedes) %>
-    window.titulo = <%- JSON.stringify(titulos) %>
-    window.area = <%- JSON.stringify(areas) %>
-    window.modalidad = <%- JSON.stringify(modalidades) %>
-    window.docente = <%- JSON.stringify(docentes) %>
-</script>

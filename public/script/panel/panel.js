@@ -42,8 +42,12 @@ document.querySelector("#btnPopUpAceptar")?.addEventListener("click", async (e) 
     document.querySelectorAll("#modal input").forEach((input) => {
       data[input.id] = input.value;
       if( input.type === "checkbox" ) {
-        data[input.id] = input.checked;
+        data[input.id] = input.id === "activo" ? (input.checked ? 1 : 0) : input.checked;
       }
+    });
+
+    document.querySelectorAll("#modal select").forEach((select) => {
+      data[select.id] = select.value;
     });
 
     // capturar los checkbox de dias y reemplazar el objeto data.dias por un array con los dias seleccionados

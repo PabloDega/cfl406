@@ -1,0 +1,56 @@
+<div class="panelContent" id="panelCursos">
+
+    <h1>Lista de cursos <div class="btn small" id="agregarCurso"><span>➕</span>Agregar curso</div></h1>
+
+    <% if (cursos && cursos.length > 0) { %>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Año</th>
+                    <th>Sede</th>
+                    <th>Curso</th>
+                    <th>Inicio</th>
+                    <th>Duración</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% cursos.forEach(curso => { %>
+                    <tr <%= new Date(curso.fin) > new Date() ? 'class=activo' : 'class=inactivo' %>>
+                        <td><%= curso.codigo %></td>
+                        <td><%= curso.anio %></td>
+                        <td><%= curso.sede %></td>
+                        <td><%= curso.curso %></td>
+                        <td><%= new Date(curso.inicio).toLocaleDateString("es-AR") %></td>
+                        <td><%= curso.duracion %></td>
+                        <td>
+                            <div class="acciones">
+                                <div class="btn small" data-id="<%= curso.id %>" data-accion="ver" data-tabla="cursos">Ver</div>
+                                <div class="btn small" data-id="<%= curso.id %>" data-accion="modificar" data-tabla="cursos">Editar</div>
+                                <div class="btn small" data-id="<%= curso.id %>" data-accion="inscribir" data-tabla="cursos">Alumnos</div>
+                                <div class="btn small" data-id="<%= curso.id %>" data-accion="eliminar" data-tabla="cursos">Eliminar</div>
+                            </div>
+                        </td>
+                    </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No hay cursos disponibles.</p>
+    <% } %>
+    
+</div>
+
+
+<!-- pasar a la vista las variables cursos y clases que se recibieron del servidor con el motor ejs -->
+
+<script defer>
+    window.cursos = <%- JSON.stringify(cursos) %>
+    window.clases = <%- JSON.stringify(clases) %>
+    window.sede = <%- JSON.stringify(sedes) %>
+    window.titulo = <%- JSON.stringify(titulos) %>
+    window.area = <%- JSON.stringify(areas) %>
+    window.modalidad = <%- JSON.stringify(modalidades) %>
+    window.docente_id = <%- JSON.stringify(docentes) %>
+</script>

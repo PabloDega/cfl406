@@ -104,6 +104,12 @@ app.use("/", mainRoutes.router);
 import * as panelRoutes from "./src/routes/panel.routes.js";
 import { checkLogin } from "./src/middlewares/auth.middleware.js";
 app.use("/panel", checkLogin, panelRoutes.router);
+app.use("/panel", notFoundLimiter, (req, res) => {
+  res.render('404', {
+    layout: "layouts/panel", 
+    user: req.session.auth, 
+    title: 'Página no encontrada' });
+});
 
 app.use(express.static("public"));
 
@@ -115,8 +121,12 @@ app.use((err, req, res, next) => {
 
 // 404 handler con rate limiting
 app.use(notFoundLimiter, (req, res, next) => {
-  res.status(404).render('404', { title: 'Página no encontrada' });
+  res.status(404).render('404', {
+    layout: "layouts/main", 
+    title: 'Página no encontrada'
+  });
 });
+
 
 // Server
 const PORT = process.env.SERVERPORT || 3000;

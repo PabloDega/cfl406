@@ -1,9 +1,5 @@
-import fs from "fs";
-import path from "path";
-import { __dirname } from "../../index.js";
-import { Cursos } from "../models/index.model.js";
 import { normalizarGetCurso } from "../utils/cursos.utils.js";
-import { Areas, Sede, Titulo, Modalidad, Docentes } from "../models/index.model.js";
+import { Cursos, Areas, Sede, Titulo, Modalidad, Docentes } from "../models/index.model.js";
 
 export const upsertCursos = async (data, accion) => {
   try {
@@ -123,42 +119,30 @@ export const getCurso = async (id) => {
 
 export const eliminarCurso = async (id) => {
   try {
-    /* let cursosRaw = await leerDatosCursos();
-    cursosRaw = cursosRaw.cursos;    
-    // Buscar y modificar el curso
-    let cursoEncontrado = false;
-    const cursosModificados = cursosRaw.map((curso) => {
-      if (curso.id === id) {
-        cursoEncontrado = true;
-        return { ...curso, activo: false };
-      }
-      return curso;
-    });
-    
-    if (!cursoEncontrado) {
+    // Hacer un soft delete registrando un 1 en el campo "eliminado" del curso correspondiente
+    const curso = await Cursos.findByPk(id);
+    if (!curso) {
       throw {
         error: true,
         msg: "No se encuentra el curso seleccionado",
-        codigo: "EC01"
+        codigo: "EC01",
       };
     }
-    
-    // Guardar los cambios
-    await upsertCursos(cursosModificados);
-    
+    curso.eliminado = 1;
+    await curso.save();
     return {
       error: false,
-      msg: "Cursos eliminado con éxito"
-    }; */
+      msg: "Curso eliminado con éxito",
+    };
   } catch (error) {
-    /*  console.error("Error en eliminarCurso:", error);
+    console.error("Error en eliminarCurso:", error);
     if (error.error) {
       throw error; // Re-lanzar errores estructurados
     }
     throw {
       error: true,
       msg: "Error al eliminar el curso",
-      codigo: "EC02"
-    }; */
+      codigo: "EC02",
+    };
   }
 };

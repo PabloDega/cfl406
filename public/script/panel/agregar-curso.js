@@ -41,8 +41,8 @@ function inicializarFormulario() {
         const data = {};
         for (let [key, value] of formData.entries()) {
             if (key === 'activo') {
-                // El checkbox envía 'on' cuando está marcado, no 'true'
-                data[key] = value === 'on' || value === true;
+                // El checkbox envía 'on' cuando está marcado
+                data[key] = value === 'on' || value === true ? 1 : 0;
             } else if (key === 'codigo' || key === 'anio' || key === 'idProfesor') {
                 data[key] = parseInt(value);
             } else {
@@ -52,7 +52,7 @@ function inicializarFormulario() {
         
         // Si el checkbox no está marcado, no aparecerá en FormData, así que lo ponemos en false
         if (!formData.has('activo')) {
-            data.activo = false;
+            data.activo = 0;
         }
         
         // Validar campos obligatorios
