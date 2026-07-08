@@ -612,7 +612,7 @@ header.desborda-x #hambHeader {
     font-size: 0.8rem;
 }
 .tabla{
-    width: 100%;
+    /* width: 100%; */
     border-collapse: collapse;
 }
 .tabla tr:hover{
